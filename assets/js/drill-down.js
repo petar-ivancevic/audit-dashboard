@@ -90,10 +90,24 @@ const DrillDown = (() => {
         const detailContent = document.getElementById('buDetailContent');
         if (!detailContent) return;
 
-        const bu = data.businessUnit || {};
-        const metrics = data.auditMetrics || {};
-        const findings = data.findings || [];
-        const risks = data.riskAssessment || {};
+        // Extract data from the correct JSON structure
+        const bu = data.businessUnits?.[0] || {};
+        const scorecard = data.executiveScorecard || {};
+        const findings = data.auditFindings?.findings || [];
+        const complianceMetrics = data.complianceMetrics || {};
+        const riskMetrics = data.riskMetrics || {};
+
+        // Calculate metrics
+        const overallScore = scorecard.overallScore?.value || 0;
+        const complianceRate = complianceMetrics.training?.completion?.overall || 0;
+        const activeFindings = findings.filter(f => f.status !== 'Closed').length;
+        const auditCoverage = complianceMetrics.controlTesting?.passRate || 0;
+
+        // Get category display name
+        let categoryDisplay = bu.category;
+        if (categoryDisplay === 'core-banking') categoryDisplay = 'Core Banking';
+        else if (categoryDisplay === 'support-operations') categoryDisplay = 'Support & Operations';
+        else if (categoryDisplay === 'geographic-region') categoryDisplay = 'Geographic Region';
 
         detailContent.innerHTML = `
             <!-- Overview Section -->
@@ -102,25 +116,26 @@ const DrillDown = (() => {
                 <div class="detail-metrics">
                     <div class="detail-metric">
                         <div class="detail-metric-label">Risk Score</div>
-                        <div class="detail-metric-value" style="color: ${getRiskColor(metrics.overallRiskScore)}">${metrics.overallRiskScore || 'N/A'}</div>
+                        <div class="detail-metric-value" style="color: ${getRiskColor(overallScore)}">${overallScore.toFixed(1)}</div>
                     </div>
                     <div class="detail-metric">
                         <div class="detail-metric-label">Compliance Rate</div>
-                        <div class="detail-metric-value">${metrics.overallComplianceScore || 'N/A'}%</div>
+                        <div class="detail-metric-value">${complianceRate.toFixed(1)}%</div>
                     </div>
                     <div class="detail-metric">
                         <div class="detail-metric-label">Active Findings</div>
-                        <div class="detail-metric-value">${findings.length || 0}</div>
+                        <div class="detail-metric-value">${activeFindings}</div>
                     </div>
                     <div class="detail-metric">
                         <div class="detail-metric-label">Audit Coverage</div>
-                        <div class="detail-metric-value">${metrics.auditCoverage || 'N/A'}%</div>
+                        <div class="detail-metric-value">${auditCoverage.toFixed(1)}%</div>
                     </div>
                 </div>
                 <p style="margin-top: 1rem; color: var(--text-secondary);">
-                    <strong>Category:</strong> ${bu.category || 'N/A'}<br>
-                    <strong>Division:</strong> ${bu.division || 'N/A'}<br>
-                    <strong>Head Count:</strong> ${bu.headCount?.toLocaleString() || 'N/A'}
+                    <strong>Category:</strong> ${categoryDisplay}<br>
+                    <strong>Region:</strong> ${bu.region || 'N/A'}<br>
+                    <strong>Head Count:</strong> ${bu.headcount?.toLocaleString() || 'N/A'}<br>
+                    <strong>Risk Tier:</strong> ${bu.riskTier || 'N/A'}
                 </p>
             </div>
 
@@ -138,19 +153,19 @@ const DrillDown = (() => {
                 <div class="detail-metrics">
                     <div class="detail-metric">
                         <div class="detail-metric-label">AML/BSA</div>
-                        <div class="detail-metric-value">${metrics.amlBsaScore || 'N/A'}</div>
+                        <div class="detail-metric-value">${(data.operationalMetrics?.amlMonitoring?.effectiveness?.modelAccuracy || 0).toFixed(1)}</div>
                     </div>
                     <div class="detail-metric">
                         <div class="detail-metric-label">KYC/CDD</div>
-                        <div class="detail-metric-value">${metrics.kycCddScore || 'N/A'}</div>
+                        <div class="detail-metric-value">${(riskMetrics.kycCompliance?.completion?.cdd || 0).toFixed(1)}</div>
                     </div>
                     <div class="detail-metric">
                         <div class="detail-metric-label">Fraud Prevention</div>
-                        <div class="detail-metric-value">${metrics.fraudPreventionScore || 'N/A'}</div>
+                        <div class="detail-metric-value">${(riskMetrics.fraudPrevention?.detection?.modelAccuracy || 0).toFixed(1)}</div>
                     </div>
                     <div class="detail-metric">
                         <div class="detail-metric-label">Cyber Security</div>
-                        <div class="detail-metric-value">${metrics.cyberSecurityScore || 'N/A'}</div>
+                        <div class="detail-metric-value">${(complianceMetrics.training?.completion?.cyberSecurity || 0).toFixed(1)}</div>
                     </div>
                 </div>
             </div>
@@ -174,13 +189,24 @@ const DrillDown = (() => {
             <!-- Key Risks Section -->
             <div class="detail-section">
                 <h3>Key Risk Areas</h3>
-                ${renderKeyRisks(risks.keyRisks || [])}
-            </div>
-
-            <!-- Recent Activity Section -->
-            <div class="detail-section">
-                <h3>Recent Activity</h3>
-                ${renderRecentActivity(data.recentActivity || [])}
+                <div class="detail-metrics">
+                    <div class="detail-metric">
+                        <div class="detail-metric-label">AML/BSA Risk</div>
+                        <div class="detail-metric-value">${getRiskLevel(data.operationalMetrics?.amlMonitoring?.effectiveness?.modelAccuracy || 0)}</div>
+                    </div>
+                    <div class="detail-metric">
+                        <div class="detail-metric-label">Fraud Risk</div>
+                        <div class="detail-metric-value">${getRiskLevel(riskMetrics.fraudPrevention?.detection?.modelAccuracy || 0)}</div>
+                    </div>
+                    <div class="detail-metric">
+                        <div class="detail-metric-label">Operational Risk</div>
+                        <div class="detail-metric-value">${getRiskLevel(riskMetrics.operationalRisk?.overallScore || 0)}</div>
+                    </div>
+                    <div class="detail-metric">
+                        <div class="detail-metric-label">Cyber Risk</div>
+                        <div class="detail-metric-value">${getRiskLevel(complianceMetrics.training?.completion?.cyberSecurity || 0)}</div>
+                    </div>
+                </div>
             </div>
         `;
     }
@@ -192,10 +218,10 @@ const DrillDown = (() => {
      */
     function renderFindingsBreakdown(findings) {
         const breakdown = {
-            critical: findings.filter(f => f.severity === 'Critical').length,
-            high: findings.filter(f => f.severity === 'High').length,
-            medium: findings.filter(f => f.severity === 'Medium').length,
-            low: findings.filter(f => f.severity === 'Low').length
+            critical: findings.filter(f => f.severity?.toLowerCase() === 'critical').length,
+            high: findings.filter(f => f.severity?.toLowerCase() === 'high').length,
+            medium: findings.filter(f => f.severity?.toLowerCase() === 'medium').length,
+            low: findings.filter(f => f.severity?.toLowerCase() === 'low').length
         };
 
         return `
@@ -279,8 +305,18 @@ const DrillDown = (() => {
         // Destroy existing charts
         destroyDetailCharts();
 
-        const metrics = data.auditMetrics || {};
-        const transactionData = data.transactionMonitoring || {};
+        // Extract data from correct JSON structure
+        const operationalMetrics = data.operationalMetrics || {};
+        const riskMetrics = data.riskMetrics || {};
+        const complianceMetrics = data.complianceMetrics || {};
+
+        // Calculate scores
+        const amlScore = operationalMetrics.amlMonitoring?.effectiveness?.modelAccuracy || 0;
+        const kycScore = riskMetrics.kycCompliance?.completion?.cdd || 0;
+        const fraudScore = riskMetrics.fraudPrevention?.detection?.modelAccuracy || 0;
+        const cyberScore = complianceMetrics.training?.completion?.cyberSecurity || 0;
+        const operationalScore = riskMetrics.operationalRisk?.overallScore || 0;
+        const complianceScore = complianceMetrics.training?.completion?.overall || 0;
 
         // Risk assessment radar chart
         setTimeout(() => {
@@ -291,12 +327,12 @@ const DrillDown = (() => {
                     datasets: [{
                         label: 'Risk Score',
                         data: [
-                            metrics.amlBsaScore || 0,
-                            metrics.kycCddScore || 0,
-                            metrics.fraudPreventionScore || 0,
-                            metrics.cyberSecurityScore || 0,
-                            metrics.operationalRiskScore || 0,
-                            metrics.overallComplianceScore || 0
+                            amlScore,
+                            kycScore,
+                            fraudScore,
+                            cyberScore,
+                            operationalScore,
+                            complianceScore
                         ],
                         borderColor: ChartEngine.colors.primary,
                         backgroundColor: ChartEngine.colors.primary.replace(')', ', 0.2)').replace('rgb', 'rgba'),
@@ -324,15 +360,19 @@ const DrillDown = (() => {
             if (riskChart) detailCharts.push(riskChart);
         }, 100);
 
-        // Transaction monitoring chart
+        // Transaction monitoring chart - use AML scenarios from operational metrics
         setTimeout(() => {
+            const scenarios = operationalMetrics.amlMonitoring?.scenarios || [];
+            const scenarioNames = scenarios.map(s => s.name);
+            const alertVolumes = scenarios.map(s => s.alertVolume);
+
             const transactionChart = ChartEngine.createChart('detailTransactionChart', {
                 type: 'bar',
                 data: {
-                    labels: transactionData.scenarioNames || ['Scenario 1', 'Scenario 2', 'Scenario 3', 'Scenario 4'],
+                    labels: scenarioNames.length > 0 ? scenarioNames : ['No Data'],
                     datasets: [{
                         label: 'Alerts Generated',
-                        data: transactionData.alertCounts || [45, 32, 28, 19],
+                        data: alertVolumes.length > 0 ? alertVolumes : [0],
                         backgroundColor: ChartEngine.colors.primary,
                         borderColor: ChartEngine.colors.borderColor,
                         borderWidth: 1
@@ -345,6 +385,10 @@ const DrillDown = (() => {
                     plugins: {
                         legend: {
                             display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'AML Alert Volume by Scenario'
                         }
                     },
                     scales: {
@@ -392,6 +436,18 @@ const DrillDown = (() => {
         if (score >= 75) return 'var(--good-color)';
         if (score >= 65) return 'var(--warning-color)';
         return 'var(--critical-color)';
+    }
+
+    /**
+     * Get risk level label based on score
+     * @param {number} score - Risk score (0-100)
+     * @returns {string} Risk level label
+     */
+    function getRiskLevel(score) {
+        if (score >= 85) return 'Low Risk';
+        if (score >= 75) return 'Moderate Risk';
+        if (score >= 65) return 'Elevated Risk';
+        return 'High Risk';
     }
 
     /**
@@ -444,7 +500,7 @@ const DrillDown = (() => {
      * Setup comparison functionality
      * @param {Array} selectedBusinessUnits - Selected business unit IDs
      */
-    function compareBusinessUnits(selectedBusinessUnits) {
+    async function compareBusinessUnits(selectedBusinessUnits) {
         console.log('[DrillDown] Comparing business units:', selectedBusinessUnits);
 
         if (selectedBusinessUnits.length < 2) {
@@ -457,9 +513,81 @@ const DrillDown = (() => {
             return;
         }
 
-        // This would open a comparison view or modal
-        // For now, log the comparison request
-        console.log(`[DrillDown] Would compare: ${selectedBusinessUnits.join(', ')}`);
+        try {
+            // Load data for all selected business units
+            const buDataPromises = selectedBusinessUnits.map(id => DataLoader.loadBusinessUnitData(id));
+            const buDataArray = await Promise.all(buDataPromises);
+
+            // Create comparison HTML
+            let comparisonHTML = '<table class="comparison-table"><thead><tr><th>Metric</th>';
+
+            buDataArray.forEach(buData => {
+                const bu = buData.businessUnits?.[0];
+                comparisonHTML += `<th>${bu?.name || 'Unknown'}</th>`;
+            });
+
+            comparisonHTML += '</tr></thead><tbody>';
+
+            // Add rows for key metrics
+            const metrics = [
+                { label: 'Overall Risk Score', getValue: (data) => data.executiveScorecard?.overallScore?.value?.toFixed(1) || 'N/A' },
+                { label: 'Compliance Rate', getValue: (data) => (data.complianceMetrics?.training?.completion?.overall?.toFixed(1) || 'N/A') + '%' },
+                { label: 'Active Findings', getValue: (data) => data.auditFindings?.findings?.filter(f => f.status !== 'Closed').length || 0 },
+                { label: 'Risk Tier', getValue: (data) => data.businessUnits?.[0]?.riskTier || 'N/A' },
+                { label: 'Headcount', getValue: (data) => data.businessUnits?.[0]?.headcount?.toLocaleString() || 'N/A' }
+            ];
+
+            metrics.forEach(metric => {
+                comparisonHTML += `<tr><td><strong>${metric.label}</strong></td>`;
+                buDataArray.forEach(buData => {
+                    comparisonHTML += `<td>${metric.getValue(buData)}</td>`;
+                });
+                comparisonHTML += '</tr>';
+            });
+
+            comparisonHTML += '</tbody></table>';
+
+            // Show comparison in the detail panel
+            const detailPanel = document.getElementById('buDetailPanel');
+            const detailTitle = document.getElementById('buDetailTitle');
+            const detailContent = document.getElementById('buDetailContent');
+
+            if (detailPanel && detailTitle && detailContent) {
+                detailTitle.textContent = `Comparison: ${selectedBusinessUnits.length} Business Units`;
+                detailContent.innerHTML = `
+                    <div class="detail-section">
+                        <h3>Business Unit Comparison</h3>
+                        ${comparisonHTML}
+                    </div>
+                    <style>
+                        .comparison-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 1rem;
+                        }
+                        .comparison-table th,
+                        .comparison-table td {
+                            padding: 0.75rem;
+                            text-align: left;
+                            border-bottom: 1px solid var(--border-color);
+                        }
+                        .comparison-table thead th {
+                            background-color: var(--primary-color);
+                            color: white;
+                            font-weight: 600;
+                        }
+                        .comparison-table tbody tr:hover {
+                            background-color: var(--bg-secondary);
+                        }
+                    </style>
+                `;
+                detailPanel.classList.remove('hidden');
+            }
+
+        } catch (error) {
+            console.error('[DrillDown] Error comparing business units:', error);
+            alert('Error loading business unit data for comparison.');
+        }
     }
 
     /**

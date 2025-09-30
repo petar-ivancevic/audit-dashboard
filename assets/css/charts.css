@@ -140,10 +140,18 @@ canvas {
     width: 100% !important;
     height: auto !important;
     max-height: 350px;
+    min-height: 200px;
 }
 
 .chart-container.large canvas {
     max-height: 450px;
+}
+
+/* Horizontal bar charts need more height */
+#amlScenarioChart,
+#fraudLossChart {
+    min-height: 300px !important;
+    max-height: 500px !important;
 }
 
 /* ============================================

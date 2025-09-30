@@ -97,12 +97,16 @@ const FilterControls = (() => {
         let visibleCount = 0;
 
         rows.forEach(row => {
-            const division = row.dataset.division || '';
-            const riskTier = row.dataset.riskTier || '';
+            // Note: dataset properties convert kebab-case to camelCase
+            // data-category -> dataset.category
+            // data-risktier -> dataset.risktier (lowercase in HTML, so lowercase in dataset)
+            const category = row.dataset.category || '';
+            const riskTier = row.dataset.risktier || ''; // lowercase because HTML attribute is data-risktier
             const searchText = row.textContent.toLowerCase();
 
-            const divisionMatch = filterStates.businessUnits.division === 'all' ||
-                                  division === filterStates.businessUnits.division;
+            // Division filter actually filters by category
+            const categoryMatch = filterStates.businessUnits.division === 'all' ||
+                                  category === filterStates.businessUnits.division;
 
             const riskMatch = filterStates.businessUnits.riskTier === 'all' ||
                              riskTier === filterStates.businessUnits.riskTier;
@@ -110,7 +114,7 @@ const FilterControls = (() => {
             const searchMatch = filterStates.businessUnits.search === '' ||
                                searchText.includes(filterStates.businessUnits.search);
 
-            if (divisionMatch && riskMatch && searchMatch) {
+            if (categoryMatch && riskMatch && searchMatch) {
                 row.style.display = '';
                 visibleCount++;
             } else {
