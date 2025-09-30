@@ -1387,21 +1387,29 @@
 
         // Aggregate findings from all business units
         const allFindings = [];
+        const categorySet = new Set();
+        const ownerSet = new Set();
 
         state.businessUnitsData.forEach(buData => {
             const bu = buData.businessUnits?.[0];
             const findings = buData.auditFindings?.findings || [];
 
             findings.forEach(finding => {
+                const category = finding.category || 'Uncategorized';
+                const owner = finding.owner || 'Unassigned';
+
+                categorySet.add(category);
+                ownerSet.add(owner);
+
                 allFindings.push({
                     id: finding.id,
                     title: finding.title,
                     unit: bu?.name || 'Unknown',
                     severity: finding.severity,
-                    category: finding.category,
+                    category,
                     status: finding.status,
                     dueDate: finding.dueDate,
-                    owner: finding.owner || 'Unassigned'
+                    owner
                 });
             });
         });
@@ -1409,6 +1417,57 @@
         // Sort by severity (critical first, then high, medium, low)
         const severityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
         allFindings.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
+
+        // Update filter dropdown options
+        const filterState = window.FilterControls?.getFilterState('findings') || {};
+        const categoryFilter = document.getElementById('findingsCategoryFilter');
+        const ownerFilter = document.getElementById('findingsOwnerFilter');
+
+        if (categoryFilter) {
+            categoryFilter.innerHTML = '';
+            const defaultCategoryOption = document.createElement('option');
+            defaultCategoryOption.value = 'all';
+            defaultCategoryOption.textContent = 'All Categories';
+            categoryFilter.appendChild(defaultCategoryOption);
+
+            const sortedCategories = Array.from(categorySet).sort((a, b) => a.localeCompare(b));
+            sortedCategories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categoryFilter.appendChild(option);
+            });
+
+            const previousCategory = filterState.category || 'all';
+            const appliedCategory = previousCategory !== 'all' && categorySet.has(previousCategory)
+                ? previousCategory
+                : 'all';
+            categoryFilter.value = appliedCategory;
+            filterState.category = appliedCategory;
+        }
+
+        if (ownerFilter) {
+            ownerFilter.innerHTML = '';
+            const defaultOwnerOption = document.createElement('option');
+            defaultOwnerOption.value = 'all';
+            defaultOwnerOption.textContent = 'All Owners';
+            ownerFilter.appendChild(defaultOwnerOption);
+
+            const sortedOwners = Array.from(ownerSet).sort((a, b) => a.localeCompare(b));
+            sortedOwners.forEach(owner => {
+                const option = document.createElement('option');
+                option.value = owner;
+                option.textContent = owner;
+                ownerFilter.appendChild(option);
+            });
+
+            const previousOwner = filterState.owner || 'all';
+            const appliedOwner = previousOwner !== 'all' && ownerSet.has(previousOwner)
+                ? previousOwner
+                : 'all';
+            ownerFilter.value = appliedOwner;
+            filterState.owner = appliedOwner;
+        }
 
         // Populate table rows
         if (allFindings.length === 0) {
@@ -1421,6 +1480,8 @@
         allFindings.forEach(finding => {
             const row = document.createElement('tr');
             row.dataset.severity = finding.severity;
+            row.dataset.category = finding.category;
+            row.dataset.owner = finding.owner;
 
             row.innerHTML = `
                 <td>${finding.id}</td>
@@ -1435,6 +1496,10 @@
 
             tbody.appendChild(row);
         });
+
+        if (window.FilterControls && typeof window.FilterControls.applyFindingsFilters === 'function') {
+            window.FilterControls.applyFindingsFilters();
+        }
 
         console.log(`[Main] Populated ${allFindings.length} audit findings from ${state.businessUnitsData.length} business units`);
     }
@@ -1692,3 +1757,4 @@
     window.DashboardState = state;
 
 })();
+

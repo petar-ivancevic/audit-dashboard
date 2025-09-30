@@ -13,6 +13,8 @@ const FilterControls = (() => {
         },
         findings: {
             severity: 'all',
+            category: 'all',
+            owner: 'all',
             status: 'all',
             search: ''
         }
@@ -77,10 +79,29 @@ const FilterControls = (() => {
      */
     function setupFindingsFilters() {
         const severityFilter = document.getElementById('findingsSeverityFilter');
+        const categoryFilter = document.getElementById('findingsCategoryFilter');
+        const ownerFilter = document.getElementById('findingsOwnerFilter');
 
         if (severityFilter) {
+            severityFilter.value = filterStates.findings.severity;
             severityFilter.addEventListener('change', (e) => {
                 filterStates.findings.severity = e.target.value;
+                applyFindingsFilters();
+            });
+        }
+
+        if (categoryFilter) {
+            categoryFilter.value = filterStates.findings.category;
+            categoryFilter.addEventListener('change', (e) => {
+                filterStates.findings.category = e.target.value;
+                applyFindingsFilters();
+            });
+        }
+
+        if (ownerFilter) {
+            ownerFilter.value = filterStates.findings.owner;
+            ownerFilter.addEventListener('change', (e) => {
+                filterStates.findings.owner = e.target.value;
                 applyFindingsFilters();
             });
         }
@@ -137,11 +158,17 @@ const FilterControls = (() => {
 
         rows.forEach(row => {
             const severity = row.dataset.severity || '';
+            const category = row.dataset.category || '';
+            const owner = row.dataset.owner || '';
 
             const severityMatch = filterStates.findings.severity === 'all' ||
                                  severity === filterStates.findings.severity;
+            const categoryMatch = filterStates.findings.category === 'all' ||
+                                 category === filterStates.findings.category;
+            const ownerMatch = filterStates.findings.owner === 'all' ||
+                                 owner === filterStates.findings.owner;
 
-            if (severityMatch) {
+            if (severityMatch && categoryMatch && ownerMatch) {
                 row.style.display = '';
                 visibleCount++;
             } else {
@@ -264,13 +291,19 @@ const FilterControls = (() => {
         } else if (filterGroup === 'findings') {
             filterStates.findings = {
                 severity: 'all',
+                category: 'all',
+                owner: 'all',
                 status: 'all',
                 search: ''
             };
 
             // Reset UI
             const severityFilter = document.getElementById('findingsSeverityFilter');
+            const categoryFilter = document.getElementById('findingsCategoryFilter');
+            const ownerFilter = document.getElementById('findingsOwnerFilter');
             if (severityFilter) severityFilter.value = 'all';
+            if (categoryFilter) categoryFilter.value = 'all';
+            if (ownerFilter) ownerFilter.value = 'all';
 
             applyFindingsFilters();
         }
@@ -416,3 +449,4 @@ const FilterControls = (() => {
 
 // Make available globally
 window.FilterControls = FilterControls;
+
