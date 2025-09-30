@@ -1,0 +1,139 @@
+================================================================================
+  ENTERPRISE AUDIT DASHBOARD - QUICK START INSTRUCTIONS
+================================================================================
+
+STEP 1: START THE SERVER
+-------------------------
+Double-click:  START-SERVER.bat
+
+(This will automatically start a local web server on port 8000)
+
+
+STEP 2: OPEN YOUR BROWSER
+--------------------------
+Go to:  http://localhost:8000
+
+
+STEP 3: EXPLORE THE DASHBOARD
+------------------------------
+- Click tabs to switch between views
+- Click heat map cells to see business unit details
+- Use filters to analyze specific units or risk tiers
+- Click table headers to sort
+- Export data using the buttons in the header
+
+
+THAT'S IT! You're ready to go.
+
+================================================================================
+
+TROUBLESHOOTING
+---------------
+
+Problem: Server won't start
+Solution: Install Python from python.org/downloads
+          OR install Node.js from nodejs.org
+
+Problem: Dashboard shows "Failed to initialize"
+Solution: Make sure you're accessing http://localhost:8000
+          (NOT opening index.html directly from file explorer)
+
+Problem: Port 8000 is already in use
+Solution: Kill the existing server (Ctrl+C in the command window)
+          OR use a different port with: python -m http.server 8080
+
+================================================================================
+
+FEATURES OVERVIEW
+-----------------
+
+Executive Summary:
+  - Enterprise risk score with trending
+  - Risk heat map for all 15 business units
+  - Key metrics cards
+  - Actionable insights
+
+Business Units:
+  - Compare all 15 business units
+  - Sort and filter by division or risk tier
+  - Click any unit for detailed drill-down
+
+Risk Analysis:
+  - AML/BSA transaction monitoring metrics
+  - KYC/CDD compliance tracking
+  - Fraud prevention statistics
+  - Sanctions screening coverage
+
+Compliance:
+  - Regulatory compliance metrics
+  - Training completion rates
+  - Policy currency tracking
+  - Control testing results
+
+Audit Findings:
+  - Findings by severity (Critical/High/Medium/Low)
+  - Status tracking (Open/In Progress/Closed)
+  - Remediation progress monitoring
+
+Trends & Forecasts:
+  - Historical trends (Q1 2022 - Q3 2024)
+  - Q4 2024 forecast
+  - 2025 annual projection
+  - Industry benchmarking
+
+================================================================================
+
+DATA INCLUDED
+-------------
+
+15 Business Units:
+  - Consumer Banking & Lending
+  - Commercial Banking
+  - Investment Banking & Capital Markets
+  - Wealth & Investment Management
+  - Treasury & Balance Sheet Management
+  - Operations & Technology
+  - Human Resources
+  - Corporate Real Estate
+  - Vendor Management
+  - Legal & Compliance
+  - Northeast Region
+  - Southeast Region
+  - West Coast Region
+  - International Division
+  - Digital Banking Unit
+
+Data Points per Unit:
+  - 200+ unique metrics
+  - Q3 2024 comprehensive data
+  - Historical trends (11 quarters)
+  - Risk scores and ratings
+  - Compliance metrics
+  - Audit findings
+
+================================================================================
+
+EXPORT OPTIONS
+--------------
+
+PDF Export:     Click "Export PDF" button, then use browser's Print to PDF
+Excel Export:   Click "Export Excel" for CSV download
+Print:          Click "Print" for formatted paper output
+Chart Images:   Right-click any chart to save as image
+
+================================================================================
+
+NEED MORE HELP?
+---------------
+
+See demo.html for detailed setup options
+See README.md for comprehensive documentation
+
+================================================================================
+
+This dashboard contains simulated data for demonstration purposes only.
+
+Version: 1.0
+Created: 2024
+
+================================================================================

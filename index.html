@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Audit Dashboard - Financial Crimes Analytics</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/charts.css">
+    <link rel="stylesheet" href="assets/css/responsive.css" media="screen">
+    <link rel="stylesheet" href="assets/css/print.css" media="print">
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Date picker library -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <h1 class="dashboard-title">Enterprise Audit Dashboard</h1>
+                <p class="dashboard-subtitle">Financial Crimes Risk & Compliance Analytics</p>
+            </div>
+            <div class="header-controls">
+                <div class="period-selector">
+                    <label for="reportingPeriod">Reporting Period:</label>
+                    <select id="reportingPeriod" class="control-select">
+                        <option value="q3-2024" selected>Q3 2024</option>
+                        <option value="q2-2024">Q2 2024</option>
+                        <option value="q1-2024">Q1 2024</option>
+                        <option value="q4-2023">Q4 2023</option>
+                    </select>
+                </div>
+                <div class="export-controls">
+                    <button id="exportPDF" class="btn btn-secondary">
+                        <span class="icon">📄</span> Export PDF
+                    </button>
+                    <button id="exportExcel" class="btn btn-secondary">
+                        <span class="icon">📊</span> Export Excel
+                    </button>
+                    <button id="printDashboard" class="btn btn-secondary">
+                        <span class="icon">🖨️</span> Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="dashboard-nav">
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-view="executive">
+                <span class="icon">📊</span> Executive Summary
+            </button>
+            <button class="nav-tab" data-view="business-units">
+                <span class="icon">🏢</span> Business Units
+            </button>
+            <button class="nav-tab" data-view="risk-analysis">
+                <span class="icon">⚠️</span> Risk Analysis
+            </button>
+            <button class="nav-tab" data-view="compliance">
+                <span class="icon">✓</span> Compliance
+            </button>
+            <button class="nav-tab" data-view="findings">
+                <span class="icon">🔍</span> Audit Findings
+            </button>
+            <button class="nav-tab" data-view="trends">
+                <span class="icon">📈</span> Trends & Forecasts
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+
+        <!-- Executive Summary View -->
+        <section id="executive-view" class="dashboard-view active">
+
+            <!-- Key Metrics Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card primary">
+                    <div class="metric-header">
+                        <h3>Enterprise Risk Score</h3>
+                        <span class="metric-trend up">↑ 2.1%</span>
+                    </div>
+                    <div class="metric-value" id="enterpriseScore">81.8</div>
+                    <div class="metric-footer">
+                        <div class="metric-indicator good">Good</div>
+                        <div class="metric-target">Target: 85.0</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Total Business Units</h3>
+                    </div>
+                    <div class="metric-value" id="totalBusinessUnits">15</div>
+                    <div class="metric-footer">
+                        <div class="metric-label">Across 3 Divisions</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Active Findings</h3>
+                        <span class="metric-trend down">↓ 8.3%</span>
+                    </div>
+                    <div class="metric-value warning" id="activeFindings">75</div>
+                    <div class="metric-footer">
+                        <div class="metric-breakdown">
+                            <span class="critical">3 Critical</span>
+                            <span class="high">15 High</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Compliance Rate</h3>
+                        <span class="metric-trend up">↑ 1.2%</span>
+                    </div>
+                    <div class="metric-value excellent" id="complianceRate">92.4%</div>
+                    <div class="metric-footer">
+                        <div class="metric-indicator excellent">Excellent</div>
+                        <div class="metric-target">Target: 90.0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Heat Map -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Business Unit Risk Heat Map</h2>
+                    <div class="section-controls">
+                        <select id="riskCategory" class="control-select">
+                            <option value="overall">Overall Risk</option>
+                            <option value="aml">AML/BSA</option>
+                            <option value="kyc">KYC/CDD</option>
+                            <option value="fraud">Fraud Risk</option>
+                            <option value="cyber">Cyber Risk</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="heatmap-container">
+                    <div id="riskHeatMap" class="risk-heatmap">
+                        <!-- Heat map will be dynamically generated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Scorecard Charts -->
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Risk Score Trends (Last 3 Quarters)</h3>
+                    </div>
+                    <canvas id="riskTrendChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Findings by Category</h3>
+                    </div>
+                    <canvas id="findingsCategoryChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Compliance Metrics</h3>
+                    </div>
+                    <canvas id="complianceChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Alert Volumes & Effectiveness</h3>
+                    </div>
+                    <canvas id="alertVolumeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Actionable Insights -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Key Insights & Recommendations</h2>
+                </div>
+                <div id="insightsContainer" class="insights-grid">
+                    <!-- Insights will be dynamically loaded -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Business Units View -->
+        <section id="business-units-view" class="dashboard-view">
+
+            <!-- Business Unit Filters -->
+            <div class="filter-panel">
+                <div class="filter-group">
+                    <label>Division:</label>
+                    <select id="divisionFilter" class="control-select">
+                        <option value="all">All Divisions</option>
+                        <option value="core-banking">Core Banking</option>
+                        <option value="support-operations">Support & Operations</option>
+                        <option value="geographic-region">Geographic Regions</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Risk Tier:</label>
+                    <select id="riskTierFilter" class="control-select">
+                        <option value="all">All Risk Tiers</option>
+                        <option value="high">High Risk</option>
+                        <option value="medium">Medium Risk</option>
+                        <option value="low">Low Risk</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Search:</label>
+                    <input type="text" id="buSearchInput" class="control-input" placeholder="Search business units...">
+                </div>
+            </div>
+
+            <!-- Business Unit Comparison Table -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Business Unit Performance Comparison</h2>
+                    <button id="compareSelected" class="btn btn-primary">Compare Selected</button>
+                </div>
+                <div class="table-container">
+                    <table id="businessUnitsTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAllBU"></th>
+                                <th class="sortable" data-sort="name">Business Unit</th>
+                                <th class="sortable" data-sort="category">Category</th>
+                                <th class="sortable" data-sort="score">Risk Score</th>
+                                <th class="sortable" data-sort="trend">Trend</th>
+                                <th class="sortable" data-sort="findings">Findings</th>
+                                <th class="sortable" data-sort="compliance">Compliance</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="businessUnitsTableBody">
+                            <!-- Rows will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Business Unit Detail Panel (Hidden by default) -->
+            <div id="buDetailPanel" class="detail-panel hidden">
+                <div class="detail-header">
+                    <h2 id="buDetailTitle"></h2>
+                    <button id="closeDetailPanel" class="btn-close">✕</button>
+                </div>
+                <div id="buDetailContent" class="detail-content">
+                    <!-- Detailed metrics will be loaded here -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Risk Analysis View -->
+        <section id="risk-analysis-view" class="dashboard-view">
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>AML/BSA Transaction Monitoring</h2>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Alert Volume by Scenario</h3>
+                        <canvas id="amlScenarioChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>False Positive Rates</h3>
+                        <canvas id="falsePositiveChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>KYC/CDD Compliance Metrics</h2>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>KYC Completion Rates</h3>
+                        <canvas id="kycCompletionChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Periodic Review Compliance</h3>
+                        <canvas id="periodicReviewChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Fraud & Sanctions Risk</h2>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Fraud Loss Rates by Business Unit</h3>
+                        <canvas id="fraudLossChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Sanctions Screening Coverage</h3>
+                        <canvas id="sanctionsCoverageChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Compliance View -->
+        <section id="compliance-view" class="dashboard-view">
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Regulatory Compliance Overview</h2>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>SAR Filing Timeliness</h3>
+                        <div class="metric-value excellent">97.2%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill excellent" style="width: 97.2%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Training Completion</h3>
+                        <div class="metric-value excellent">95.9%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill excellent" style="width: 95.9%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Policy Currency</h3>
+                        <div class="metric-value good">92.8%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill good" style="width: 92.8%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Control Testing Pass Rate</h3>
+                        <div class="metric-value good">89.7%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill good" style="width: 89.7%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Regulatory Examination Results</h3>
+                        <canvas id="examResultsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Training Completion by Category</h3>
+                        <canvas id="trainingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Audit Findings View -->
+        <section id="findings-view" class="dashboard-view">
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Audit Findings Summary</h2>
+                </div>
+
+                <div class="findings-summary">
+                    <div class="finding-stat critical">
+                        <div class="stat-value" id="criticalFindings">3</div>
+                        <div class="stat-label">Critical</div>
+                    </div>
+                    <div class="finding-stat high">
+                        <div class="stat-value" id="highFindings">15</div>
+                        <div class="stat-label">High</div>
+                    </div>
+                    <div class="finding-stat medium">
+                        <div class="stat-value" id="mediumFindings">39</div>
+                        <div class="stat-label">Medium</div>
+                    </div>
+                    <div class="finding-stat low">
+                        <div class="stat-value" id="lowFindings">18</div>
+                        <div class="stat-label">Low</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Findings by Status</h2>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Status Distribution</h3>
+                        <canvas id="findingsStatusChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Remediation Progress</h3>
+                        <canvas id="remediationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Detailed Findings</h2>
+                    <div class="section-controls">
+                        <select id="findingsSeverityFilter" class="control-select">
+                            <option value="all">All Severities</option>
+                            <option value="critical">Critical</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="findingsTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Business Unit</th>
+                                <th>Severity</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                                <th>Owner</th>
+                            </tr>
+                        </thead>
+                        <tbody id="findingsTableBody">
+                            <!-- Findings will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Trends & Forecasts View -->
+        <section id="trends-view" class="dashboard-view">
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Historical Trends (Q1 2022 - Q3 2024)</h2>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="historicalTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Forecasts & Projections</h2>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Q4 2024 Forecast</h3>
+                        <canvas id="forecastQ4Chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>2025 Annual Projection</h3>
+                        <canvas id="forecast2025Chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Industry Benchmarking</h2>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="benchmarkChart"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Enterprise Audit Dashboard v1.0</p>
+                <p>Data as of Q3 2024 | Generated: <span id="generatedDate"></span></p>
+            </div>
+            <div class="footer-disclaimer">
+                <p><strong>Disclaimer:</strong> This dashboard contains simulated data for demonstration purposes only. All figures, metrics, and insights are illustrative examples.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Loading dashboard data...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/chart-engine.js"></script>
+    <script src="assets/js/filter-controls.js"></script>
+    <script src="assets/js/drill-down.js"></script>
+    <script src="assets/js/export-functions.js"></script>
+    <script src="assets/js/performance.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

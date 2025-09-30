@@ -1,0 +1,838 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Enterprise Audit Dashboard Schema v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "organization",
+    "reportingPeriod",
+    "generatedAt",
+    "businessUnits",
+    "executiveScorecard",
+    "operationalMetrics",
+    "riskMetrics",
+    "complianceMetrics",
+    "auditFindings",
+    "trends",
+    "metadata"
+  ],
+  "properties": {
+    "organization": {
+      "type": "string",
+      "description": "Organization name (anonymized for demo)"
+    },
+    "reportingPeriod": {
+      "type": "object",
+      "required": ["quarter", "year", "asOfDate"],
+      "properties": {
+        "quarter": {"type": "integer", "minimum": 1, "maximum": 4},
+        "year": {"type": "integer", "minimum": 2020, "maximum": 2030},
+        "asOfDate": {"type": "string", "format": "date"}
+      }
+    },
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "businessUnits": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "region", "headcount", "assets"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "category": {
+            "type": "string",
+            "enum": ["core-banking", "support-operations", "geographic-region", "specialty-unit"]
+          },
+          "region": {"type": "string"},
+          "headcount": {"type": "integer", "minimum": 0},
+          "assets": {"type": "number", "minimum": 0},
+          "riskTier": {"type": "string", "enum": ["high", "medium", "low"]},
+          "regulatoryFocus": {"type": "boolean"}
+        }
+      }
+    },
+    "executiveScorecard": {
+      "type": "object",
+      "required": ["overallScore", "kpis", "alerts", "trending"],
+      "properties": {
+        "overallScore": {
+          "type": "object",
+          "required": ["value", "trend", "benchmark"],
+          "properties": {
+            "value": {"type": "number", "minimum": 0, "maximum": 100},
+            "trend": {"type": "string", "enum": ["improving", "stable", "declining"]},
+            "benchmark": {"type": "string", "enum": ["excellent", "good", "acceptable", "needs-improvement", "critical"]}
+          }
+        },
+        "kpis": {
+          "type": "array",
+          "minItems": 15,
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "value", "target", "status", "trend"],
+            "properties": {
+              "id": {"type": "string"},
+              "name": {"type": "string"},
+              "value": {"type": "number"},
+              "target": {"type": "number"},
+              "unit": {"type": "string"},
+              "status": {"type": "string", "enum": ["excellent", "good", "warning", "critical"]},
+              "trend": {"type": "string", "enum": ["up", "down", "flat"]},
+              "category": {"type": "string"}
+            }
+          }
+        },
+        "alerts": {
+          "type": "object",
+          "required": ["critical", "high", "medium", "low"],
+          "properties": {
+            "critical": {"type": "integer", "minimum": 0},
+            "high": {"type": "integer", "minimum": 0},
+            "medium": {"type": "integer", "minimum": 0},
+            "low": {"type": "integer", "minimum": 0}
+          }
+        },
+        "trending": {
+          "type": "object",
+          "required": ["quarterOverQuarter", "yearOverYear", "trendingUp", "trendingDown"],
+          "properties": {
+            "quarterOverQuarter": {"type": "number"},
+            "yearOverYear": {"type": "number"},
+            "trendingUp": {"type": "array", "items": {"type": "string"}},
+            "trendingDown": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "operationalMetrics": {
+      "type": "object",
+      "required": ["amlMonitoring", "investigations", "caseManagement", "productivity"],
+      "properties": {
+        "amlMonitoring": {
+          "type": "object",
+          "required": ["alerts", "scenarios", "effectiveness"],
+          "properties": {
+            "alerts": {
+              "type": "object",
+              "required": ["total", "falsePositiveRate", "averageDispositionTime", "backlog"],
+              "properties": {
+                "total": {"type": "integer", "minimum": 0},
+                "falsePositiveRate": {"type": "number", "minimum": 0, "maximum": 100},
+                "averageDispositionTime": {"type": "number", "minimum": 0},
+                "backlog": {"type": "integer", "minimum": 0}
+              }
+            },
+            "scenarios": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "alertVolume", "falsePositiveRate", "effectiveness"],
+                "properties": {
+                  "name": {"type": "string"},
+                  "alertVolume": {"type": "integer", "minimum": 0},
+                  "falsePositiveRate": {"type": "number", "minimum": 0, "maximum": 100},
+                  "effectiveness": {"type": "number", "minimum": 0, "maximum": 100}
+                }
+              }
+            },
+            "effectiveness": {
+              "type": "object",
+              "required": ["sarConversionRate", "modelAccuracy", "coverageRatio"],
+              "properties": {
+                "sarConversionRate": {"type": "number", "minimum": 0, "maximum": 100},
+                "modelAccuracy": {"type": "number", "minimum": 0, "maximum": 100},
+                "coverageRatio": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "investigations": {
+          "type": "object",
+          "required": ["caseLoad", "cycleTime", "quality", "staffing"],
+          "properties": {
+            "caseLoad": {
+              "type": "object",
+              "required": ["active", "closed", "escalated", "aging"],
+              "properties": {
+                "active": {"type": "integer", "minimum": 0},
+                "closed": {"type": "integer", "minimum": 0},
+                "escalated": {"type": "integer", "minimum": 0},
+                "aging": {
+                  "type": "object",
+                  "required": ["under30Days", "days30to60", "days60to90", "over90Days"],
+                  "properties": {
+                    "under30Days": {"type": "integer", "minimum": 0},
+                    "days30to60": {"type": "integer", "minimum": 0},
+                    "days60to90": {"type": "integer", "minimum": 0},
+                    "over90Days": {"type": "integer", "minimum": 0}
+                  }
+                }
+              }
+            },
+            "cycleTime": {
+              "type": "object",
+              "required": ["average", "median", "target"],
+              "properties": {
+                "average": {"type": "number", "minimum": 0},
+                "median": {"type": "number", "minimum": 0},
+                "target": {"type": "number", "minimum": 0}
+              }
+            },
+            "quality": {
+              "type": "object",
+              "required": ["qaScore", "reworkRate", "documentationScore"],
+              "properties": {
+                "qaScore": {"type": "number", "minimum": 0, "maximum": 100},
+                "reworkRate": {"type": "number", "minimum": 0, "maximum": 100},
+                "documentationScore": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "staffing": {
+              "type": "object",
+              "required": ["analysts", "seniors", "managers", "utilizationRate"],
+              "properties": {
+                "analysts": {"type": "integer", "minimum": 0},
+                "seniors": {"type": "integer", "minimum": 0},
+                "managers": {"type": "integer", "minimum": 0},
+                "utilizationRate": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "caseManagement": {
+          "type": "object",
+          "required": ["workflow", "slaCompliance", "escalations"],
+          "properties": {
+            "workflow": {
+              "type": "object",
+              "required": ["automated", "manual", "hybrid"],
+              "properties": {
+                "automated": {"type": "number", "minimum": 0, "maximum": 100},
+                "manual": {"type": "number", "minimum": 0, "maximum": 100},
+                "hybrid": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "slaCompliance": {
+              "type": "object",
+              "required": ["overall", "byPriority"],
+              "properties": {
+                "overall": {"type": "number", "minimum": 0, "maximum": 100},
+                "byPriority": {
+                  "type": "object",
+                  "required": ["critical", "high", "medium", "low"],
+                  "properties": {
+                    "critical": {"type": "number", "minimum": 0, "maximum": 100},
+                    "high": {"type": "number", "minimum": 0, "maximum": 100},
+                    "medium": {"type": "number", "minimum": 0, "maximum": 100},
+                    "low": {"type": "number", "minimum": 0, "maximum": 100}
+                  }
+                }
+              }
+            },
+            "escalations": {
+              "type": "object",
+              "required": ["total", "reasons", "resolutionTime"],
+              "properties": {
+                "total": {"type": "integer", "minimum": 0},
+                "reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["reason", "count", "percentage"],
+                    "properties": {
+                      "reason": {"type": "string"},
+                      "count": {"type": "integer", "minimum": 0},
+                      "percentage": {"type": "number", "minimum": 0, "maximum": 100}
+                    }
+                  }
+                },
+                "resolutionTime": {"type": "number", "minimum": 0}
+              }
+            }
+          }
+        },
+        "productivity": {
+          "type": "object",
+          "required": ["casesPerAnalyst", "alertsPerAnalyst", "automationRate"],
+          "properties": {
+            "casesPerAnalyst": {"type": "number", "minimum": 0},
+            "alertsPerAnalyst": {"type": "number", "minimum": 0},
+            "automationRate": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        }
+      }
+    },
+    "riskMetrics": {
+      "type": "object",
+      "required": ["kycCompliance", "sanctionsScreening", "fraudPrevention", "modelRisk"],
+      "properties": {
+        "kycCompliance": {
+          "type": "object",
+          "required": ["completion", "quality", "periodicReviews", "riskRatings"],
+          "properties": {
+            "completion": {
+              "type": "object",
+              "required": ["cip", "cdd", "edd"],
+              "properties": {
+                "cip": {"type": "number", "minimum": 0, "maximum": 100},
+                "cdd": {"type": "number", "minimum": 0, "maximum": 100},
+                "edd": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "quality": {
+              "type": "object",
+              "required": ["documentationScore", "accuracyRate", "deficiencyRate"],
+              "properties": {
+                "documentationScore": {"type": "number", "minimum": 0, "maximum": 100},
+                "accuracyRate": {"type": "number", "minimum": 0, "maximum": 100},
+                "deficiencyRate": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "periodicReviews": {
+              "type": "object",
+              "required": ["onTime", "pastDue", "riskTierCompliance"],
+              "properties": {
+                "onTime": {"type": "number", "minimum": 0, "maximum": 100},
+                "pastDue": {"type": "integer", "minimum": 0},
+                "riskTierCompliance": {
+                  "type": "object",
+                  "required": ["high", "medium", "low"],
+                  "properties": {
+                    "high": {"type": "number", "minimum": 0, "maximum": 100},
+                    "medium": {"type": "number", "minimum": 0, "maximum": 100},
+                    "low": {"type": "number", "minimum": 0, "maximum": 100}
+                  }
+                }
+              }
+            },
+            "riskRatings": {
+              "type": "object",
+              "required": ["distribution", "changes", "accuracy"],
+              "properties": {
+                "distribution": {
+                  "type": "object",
+                  "required": ["high", "medium", "low"],
+                  "properties": {
+                    "high": {"type": "number", "minimum": 0, "maximum": 100},
+                    "medium": {"type": "number", "minimum": 0, "maximum": 100},
+                    "low": {"type": "number", "minimum": 0, "maximum": 100}
+                  }
+                },
+                "changes": {"type": "integer", "minimum": 0},
+                "accuracy": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "sanctionsScreening": {
+          "type": "object",
+          "required": ["coverage", "hitRates", "processing", "listManagement"],
+          "properties": {
+            "coverage": {
+              "type": "object",
+              "required": ["customers", "transactions", "wires", "vendors"],
+              "properties": {
+                "customers": {"type": "number", "minimum": 0, "maximum": 100},
+                "transactions": {"type": "number", "minimum": 0, "maximum": 100},
+                "wires": {"type": "number", "minimum": 0, "maximum": 100},
+                "vendors": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "hitRates": {
+              "type": "object",
+              "required": ["truePositives", "falsePositives", "accuracy"],
+              "properties": {
+                "truePositives": {"type": "number", "minimum": 0},
+                "falsePositives": {"type": "number", "minimum": 0},
+                "accuracy": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "processing": {
+              "type": "object",
+              "required": ["averageResponseTime", "slaCompliance", "escalations"],
+              "properties": {
+                "averageResponseTime": {"type": "number", "minimum": 0},
+                "slaCompliance": {"type": "number", "minimum": 0, "maximum": 100},
+                "escalations": {"type": "integer", "minimum": 0}
+              }
+            },
+            "listManagement": {
+              "type": "object",
+              "required": ["updateFrequency", "latency", "coverage"],
+              "properties": {
+                "updateFrequency": {"type": "string"},
+                "latency": {"type": "number", "minimum": 0},
+                "coverage": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "fraudPrevention": {
+          "type": "object",
+          "required": ["losses", "detection", "prevention", "customer"],
+          "properties": {
+            "losses": {
+              "type": "object",
+              "required": ["total", "rate", "recovery"],
+              "properties": {
+                "total": {"type": "number", "minimum": 0},
+                "rate": {"type": "number", "minimum": 0},
+                "recovery": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "detection": {
+              "type": "object",
+              "required": ["modelAccuracy", "timeToDetection", "alertVolume"],
+              "properties": {
+                "modelAccuracy": {"type": "number", "minimum": 0, "maximum": 100},
+                "timeToDetection": {"type": "number", "minimum": 0},
+                "alertVolume": {"type": "integer", "minimum": 0}
+              }
+            },
+            "prevention": {
+              "type": "object",
+              "required": ["blockedTransactions", "preventedLoss", "falsePositives"],
+              "properties": {
+                "blockedTransactions": {"type": "integer", "minimum": 0},
+                "preventedLoss": {"type": "number", "minimum": 0},
+                "falsePositives": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "customer": {
+              "type": "object",
+              "required": ["impactScore", "complaintRate", "resolutionTime"],
+              "properties": {
+                "impactScore": {"type": "number", "minimum": 0, "maximum": 100},
+                "complaintRate": {"type": "number", "minimum": 0},
+                "resolutionTime": {"type": "number", "minimum": 0}
+              }
+            }
+          }
+        },
+        "modelRisk": {
+          "type": "object",
+          "required": ["inventory", "validation", "monitoring", "governance"],
+          "properties": {
+            "inventory": {
+              "type": "object",
+              "required": ["total", "byTier", "documentation"],
+              "properties": {
+                "total": {"type": "integer", "minimum": 0},
+                "byTier": {
+                  "type": "object",
+                  "required": ["tier1", "tier2", "tier3"],
+                  "properties": {
+                    "tier1": {"type": "integer", "minimum": 0},
+                    "tier2": {"type": "integer", "minimum": 0},
+                    "tier3": {"type": "integer", "minimum": 0}
+                  }
+                },
+                "documentation": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "validation": {
+              "type": "object",
+              "required": ["onTime", "overdue", "quality"],
+              "properties": {
+                "onTime": {"type": "number", "minimum": 0, "maximum": 100},
+                "overdue": {"type": "integer", "minimum": 0},
+                "quality": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "monitoring": {
+              "type": "object",
+              "required": ["performanceDrift", "dataQuality", "alerting"],
+              "properties": {
+                "performanceDrift": {"type": "number", "minimum": 0},
+                "dataQuality": {"type": "number", "minimum": 0, "maximum": 100},
+                "alerting": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "governance": {
+              "type": "object",
+              "required": ["committee", "policies", "training"],
+              "properties": {
+                "committee": {"type": "number", "minimum": 0, "maximum": 100},
+                "policies": {"type": "number", "minimum": 0, "maximum": 100},
+                "training": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        }
+      }
+    },
+    "complianceMetrics": {
+      "type": "object",
+      "required": ["regulatory", "training", "policy", "reporting"],
+      "properties": {
+        "regulatory": {
+          "type": "object",
+          "required": ["sarFiling", "ctrReporting", "examination", "consent"],
+          "properties": {
+            "sarFiling": {
+              "type": "object",
+              "required": ["volume", "timeliness", "quality", "categories"],
+              "properties": {
+                "volume": {"type": "integer", "minimum": 0},
+                "timeliness": {"type": "number", "minimum": 0, "maximum": 100},
+                "quality": {"type": "number", "minimum": 0, "maximum": 100},
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["category", "count", "percentage"],
+                    "properties": {
+                      "category": {"type": "string"},
+                      "count": {"type": "integer", "minimum": 0},
+                      "percentage": {"type": "number", "minimum": 0, "maximum": 100}
+                    }
+                  }
+                }
+              }
+            },
+            "ctrReporting": {
+              "type": "object",
+              "required": ["volume", "timeliness", "accuracy", "exemptions"],
+              "properties": {
+                "volume": {"type": "integer", "minimum": 0},
+                "timeliness": {"type": "number", "minimum": 0, "maximum": 100},
+                "accuracy": {"type": "number", "minimum": 0, "maximum": 100},
+                "exemptions": {"type": "integer", "minimum": 0}
+              }
+            },
+            "examination": {
+              "type": "object",
+              "required": ["lastDate", "rating", "findings", "mra"],
+              "properties": {
+                "lastDate": {"type": "string", "format": "date"},
+                "rating": {"type": "string", "enum": ["satisfactory", "needs-improvement", "deficient"]},
+                "findings": {"type": "integer", "minimum": 0},
+                "mra": {"type": "integer", "minimum": 0}
+              }
+            },
+            "consent": {
+              "type": "object",
+              "required": ["active", "compliance", "requirements"],
+              "properties": {
+                "active": {"type": "boolean"},
+                "compliance": {"type": "number", "minimum": 0, "maximum": 100},
+                "requirements": {"type": "integer", "minimum": 0}
+              }
+            }
+          }
+        },
+        "training": {
+          "type": "object",
+          "required": ["completion", "effectiveness", "currency", "specialized"],
+          "properties": {
+            "completion": {
+              "type": "object",
+              "required": ["overall", "aml", "fraud", "sanctions"],
+              "properties": {
+                "overall": {"type": "number", "minimum": 0, "maximum": 100},
+                "aml": {"type": "number", "minimum": 0, "maximum": 100},
+                "fraud": {"type": "number", "minimum": 0, "maximum": 100},
+                "sanctions": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "effectiveness": {
+              "type": "object",
+              "required": ["testScores", "retention", "application"],
+              "properties": {
+                "testScores": {"type": "number", "minimum": 0, "maximum": 100},
+                "retention": {"type": "number", "minimum": 0, "maximum": 100},
+                "application": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "currency": {
+              "type": "object",
+              "required": ["upToDate", "renewal", "specialized"],
+              "properties": {
+                "upToDate": {"type": "number", "minimum": 0, "maximum": 100},
+                "renewal": {"type": "number", "minimum": 0, "maximum": 100},
+                "specialized": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "specialized": {
+              "type": "object",
+              "required": ["investigators", "managers", "executives"],
+              "properties": {
+                "investigators": {"type": "number", "minimum": 0, "maximum": 100},
+                "managers": {"type": "number", "minimum": 0, "maximum": 100},
+                "executives": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "policy": {
+          "type": "object",
+          "required": ["currency", "approval", "distribution", "exceptions"],
+          "properties": {
+            "currency": {
+              "type": "object",
+              "required": ["upToDate", "overdue", "scheduled"],
+              "properties": {
+                "upToDate": {"type": "number", "minimum": 0, "maximum": 100},
+                "overdue": {"type": "integer", "minimum": 0},
+                "scheduled": {"type": "integer", "minimum": 0}
+              }
+            },
+            "approval": {
+              "type": "object",
+              "required": ["timely", "documented", "authorized"],
+              "properties": {
+                "timely": {"type": "number", "minimum": 0, "maximum": 100},
+                "documented": {"type": "number", "minimum": 0, "maximum": 100},
+                "authorized": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "distribution": {
+              "type": "object",
+              "required": ["coverage", "acknowledgment", "training"],
+              "properties": {
+                "coverage": {"type": "number", "minimum": 0, "maximum": 100},
+                "acknowledgment": {"type": "number", "minimum": 0, "maximum": 100},
+                "training": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "exceptions": {
+              "type": "object",
+              "required": ["total", "approved", "expired"],
+              "properties": {
+                "total": {"type": "integer", "minimum": 0},
+                "approved": {"type": "integer", "minimum": 0},
+                "expired": {"type": "integer", "minimum": 0}
+              }
+            }
+          }
+        },
+        "reporting": {
+          "type": "object",
+          "required": ["internal", "regulatory", "board", "quality"],
+          "properties": {
+            "internal": {
+              "type": "object",
+              "required": ["timeliness", "accuracy", "completeness"],
+              "properties": {
+                "timeliness": {"type": "number", "minimum": 0, "maximum": 100},
+                "accuracy": {"type": "number", "minimum": 0, "maximum": 100},
+                "completeness": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "regulatory": {
+              "type": "object",
+              "required": ["timeliness", "accuracy", "corrections"],
+              "properties": {
+                "timeliness": {"type": "number", "minimum": 0, "maximum": 100},
+                "accuracy": {"type": "number", "minimum": 0, "maximum": 100},
+                "corrections": {"type": "integer", "minimum": 0}
+              }
+            },
+            "board": {
+              "type": "object",
+              "required": ["frequency", "quality", "actionItems"],
+              "properties": {
+                "frequency": {"type": "string"},
+                "quality": {"type": "number", "minimum": 0, "maximum": 100},
+                "actionItems": {"type": "integer", "minimum": 0}
+              }
+            },
+            "quality": {
+              "type": "object",
+              "required": ["dataIntegrity", "lineage", "controls"],
+              "properties": {
+                "dataIntegrity": {"type": "number", "minimum": 0, "maximum": 100},
+                "lineage": {"type": "number", "minimum": 0, "maximum": 100},
+                "controls": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        }
+      }
+    },
+    "auditFindings": {
+      "type": "object",
+      "required": ["summary", "findings", "remediation", "testing"],
+      "properties": {
+        "summary": {
+          "type": "object",
+          "required": ["total", "bySeverity", "byCategory", "status"],
+          "properties": {
+            "total": {"type": "integer", "minimum": 0},
+            "bySeverity": {
+              "type": "object",
+              "required": ["critical", "high", "medium", "low"],
+              "properties": {
+                "critical": {"type": "integer", "minimum": 0},
+                "high": {"type": "integer", "minimum": 0},
+                "medium": {"type": "integer", "minimum": 0},
+                "low": {"type": "integer", "minimum": 0}
+              }
+            },
+            "byCategory": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["category", "count"],
+                "properties": {
+                  "category": {"type": "string"},
+                  "count": {"type": "integer", "minimum": 0}
+                }
+              }
+            },
+            "status": {
+              "type": "object",
+              "required": ["open", "inProgress", "closed", "overdue"],
+              "properties": {
+                "open": {"type": "integer", "minimum": 0},
+                "inProgress": {"type": "integer", "minimum": 0},
+                "closed": {"type": "integer", "minimum": 0},
+                "overdue": {"type": "integer", "minimum": 0}
+              }
+            }
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title", "severity", "category", "status", "dueDate"],
+            "properties": {
+              "id": {"type": "string"},
+              "title": {"type": "string"},
+              "description": {"type": "string"},
+              "severity": {"type": "string", "enum": ["critical", "high", "medium", "low"]},
+              "category": {"type": "string"},
+              "status": {"type": "string", "enum": ["open", "in-progress", "closed", "overdue"]},
+              "dueDate": {"type": "string", "format": "date"},
+              "owner": {"type": "string"},
+              "businessUnit": {"type": "string"}
+            }
+          }
+        },
+        "remediation": {
+          "type": "object",
+          "required": ["plans", "progress", "effectiveness"],
+          "properties": {
+            "plans": {
+              "type": "object",
+              "required": ["approved", "inDevelopment", "pending"],
+              "properties": {
+                "approved": {"type": "integer", "minimum": 0},
+                "inDevelopment": {"type": "integer", "minimum": 0},
+                "pending": {"type": "integer", "minimum": 0}
+              }
+            },
+            "progress": {
+              "type": "object",
+              "required": ["onTrack", "delayed", "completed"],
+              "properties": {
+                "onTrack": {"type": "number", "minimum": 0, "maximum": 100},
+                "delayed": {"type": "number", "minimum": 0, "maximum": 100},
+                "completed": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "effectiveness": {
+              "type": "object",
+              "required": ["validated", "repeat", "sustained"],
+              "properties": {
+                "validated": {"type": "number", "minimum": 0, "maximum": 100},
+                "repeat": {"type": "number", "minimum": 0, "maximum": 100},
+                "sustained": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "testing": {
+          "type": "object",
+          "required": ["coverage", "results", "methodology"],
+          "properties": {
+            "coverage": {
+              "type": "object",
+              "required": ["controls", "processes", "systems"],
+              "properties": {
+                "controls": {"type": "number", "minimum": 0, "maximum": 100},
+                "processes": {"type": "number", "minimum": 0, "maximum": 100},
+                "systems": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "results": {
+              "type": "object",
+              "required": ["pass", "fail", "exception"],
+              "properties": {
+                "pass": {"type": "number", "minimum": 0, "maximum": 100},
+                "fail": {"type": "number", "minimum": 0, "maximum": 100},
+                "exception": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "methodology": {
+              "type": "object",
+              "required": ["sampling", "walkthrough", "reperformance"],
+              "properties": {
+                "sampling": {"type": "number", "minimum": 0, "maximum": 100},
+                "walkthrough": {"type": "number", "minimum": 0, "maximum": 100},
+                "reperformance": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        }
+      }
+    },
+    "trends": {
+      "type": "object",
+      "required": ["historical", "forecasts", "benchmarks"],
+      "properties": {
+        "historical": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["period", "metrics"],
+            "properties": {
+              "period": {"type": "string"},
+              "metrics": {"type": "object"}
+            }
+          }
+        },
+        "forecasts": {
+          "type": "object",
+          "required": ["nextQuarter", "nextYear", "confidence"],
+          "properties": {
+            "nextQuarter": {"type": "object"},
+            "nextYear": {"type": "object"},
+            "confidence": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        },
+        "benchmarks": {
+          "type": "object",
+          "required": ["industry", "peers", "internal"],
+          "properties": {
+            "industry": {"type": "object"},
+            "peers": {"type": "object"},
+            "internal": {"type": "object"}
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["version", "source", "confidence", "caveats"],
+      "properties": {
+        "version": {"type": "string"},
+        "source": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 100},
+        "caveats": {"type": "array", "items": {"type": "string"}},
+        "dataQuality": {
+          "type": "object",
+          "properties": {
+            "completeness": {"type": "number", "minimum": 0, "maximum": 100},
+            "accuracy": {"type": "number", "minimum": 0, "maximum": 100},
+            "timeliness": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        }
+      }
+    }
+  }
+}

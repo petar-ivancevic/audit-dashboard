@@ -1,0 +1,691 @@
+/* ============================================
+   Responsive Design - Mobile & Tablet
+   ============================================ */
+
+/* ============================================
+   Tablet Breakpoint (768px - 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    /* Header Adjustments */
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .logo-section {
+        text-align: center;
+    }
+
+    .header-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .export-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .nav-tab {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Main Dashboard */
+    .dashboard-main {
+        padding: var(--spacing-lg);
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    /* Chart Grid */
+    .chart-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .chart-grid.two-column,
+    .chart-grid.three-column {
+        grid-template-columns: 1fr;
+    }
+
+    /* Filter Panel */
+    .filter-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    /* Data Tables */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .data-table {
+        min-width: 800px;
+    }
+
+    /* Detail Panel */
+    .detail-panel {
+        width: 500px;
+    }
+
+    .detail-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    /* Heat Map */
+    .risk-heatmap {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    /* Insights Grid */
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-disclaimer {
+        text-align: center;
+    }
+}
+
+/* ============================================
+   Mobile Breakpoint (max-width: 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Base Font Size Adjustment */
+    html {
+        font-size: 14px;
+    }
+
+    /* Header */
+    .dashboard-header {
+        padding: var(--spacing-md);
+        position: relative;
+    }
+
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .period-selector {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-xs);
+    }
+
+    .period-selector label {
+        font-size: 0.85rem;
+    }
+
+    .control-select,
+    .control-input {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .export-controls {
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .btn .icon {
+        font-size: 1rem;
+    }
+
+    /* Navigation Tabs */
+    .dashboard-nav {
+        position: relative;
+        top: 0;
+    }
+
+    .nav-tabs {
+        padding: 0 var(--spacing-md);
+    }
+
+    .nav-tab {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.85rem;
+    }
+
+    .nav-tab .icon {
+        display: none;
+    }
+
+    /* Main Content */
+    .dashboard-main {
+        padding: var(--spacing-md);
+    }
+
+    .dashboard-section {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        border-radius: var(--radius-md);
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .section-controls {
+        width: 100%;
+    }
+
+    .section-controls .control-select {
+        width: 100%;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .metric-card {
+        padding: var(--spacing-md);
+    }
+
+    .metric-header h3 {
+        font-size: 0.85rem;
+    }
+
+    .metric-value {
+        font-size: 2rem;
+    }
+
+    .metric-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .metric-breakdown {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
+    /* Heat Map */
+    .risk-heatmap {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .heatmap-cell {
+        padding: var(--spacing-md);
+        min-height: 120px;
+    }
+
+    .heatmap-cell-header {
+        font-size: 0.85rem;
+    }
+
+    .heatmap-cell-score {
+        font-size: 1.75rem;
+    }
+
+    /* Chart Grid */
+    .chart-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .chart-container {
+        padding: var(--spacing-md);
+        min-height: 300px;
+    }
+
+    .chart-container.large {
+        min-height: 350px;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .chart-header h3 {
+        font-size: 1rem;
+    }
+
+    .chart-controls {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .chart-legend {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .chart-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Filter Panel */
+    .filter-panel {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    /* Data Tables */
+    .data-table {
+        font-size: 0.8rem;
+        min-width: 700px;
+    }
+
+    .data-table thead th {
+        padding: var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+
+    .data-table tbody td {
+        padding: var(--spacing-sm);
+    }
+
+    .data-table .action-button {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    /* Detail Panel */
+    .detail-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .detail-header {
+        padding: var(--spacing-md);
+    }
+
+    .detail-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .detail-content {
+        padding: var(--spacing-md);
+    }
+
+    .detail-section {
+        margin-bottom: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .detail-metrics {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .detail-metric {
+        padding: var(--spacing-sm);
+    }
+
+    .detail-metric-value {
+        font-size: 1.25rem;
+    }
+
+    /* Insights Grid */
+    .insights-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .insight-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Findings Summary */
+    .findings-summary {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .finding-stat {
+        padding: var(--spacing-md);
+    }
+
+    .finding-stat .stat-value {
+        font-size: 2rem;
+    }
+
+    .finding-stat .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .dashboard-footer {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .footer-info p,
+    .footer-disclaimer p {
+        font-size: 0.8rem;
+    }
+
+    /* Loading Overlay */
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+    }
+
+    .loading-overlay p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   Small Mobile Breakpoint (max-width: 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    /* Base Font Size */
+    html {
+        font-size: 13px;
+    }
+
+    /* Spacing Adjustments */
+    .dashboard-main {
+        padding: var(--spacing-sm);
+    }
+
+    .dashboard-section {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Header */
+    .dashboard-header {
+        padding: var(--spacing-sm);
+    }
+
+    .dashboard-title {
+        font-size: 1.25rem;
+    }
+
+    .dashboard-subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* Navigation */
+    .nav-tabs {
+        padding: 0 var(--spacing-sm);
+        gap: 0;
+    }
+
+    .nav-tab {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+
+    /* Metrics */
+    .metric-value {
+        font-size: 1.75rem;
+    }
+
+    .metric-header h3 {
+        font-size: 0.8rem;
+    }
+
+    /* Charts */
+    .chart-container {
+        padding: var(--spacing-sm);
+        min-height: 250px;
+    }
+
+    .chart-header h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tables */
+    .data-table {
+        font-size: 0.75rem;
+        min-width: 600px;
+    }
+
+    .data-table thead th {
+        padding: var(--spacing-xs);
+        font-size: 0.7rem;
+    }
+
+    .data-table tbody td {
+        padding: var(--spacing-xs);
+    }
+
+    /* Findings */
+    .findings-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .finding-stat .stat-value {
+        font-size: 1.75rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+
+    /* Heat Map */
+    .heatmap-cell {
+        min-height: 100px;
+        padding: var(--spacing-sm);
+    }
+
+    .heatmap-cell-score {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
+   Landscape Orientation (Mobile)
+   ============================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .dashboard-header {
+        position: relative;
+    }
+
+    .dashboard-nav {
+        position: relative;
+        top: 0;
+    }
+
+    .metric-card {
+        min-height: auto;
+    }
+
+    .chart-container {
+        min-height: 250px;
+    }
+}
+
+/* ============================================
+   Touch Device Optimizations
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn,
+    .nav-tab,
+    .control-select,
+    .control-input,
+    .action-button {
+        min-height: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .metric-card:hover,
+    .heatmap-cell:hover,
+    .chart-container:hover,
+    .insight-card:hover {
+        transform: none;
+    }
+
+    /* Increase tap target sizes */
+    .data-table tbody td input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-close {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+
+    /* Prevent text selection on interactive elements */
+    .nav-tab,
+    .btn,
+    .sortable,
+    .heatmap-cell {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(44, 90, 160, 0.2);
+    }
+}
+
+/* ============================================
+   Reduced Motion Preference
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .loading-spinner {
+        animation: none;
+        border-top-color: var(--primary-color);
+    }
+}
+
+/* ============================================
+   High Contrast Mode
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000;
+        --text-secondary: #333;
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .metric-card,
+    .chart-container,
+    .dashboard-section {
+        border: 2px solid var(--border-color);
+    }
+
+    .btn-primary,
+    .nav-tab.active {
+        border: 2px solid var(--primary-dark);
+    }
+}
+
+/* ============================================
+   Print-Friendly Responsive Adjustments
+   ============================================ */
+
+@media print and (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Grid System Utilities
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .dashboard-main {
+        max-width: 100%;
+        padding: var(--spacing-lg);
+    }
+
+    .header-content,
+    .nav-tabs,
+    .footer-content {
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   Scrollbar Styling for Touch Devices
+   ============================================ */
+
+@media (max-width: 768px) {
+    .table-container::-webkit-scrollbar,
+    .nav-tabs::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb,
+    .nav-tabs::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 3px;
+    }
+
+    .table-container::-webkit-scrollbar-track,
+    .nav-tabs::-webkit-scrollbar-track {
+        background: var(--background-color);
+    }
+}

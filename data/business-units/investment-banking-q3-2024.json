@@ -1,0 +1,607 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "investment-banking",
+      "name": "Investment Banking & Capital Markets",
+      "category": "core-banking",
+      "region": "Global",
+      "headcount": 12000,
+      "assets": 420000000000,
+      "riskTier": "high",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 89.7,
+      "trend": "stable",
+      "benchmark": "excellent"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 89.7,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 93.4,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "regulatory-readiness",
+        "name": "Regulatory Readiness Index",
+        "value": 95.8,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "market-risk-controls",
+        "name": "Market Risk Control Effectiveness",
+        "value": 96.3,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "trading-surveillance",
+        "name": "Trading Surveillance Coverage",
+        "value": 99.2,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "var-model-accuracy",
+        "name": "VaR Model Accuracy",
+        "value": 94.8,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "risk"
+      },
+      {
+        "id": "client-onboarding",
+        "name": "Client Onboarding Timeliness",
+        "value": 87.9,
+        "target": 85.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "trade-settlement",
+        "name": "Trade Settlement Efficiency",
+        "value": 98.7,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "compliance-testing",
+        "name": "Compliance Testing Pass Rate",
+        "value": 95.6,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "training-completion",
+        "name": "Regulatory Training Completion",
+        "value": 98.9,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "conduct-risk-score",
+        "name": "Conduct Risk Assessment Score",
+        "value": 91.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "capital-adequacy",
+        "name": "Capital Adequacy Ratio",
+        "value": 18.4,
+        "target": 12.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "financial"
+      },
+      {
+        "id": "liquidity-coverage",
+        "name": "Liquidity Coverage Ratio",
+        "value": 145.8,
+        "target": 100.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "financial"
+      },
+      {
+        "id": "operational-risk-loss",
+        "name": "Operational Risk Loss Rate",
+        "value": 0.0084,
+        "target": 0.0150,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "down",
+        "category": "risk"
+      },
+      {
+        "id": "client-satisfaction",
+        "name": "Client Satisfaction Score",
+        "value": 4.3,
+        "target": 4.0,
+        "unit": "rating",
+        "status": "excellent",
+        "trend": "up",
+        "category": "business"
+      }
+    ],
+    "alerts": {
+      "critical": 1,
+      "high": 6,
+      "medium": 14,
+      "low": 23
+    },
+    "trending": {
+      "quarterOverQuarter": 0.8,
+      "yearOverYear": 4.2,
+      "trendingUp": ["Control Maturity", "Market Risk Controls", "Client Onboarding", "Conduct Risk", "Client Satisfaction"],
+      "trendingDown": ["Operational Risk Loss Rate"]
+    }
+  },
+  "operationalMetrics": {
+    "tradingOperations": {
+      "volumes": {
+        "equityTrades": 2456789,
+        "fixedIncomeTrades": 567890,
+        "derivativesTrades": 234567,
+        "fxTrades": 789012
+      },
+      "surveillance": {
+        "alertsGenerated": 15678,
+        "falsePositiveRate": 68.4,
+        "investigationTime": 2.8,
+        "escalationRate": 3.2
+      },
+      "settlement": {
+        "settlementRate": 98.7,
+        "failedTrades": 1.3,
+        "averageSettlementTime": 1.2,
+        "reconciliationAccuracy": 99.8
+      },
+      "riskLimits": {
+        "limitBreaches": 23,
+        "limitUtilization": 76.8,
+        "escalationTime": 8.4,
+        "approvalTime": 12.7
+      }
+    },
+    "marketRisk": {
+      "var": {
+        "dailyVar": 15.6,
+        "utilizationRate": 78.4,
+        "backtestingResults": 94.8,
+        "stressTesting": 89.7
+      },
+      "exposure": {
+        "equityExposure": 245.7,
+        "fixedIncomeExposure": 189.3,
+        "creditExposure": 134.8,
+        "commodityExposure": 67.9
+      },
+      "hedging": {
+        "hedgeEffectiveness": 91.8,
+        "hedgeRatio": 87.4,
+        "basisRisk": 2.3,
+        "rolloverRisk": 1.8
+      }
+    },
+    "creditRisk": {
+      "counterparty": {
+        "exposureAtDefault": 8934.5,
+        "probabilityOfDefault": 0.28,
+        "lossGivenDefault": 0.42,
+        "expectedLoss": 10.5
+      },
+      "concentrations": {
+        "sectorConcentration": 23.4,
+        "geographicConcentration": 18.7,
+        "counterpartyConcentration": 12.9,
+        "productConcentration": 15.6
+      },
+      "provisioning": {
+        "provisionCoverage": 156.8,
+        "provisionAccuracy": 91.7,
+        "releaseRate": 8.4,
+        "chargeoffRate": 0.012
+      }
+    },
+    "compliance": {
+      "surveillance": {
+        "communicationsSurveilled": 99.2,
+        "tradingSurveilled": 99.8,
+        "alertsInvestigated": 96.7,
+        "reportsFiled": 156
+      },
+      "conflicts": {
+        "conflictsIdentified": 78,
+        "conflictsManaged": 74,
+        "disclosureAccuracy": 94.8,
+        "clientConsents": 89.3
+      },
+      "research": {
+        "researchCompliance": 97.4,
+        "analystCertifications": 98.9,
+        "disclosureAccuracy": 96.7,
+        "distributionControls": 94.8
+      }
+    }
+  },
+  "riskMetrics": {
+    "operationalRisk": {
+      "lossEvents": {
+        "totalEvents": 23,
+        "totalLoss": 8400000,
+        "averageLoss": 365217,
+        "severeLossEvents": 2
+      },
+      "keyRiskIndicators": {
+        "processFailures": 45,
+        "systemDowntime": 0.08,
+        "errorRates": 0.023,
+        "clientComplaints": 12
+      },
+      "controls": {
+        "controlTesting": 95.6,
+        "controlDeficiencies": 8,
+        "remediationTimeliness": 91.4,
+        "controlMaturity": 93.4
+      }
+    },
+    "marketRisk": {
+      "trading": {
+        "pnlVolatility": 23.4,
+        "correlationBreakdown": 2.8,
+        "modelPerformance": 94.8,
+        "limitExceedances": 3
+      },
+      "liquidity": {
+        "liquidityBuffer": 145.8,
+        "fundingStress": 87.9,
+        "assetLiquidity": 92.3,
+        "contingencyFunding": 234.7
+      },
+      "interest": {
+        "durationRisk": 12.8,
+        "basisRisk": 3.4,
+        "optionRisk": 5.7,
+        "creditSpreadRisk": 8.9
+      }
+    },
+    "creditRisk": {
+      "portfolio": {
+        "portfolioVar": 89.4,
+        "concentrationRisk": 23.4,
+        "correlationRisk": 15.6,
+        "recoveryRisk": 8.7
+      },
+      "counterparty": {
+        "cvaRisk": 45.7,
+        "wrongWayRisk": 12.3,
+        "settlementRisk": 3.4,
+        "guaranteeRisk": 7.8
+      }
+    },
+    "conductRisk": {
+      "culture": {
+        "cultureScore": 91.7,
+        "speakUpUtilization": 87.4,
+        "ethicsTraining": 98.9,
+        "codeViolations": 5
+      },
+      "clientTreatment": {
+        "suitabilityAssessment": 94.8,
+        "disclosureAccuracy": 96.7,
+        "complaintResolution": 89.3,
+        "clientOutcomes": 4.3
+      },
+      "marketConduct": {
+        "tradingViolations": 2,
+        "manipulationAlerts": 8,
+        "insiderTradingAlerts": 3,
+        "bestExecutionCompliance": 97.8
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "mifid": {
+        "bestExecutionReports": 98.7,
+        "transactionReporting": 99.2,
+        "clientDisclosures": 96.8,
+        "conflictManagement": 94.3
+      },
+      "finra": {
+        "surveillanceCompliance": 97.8,
+        "examinationFindings": 2,
+        "finesPenalties": 0,
+        "regulatoryReporting": 98.9
+      },
+      "sec": {
+        "filingAccuracy": 99.1,
+        "filingTimeliness": 98.7,
+        "examinationRating": "No Significant Deficiencies",
+        "enforcementActions": 0
+      },
+      "cftc": {
+        "swapReporting": 99.8,
+        "marginCompliance": 97.4,
+        "positionLimits": 94.8,
+        "recordkeeping": 96.7
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 98.9,
+        "mifid": 99.2,
+        "finra": 98.7,
+        "antiCorruption": 97.8
+      },
+      "effectiveness": {
+        "testScores": 94.7,
+        "retention": 92.3,
+        "application": 89.8
+      },
+      "specialized": {
+        "traders": 99.8,
+        "salespeople": 99.4,
+        "researchers": 98.9,
+        "compliance": 100.0
+      }
+    },
+    "governance": {
+      "committees": {
+        "riskCommittee": 96.8,
+        "complianceCommittee": 94.7,
+        "conductCommittee": 92.3,
+        "productCommittee": 89.4
+      },
+      "policies": {
+        "currency": 97.8,
+        "approval": 96.4,
+        "distribution": 94.8,
+        "exceptions": 23
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 9,
+      "bySeverity": {
+        "critical": 0,
+        "high": 1,
+        "medium": 5,
+        "low": 3
+      },
+      "byCategory": [
+        {
+          "category": "Market Risk Controls",
+          "count": 2
+        },
+        {
+          "category": "Compliance Surveillance",
+          "count": 2
+        },
+        {
+          "category": "Operational Risk",
+          "count": 2
+        },
+        {
+          "category": "Model Risk Management",
+          "count": 1
+        },
+        {
+          "category": "Client Onboarding",
+          "count": 1
+        },
+        {
+          "category": "Regulatory Reporting",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 2,
+        "inProgress": 6,
+        "closed": 1,
+        "overdue": 0
+      }
+    },
+    "findings": [
+      {
+        "id": "IB-2024-001",
+        "title": "VaR Model Backtesting Documentation",
+        "description": "VaR model backtesting documentation requires enhancement for stress testing scenarios",
+        "severity": "medium",
+        "category": "Market Risk Controls",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Market Risk Director",
+        "businessUnit": "investment-banking"
+      },
+      {
+        "id": "IB-2024-002",
+        "title": "Communications Surveillance Tuning",
+        "description": "Communications surveillance parameters need calibration for emerging communication channels",
+        "severity": "high",
+        "category": "Compliance Surveillance",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "Compliance Director",
+        "businessUnit": "investment-banking"
+      },
+      {
+        "id": "IB-2024-003",
+        "title": "Client Suitability Assessment Process",
+        "description": "Complex product suitability assessment process requires standardization",
+        "severity": "medium",
+        "category": "Client Onboarding",
+        "status": "open",
+        "dueDate": "2025-01-31",
+        "owner": "Client Coverage Director",
+        "businessUnit": "investment-banking"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 8,
+        "inDevelopment": 1,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 88.9,
+        "delayed": 0.0,
+        "completed": 11.1
+      },
+      "effectiveness": {
+        "validated": 94.4,
+        "repeat": 0.0,
+        "sustained": 100.0
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 95.6,
+        "processes": 97.8,
+        "systems": 94.2
+      },
+      "results": {
+        "pass": 95.6,
+        "fail": 3.3,
+        "exception": 1.1
+      },
+      "methodology": {
+        "sampling": 78.9,
+        "walkthrough": 12.2,
+        "reperformance": 8.9
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 87.9,
+          "tradingVolume": 8945678,
+          "varUtilization": 82.1,
+          "complianceScore": 94.2
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 89.1,
+          "tradingVolume": 9234567,
+          "varUtilization": 79.8,
+          "complianceScore": 95.8
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 89.7,
+          "tradingVolume": 9567890,
+          "varUtilization": 78.4,
+          "complianceScore": 96.4
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 90.5,
+        "tradingVolume": 9800000,
+        "varUtilization": 77.2
+      },
+      "nextYear": {
+        "overallScore": 92.3,
+        "tradingVolume": 42000000,
+        "varUtilization": 75.0
+      },
+      "confidence": 91.8
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 82.4,
+        "complianceScore": 89.7,
+        "operationalLossRate": 0.0156
+      },
+      "peers": {
+        "overallScore": 85.9,
+        "complianceScore": 92.3,
+        "operationalLossRate": 0.0124
+      },
+      "internal": {
+        "bestPerforming": "investment-banking",
+        "averageScore": 76.9,
+        "improvementTarget": 85.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 96.8,
+    "caveats": [
+      "Q3 2024 trading volumes reflect increased market volatility and client activity",
+      "VaR model performance includes impact of new stress testing requirements",
+      "Compliance surveillance enhancements implemented mid-quarter",
+      "Client satisfaction scores based on quarterly survey with 87% response rate",
+      "Operational loss figures exclude one-time regulatory settlement from Q2"
+    ],
+    "dataQuality": {
+      "completeness": 98.7,
+      "accuracy": 97.4,
+      "timeliness": 96.8
+    }
+  }
+}

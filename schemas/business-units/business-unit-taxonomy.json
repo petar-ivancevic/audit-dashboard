@@ -1,0 +1,440 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Business Unit Taxonomy for Enterprise Audit Dashboard",
+  "description": "Hierarchical business unit structure for large bank audit organization",
+  "type": "object",
+  "required": ["organization", "hierarchy", "units"],
+  "properties": {
+    "organization": {
+      "type": "object",
+      "required": ["name", "type", "assets", "employees"],
+      "properties": {
+        "name": "Global Financial Services Corporation",
+        "type": "Large Bank Holding Company",
+        "assets": 2800000000000,
+        "employees": 220000
+      }
+    },
+    "hierarchy": {
+      "type": "object",
+      "required": ["levels", "structure"],
+      "properties": {
+        "levels": {
+          "type": "array",
+          "items": [
+            {"type": "string", "const": "Enterprise"},
+            {"type": "string", "const": "Division"},
+            {"type": "string", "const": "Business Unit"},
+            {"type": "string", "const": "Department"},
+            {"type": "string", "const": "Function"}
+          ]
+        },
+        "structure": {
+          "type": "object",
+          "properties": {
+            "coreBanking": {
+              "name": "Core Banking Division",
+              "description": "Primary customer-facing banking operations",
+              "units": ["consumer-banking", "commercial-banking", "investment-banking", "wealth-management", "treasury"]
+            },
+            "supportOperations": {
+              "name": "Support & Operations Division",
+              "description": "Internal support and operational functions",
+              "units": ["operations-tech", "human-resources", "corporate-real-estate", "vendor-management", "legal-compliance"]
+            },
+            "geographicRegions": {
+              "name": "Geographic Operations Division",
+              "description": "Regional market operations",
+              "units": ["northeast-region", "southeast-region", "west-coast-region", "international", "digital-banking"]
+            }
+          }
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "division", "description", "characteristics"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "category": {"type": "string", "enum": ["core-banking", "support-operations", "geographic-region"]},
+          "division": {"type": "string"},
+          "description": {"type": "string"},
+          "characteristics": {
+            "type": "object",
+            "required": ["headcount", "revenue", "assets", "riskProfile", "regulatoryFocus", "complexity"],
+            "properties": {
+              "headcount": {"type": "integer", "minimum": 100},
+              "revenue": {"type": "number", "minimum": 0},
+              "assets": {"type": "number", "minimum": 0},
+              "riskProfile": {"type": "string", "enum": ["high", "medium-high", "medium", "medium-low", "low"]},
+              "regulatoryFocus": {"type": "boolean"},
+              "complexity": {"type": "string", "enum": ["very-high", "high", "medium", "low"]},
+              "auditFrequency": {"type": "string", "enum": ["continuous", "quarterly", "semi-annual", "annual"]},
+              "keyRisks": {"type": "array", "items": {"type": "string"}},
+              "primaryRegulators": {"type": "array", "items": {"type": "string"}},
+              "customerTypes": {"type": "array", "items": {"type": "string"}},
+              "products": {"type": "array", "items": {"type": "string"}},
+              "geographicScope": {"type": "string"},
+              "technologyStack": {"type": "string"},
+              "dataVolume": {"type": "string", "enum": ["very-high", "high", "medium", "low"]}
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "businessUnits": [
+      {
+        "id": "consumer-banking",
+        "name": "Consumer Banking & Lending",
+        "category": "core-banking",
+        "division": "Core Banking Division",
+        "description": "Retail banking services including deposits, loans, credit cards, and mortgages for individual consumers",
+        "characteristics": {
+          "headcount": 45000,
+          "revenue": 28500000000,
+          "assets": 950000000000,
+          "riskProfile": "high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Credit Risk", "Operational Risk", "Compliance Risk", "Fraud Risk", "Interest Rate Risk"],
+          "primaryRegulators": ["OCC", "CFPB", "Fed", "FDIC"],
+          "customerTypes": ["Individual Consumers", "Small Business", "Mass Affluent"],
+          "products": ["Checking Accounts", "Savings Accounts", "Personal Loans", "Credit Cards", "Mortgages", "Auto Loans"],
+          "geographicScope": "National",
+          "technologyStack": "Core Banking Platform + Digital Channels",
+          "dataVolume": "very-high"
+        }
+      },
+      {
+        "id": "commercial-banking",
+        "name": "Commercial Banking",
+        "category": "core-banking",
+        "division": "Core Banking Division",
+        "description": "Business banking services for middle-market and large corporate clients including lending, treasury, and trade finance",
+        "characteristics": {
+          "headcount": 18500,
+          "revenue": 15200000000,
+          "assets": 780000000000,
+          "riskProfile": "high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Credit Risk", "Market Risk", "Operational Risk", "Sanctions Risk", "AML Risk"],
+          "primaryRegulators": ["OCC", "Fed", "OFAC", "FinCEN"],
+          "customerTypes": ["Middle Market", "Large Corporate", "Financial Institutions"],
+          "products": ["Commercial Loans", "Lines of Credit", "Treasury Management", "Trade Finance", "Foreign Exchange"],
+          "geographicScope": "Global",
+          "technologyStack": "Commercial Banking Platform + Trade Systems",
+          "dataVolume": "high"
+        }
+      },
+      {
+        "id": "investment-banking",
+        "name": "Investment Banking & Capital Markets",
+        "category": "core-banking",
+        "division": "Core Banking Division",
+        "description": "Investment banking, trading, sales, and capital markets activities including underwriting and advisory services",
+        "characteristics": {
+          "headcount": 12000,
+          "revenue": 8900000000,
+          "assets": 420000000000,
+          "riskProfile": "very-high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Market Risk", "Credit Risk", "Operational Risk", "Regulatory Risk", "Reputation Risk"],
+          "primaryRegulators": ["SEC", "FINRA", "CFTC", "Fed", "OCC"],
+          "customerTypes": ["Institutional Investors", "Corporations", "Government Entities", "High Net Worth"],
+          "products": ["Equity Underwriting", "Debt Underwriting", "M&A Advisory", "Trading", "Derivatives"],
+          "geographicScope": "Global",
+          "technologyStack": "Trading Platforms + Risk Systems",
+          "dataVolume": "very-high"
+        }
+      },
+      {
+        "id": "wealth-management",
+        "name": "Wealth & Investment Management",
+        "category": "core-banking",
+        "division": "Core Banking Division",
+        "description": "Private banking, investment advisory, and wealth management services for high-net-worth and ultra-high-net-worth clients",
+        "characteristics": {
+          "headcount": 8200,
+          "revenue": 5400000000,
+          "assets": 650000000000,
+          "riskProfile": "medium-high",
+          "regulatoryFocus": true,
+          "complexity": "high",
+          "auditFrequency": "quarterly",
+          "keyRisks": ["Fiduciary Risk", "Investment Risk", "Operational Risk", "AML Risk", "Sanctions Risk"],
+          "primaryRegulators": ["SEC", "FINRA", "OCC", "State Regulators"],
+          "customerTypes": ["High Net Worth", "Ultra High Net Worth", "Family Offices", "Endowments"],
+          "products": ["Portfolio Management", "Trust Services", "Private Banking", "Alternative Investments"],
+          "geographicScope": "Global",
+          "technologyStack": "Wealth Management Platform + Portfolio Systems",
+          "dataVolume": "medium"
+        }
+      },
+      {
+        "id": "treasury",
+        "name": "Treasury & Balance Sheet Management",
+        "category": "core-banking",
+        "division": "Core Banking Division",
+        "description": "Enterprise liquidity management, interest rate risk, and balance sheet optimization functions",
+        "characteristics": {
+          "headcount": 850,
+          "revenue": 3100000000,
+          "assets": 180000000000,
+          "riskProfile": "high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Interest Rate Risk", "Liquidity Risk", "Market Risk", "Operational Risk", "Model Risk"],
+          "primaryRegulators": ["Fed", "OCC", "FDIC"],
+          "customerTypes": ["Internal Business Units", "Financial Institutions", "Central Banks"],
+          "products": ["Liquidity Management", "Interest Rate Derivatives", "Securities Portfolio", "Funding Operations"],
+          "geographicScope": "Global",
+          "technologyStack": "Treasury Management Systems + Risk Analytics",
+          "dataVolume": "high"
+        }
+      },
+      {
+        "id": "operations-tech",
+        "name": "Operations & Technology",
+        "category": "support-operations",
+        "division": "Support & Operations Division",
+        "description": "Technology infrastructure, operations processing, data management, and cybersecurity functions",
+        "characteristics": {
+          "headcount": 32000,
+          "revenue": 0,
+          "assets": 25000000000,
+          "riskProfile": "high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Cyber Risk", "Operational Risk", "Technology Risk", "Data Risk", "Business Continuity Risk"],
+          "primaryRegulators": ["OCC", "Fed", "FFIEC", "State Regulators"],
+          "customerTypes": ["Internal Business Units", "External Service Providers"],
+          "products": ["IT Infrastructure", "Data Centers", "Applications", "Cybersecurity", "Business Continuity"],
+          "geographicScope": "Global",
+          "technologyStack": "Enterprise Architecture + Cloud Platforms",
+          "dataVolume": "very-high"
+        }
+      },
+      {
+        "id": "human-resources",
+        "name": "Human Resources",
+        "category": "support-operations",
+        "division": "Support & Operations Division",
+        "description": "Employee lifecycle management, compensation, benefits, training, and talent development functions",
+        "characteristics": {
+          "headcount": 4500,
+          "revenue": 0,
+          "assets": 8500000000,
+          "riskProfile": "medium",
+          "regulatoryFocus": false,
+          "complexity": "medium",
+          "auditFrequency": "annual",
+          "keyRisks": ["Employment Risk", "Regulatory Risk", "Data Privacy Risk", "Operational Risk"],
+          "primaryRegulators": ["EEOC", "DOL", "State Labor Agencies"],
+          "customerTypes": ["Employees", "Contractors", "Job Candidates"],
+          "products": ["Recruiting", "Performance Management", "Compensation", "Benefits", "Training"],
+          "geographicScope": "Global",
+          "technologyStack": "HRIS + Talent Management Systems",
+          "dataVolume": "medium"
+        }
+      },
+      {
+        "id": "corporate-real-estate",
+        "name": "Corporate Real Estate",
+        "category": "support-operations",
+        "division": "Support & Operations Division",
+        "description": "Real estate portfolio management including branches, offices, data centers, and facilities operations",
+        "characteristics": {
+          "headcount": 2800,
+          "revenue": 0,
+          "assets": 42000000000,
+          "riskProfile": "medium-low",
+          "regulatoryFocus": false,
+          "complexity": "medium",
+          "auditFrequency": "semi-annual",
+          "keyRisks": ["Property Risk", "Environmental Risk", "Operational Risk", "Regulatory Risk"],
+          "primaryRegulators": ["Local Authorities", "EPA", "OSHA"],
+          "customerTypes": ["Internal Business Units", "Property Vendors", "Tenants"],
+          "products": ["Branch Operations", "Office Space", "Data Centers", "Facilities Management"],
+          "geographicScope": "National + International Offices",
+          "technologyStack": "Facilities Management Systems + IoT",
+          "dataVolume": "low"
+        }
+      },
+      {
+        "id": "vendor-management",
+        "name": "Vendor Management",
+        "category": "support-operations",
+        "division": "Support & Operations Division",
+        "description": "Third-party vendor oversight, due diligence, contract management, and supplier risk management",
+        "characteristics": {
+          "headcount": 1200,
+          "revenue": 0,
+          "assets": 1500000000,
+          "riskProfile": "medium-high",
+          "regulatoryFocus": true,
+          "complexity": "high",
+          "auditFrequency": "quarterly",
+          "keyRisks": ["Third Party Risk", "Operational Risk", "Compliance Risk", "Cyber Risk", "Concentration Risk"],
+          "primaryRegulators": ["OCC", "Fed", "CFPB"],
+          "customerTypes": ["Internal Business Units", "Vendors", "Service Providers"],
+          "products": ["Vendor Onboarding", "Risk Assessment", "Contract Management", "Performance Monitoring"],
+          "geographicScope": "Global",
+          "technologyStack": "Vendor Management Platform + GRC Tools",
+          "dataVolume": "medium"
+        }
+      },
+      {
+        "id": "legal-compliance",
+        "name": "Legal & Compliance",
+        "category": "support-operations",
+        "division": "Support & Operations Division",
+        "description": "Legal affairs, regulatory compliance, ethics, and enterprise risk management functions",
+        "characteristics": {
+          "headcount": 3400,
+          "revenue": 0,
+          "assets": 500000000,
+          "riskProfile": "high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Legal Risk", "Regulatory Risk", "Compliance Risk", "Reputation Risk", "Ethics Risk"],
+          "primaryRegulators": ["All Federal Banking Regulators", "State Regulators", "International Regulators"],
+          "customerTypes": ["Internal Business Units", "Regulators", "External Counsel"],
+          "products": ["Legal Services", "Compliance Monitoring", "Risk Management", "Ethics Programs"],
+          "geographicScope": "Global",
+          "technologyStack": "Legal Technology + GRC Platforms",
+          "dataVolume": "high"
+        }
+      },
+      {
+        "id": "northeast-region",
+        "name": "Northeast Region",
+        "category": "geographic-region",
+        "division": "Geographic Operations Division",
+        "description": "Regional operations covering New York, New Jersey, Pennsylvania, Connecticut, Massachusetts, and surrounding states",
+        "characteristics": {
+          "headcount": 28000,
+          "revenue": 12400000000,
+          "assets": 420000000000,
+          "riskProfile": "medium-high",
+          "regulatoryFocus": true,
+          "complexity": "high",
+          "auditFrequency": "quarterly",
+          "keyRisks": ["Credit Risk", "Operational Risk", "AML Risk", "Market Risk", "Regulatory Risk"],
+          "primaryRegulators": ["State Banking Regulators", "Fed", "OCC", "CFPB"],
+          "customerTypes": ["Regional Consumers", "Small Business", "Commercial", "Wealth Clients"],
+          "products": ["Full Banking Services", "Commercial Lending", "Wealth Management", "Investment Services"],
+          "geographicScope": "Northeast United States",
+          "technologyStack": "Regional Banking Platforms + Digital Channels",
+          "dataVolume": "high"
+        }
+      },
+      {
+        "id": "southeast-region",
+        "name": "Southeast Region",
+        "category": "geographic-region",
+        "division": "Geographic Operations Division",
+        "description": "Regional operations covering Florida, Georgia, North Carolina, South Carolina, Tennessee, and surrounding states",
+        "characteristics": {
+          "headcount": 22000,
+          "revenue": 9800000000,
+          "assets": 340000000000,
+          "riskProfile": "medium",
+          "regulatoryFocus": true,
+          "complexity": "medium",
+          "auditFrequency": "quarterly",
+          "keyRisks": ["Credit Risk", "Operational Risk", "Natural Disaster Risk", "Growth Risk"],
+          "primaryRegulators": ["State Banking Regulators", "Fed", "OCC", "CFPB"],
+          "customerTypes": ["Regional Consumers", "Small Business", "Commercial", "Retirees"],
+          "products": ["Full Banking Services", "Mortgage Lending", "Small Business Banking", "Retirement Services"],
+          "geographicScope": "Southeast United States",
+          "technologyStack": "Regional Banking Platforms + Mobile Banking",
+          "dataVolume": "high"
+        }
+      },
+      {
+        "id": "west-coast-region",
+        "name": "West Coast Region",
+        "category": "geographic-region",
+        "division": "Geographic Operations Division",
+        "description": "Regional operations covering California, Washington, Oregon, Nevada, and Hawaii",
+        "characteristics": {
+          "headcount": 19500,
+          "revenue": 11200000000,
+          "assets": 380000000000,
+          "riskProfile": "medium-high",
+          "regulatoryFocus": true,
+          "complexity": "high",
+          "auditFrequency": "quarterly",
+          "keyRisks": ["Credit Risk", "Operational Risk", "Tech Sector Risk", "Real Estate Risk", "Regulatory Risk"],
+          "primaryRegulators": ["State Banking Regulators", "Fed", "OCC", "CFPB"],
+          "customerTypes": ["Tech Companies", "Entertainment", "Real Estate", "High Net Worth", "Consumers"],
+          "products": ["Commercial Banking", "Tech Banking", "Real Estate Finance", "Wealth Services"],
+          "geographicScope": "West Coast United States + Hawaii",
+          "technologyStack": "Advanced Digital Platforms + Fintech Integration",
+          "dataVolume": "high"
+        }
+      },
+      {
+        "id": "international",
+        "name": "International Division",
+        "category": "geographic-region",
+        "division": "Geographic Operations Division",
+        "description": "Global operations including Europe, Asia-Pacific, Latin America, and emerging markets",
+        "characteristics": {
+          "headcount": 15000,
+          "revenue": 6700000000,
+          "assets": 290000000000,
+          "riskProfile": "very-high",
+          "regulatoryFocus": true,
+          "complexity": "very-high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Country Risk", "Currency Risk", "AML Risk", "Sanctions Risk", "Political Risk"],
+          "primaryRegulators": ["International Regulators", "Fed", "OCC", "Treasury", "State Department"],
+          "customerTypes": ["Multinational Corporations", "Financial Institutions", "Government Entities", "High Net Worth"],
+          "products": ["Trade Finance", "Foreign Exchange", "International Banking", "Correspondent Banking"],
+          "geographicScope": "Global (50+ Countries)",
+          "technologyStack": "Global Banking Platforms + Local Systems",
+          "dataVolume": "very-high"
+        }
+      },
+      {
+        "id": "digital-banking",
+        "name": "Digital Banking Unit",
+        "category": "geographic-region",
+        "division": "Geographic Operations Division",
+        "description": "Digital-first banking services, mobile applications, online platforms, and fintech partnerships",
+        "characteristics": {
+          "headcount": 5500,
+          "revenue": 3900000000,
+          "assets": 85000000000,
+          "riskProfile": "medium-high",
+          "regulatoryFocus": true,
+          "complexity": "high",
+          "auditFrequency": "continuous",
+          "keyRisks": ["Cyber Risk", "Technology Risk", "Operational Risk", "Innovation Risk", "Regulatory Risk"],
+          "primaryRegulators": ["CFPB", "OCC", "Fed", "State Regulators"],
+          "customerTypes": ["Digital Natives", "Mobile Users", "Tech-Savvy Consumers", "Small Business"],
+          "products": ["Mobile Banking", "Online Banking", "Digital Payments", "Robo-Advisory", "API Banking"],
+          "geographicScope": "National Digital Presence",
+          "technologyStack": "Cloud-Native + API-First + AI/ML",
+          "dataVolume": "very-high"
+        }
+      }
+    ]
+  }
+}

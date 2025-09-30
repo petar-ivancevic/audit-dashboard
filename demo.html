@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Audit Dashboard - Demo Mode</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3d6f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .alert h2 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .alert p {
+            color: #856404;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .alert-success h2,
+        .alert-success p {
+            color: #155724;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .option-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 2px solid #e0e4e8;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover {
+            border-color: #2c5aa0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .option-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .option-card p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .option-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .option-card li {
+            padding: 8px 0;
+            color: #495057;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .option-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2c5aa0;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #1e3d6f;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .steps {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .steps h3 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+        }
+
+        .steps ol {
+            padding-left: 20px;
+        }
+
+        .steps li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #495057;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Enterprise Audit Dashboard</h1>
+            <p>Financial Crimes Risk & Compliance Analytics Platform</p>
+        </div>
+
+        <div class="alert">
+            <h2>⚠️ Local File System Limitation</h2>
+            <p>The dashboard cannot load JSON data files when opened directly from the file system (file:// protocol) due to browser security restrictions (CORS policy).</p>
+            <p><strong>To view the full dashboard, please choose one of the options below:</strong></p>
+        </div>
+
+        <div class="options">
+            <div class="option-card">
+                <div class="icon">🌐</div>
+                <h3>Option 1: Use Python HTTP Server</h3>
+                <p>Quick and easy - works if you have Python installed</p>
+                <ul>
+                    <li>No installation required</li>
+                    <li>Works immediately</li>
+                    <li>Perfect for demos</li>
+                </ul>
+                <div class="code-block">
+                    # Navigate to the dashboard folder<br>
+                    cd "path/to/ADV-005 - Audit Dashboard"<br>
+                    <br>
+                    # Python 3<br>
+                    python -m http.server 8000<br>
+                    <br>
+                    # OR Python 2<br>
+                    python -m SimpleHTTPServer 8000
+                </div>
+                <p><strong>Then open:</strong> <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+            </div>
+
+            <div class="option-card">
+                <div class="icon">📦</div>
+                <h3>Option 2: Use Node.js HTTP Server</h3>
+                <p>If you have Node.js installed</p>
+                <ul>
+                    <li>Fast and reliable</li>
+                    <li>Great for development</li>
+                    <li>Easy to use</li>
+                </ul>
+                <div class="code-block">
+                    # Install http-server globally (one time)<br>
+                    npm install -g http-server<br>
+                    <br>
+                    # Navigate to dashboard folder<br>
+                    cd "path/to/ADV-005 - Audit Dashboard"<br>
+                    <br>
+                    # Start server<br>
+                    http-server -p 8000
+                </div>
+                <p><strong>Then open:</strong> <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+            </div>
+
+            <div class="option-card">
+                <div class="icon">🔧</div>
+                <h3>Option 3: Use VS Code Live Server</h3>
+                <p>If you use Visual Studio Code</p>
+                <ul>
+                    <li>One-click solution</li>
+                    <li>Auto-refresh on changes</li>
+                    <li>Best for development</li>
+                </ul>
+                <div class="code-block">
+                    1. Open VS Code<br>
+                    2. Install "Live Server" extension<br>
+                    3. Right-click index.html<br>
+                    4. Select "Open with Live Server"
+                </div>
+                <p><strong>Server will start automatically</strong></p>
+            </div>
+        </div>
+
+        <div class="alert alert-success">
+            <h2>✅ What You'll See</h2>
+            <p>Once the server is running, the dashboard will display:</p>
+            <ul style="padding-left: 20px; margin-top: 10px;">
+                <li>15 Business Units with comprehensive audit metrics</li>
+                <li>Interactive risk heat maps and visualizations</li>
+                <li>Real-time filtering and drill-down capabilities</li>
+                <li>Executive scorecard with KPIs and trends</li>
+                <li>Compliance metrics and regulatory reporting</li>
+                <li>Audit findings tracking and remediation status</li>
+                <li>Historical trends and forecasting</li>
+                <li>Export capabilities (PDF, Excel, Print)</li>
+            </ul>
+        </div>
+
+        <div class="steps">
+            <h3>📋 Quick Start Guide</h3>
+            <ol>
+                <li><strong>Choose an option above</strong> and run the server command in your terminal/command prompt</li>
+                <li><strong>Open your browser</strong> and go to <code>http://localhost:8000</code></li>
+                <li><strong>The dashboard will load</strong> with data from all 15 business units</li>
+                <li><strong>Explore the features:</strong>
+                    <ul style="margin-top: 10px; list-style-type: disc; padding-left: 20px;">
+                        <li>Click tabs to switch between views</li>
+                        <li>Click heat map cells to see details</li>
+                        <li>Use filters to analyze specific business units</li>
+                        <li>Sort tables by clicking column headers</li>
+                        <li>Export data using the header buttons</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <h3 style="color: #2c5aa0; margin-bottom: 15px;">📊 Dashboard Features</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: #495057; margin-bottom: 10px;">Data Coverage</h4>
+                    <ul style="list-style: none; color: #6c757d; line-height: 1.8;">
+                        <li>✓ 15 Business Units</li>
+                        <li>✓ Q3 2024 Data</li>
+                        <li>✓ 200+ Unique Metrics</li>
+                        <li>✓ 11 Quarters Historical</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #495057; margin-bottom: 10px;">Analytics</h4>
+                    <ul style="list-style: none; color: #6c757d; line-height: 1.8;">
+                        <li>✓ AML/BSA Monitoring</li>
+                        <li>✓ KYC/CDD Compliance</li>
+                        <li>✓ Fraud Detection</li>
+                        <li>✓ Sanctions Screening</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #495057; margin-bottom: 10px;">Visualizations</h4>
+                    <ul style="list-style: none; color: #6c757d; line-height: 1.8;">
+                        <li>✓ Interactive Charts</li>
+                        <li>✓ Heat Maps</li>
+                        <li>✓ Trend Analysis</li>
+                        <li>✓ Benchmarking</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #495057; margin-bottom: 10px;">Export Options</h4>
+                    <ul style="list-style: none; color: #6c757d; line-height: 1.8;">
+                        <li>✓ PDF Reports</li>
+                        <li>✓ Excel Data</li>
+                        <li>✓ Print Layout</li>
+                        <li>✓ Chart Images</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; text-align: center; color: #6c757d; font-size: 0.9rem;">
+            <p><strong>Enterprise Audit Dashboard v1.0</strong></p>
+            <p>Demonstration data for Q3 2024 | AI-Powered Financial Crimes Analytics</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #adb5bd;">
+                This dashboard contains simulated data for demonstration purposes only.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

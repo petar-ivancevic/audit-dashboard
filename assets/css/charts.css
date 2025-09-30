@@ -1,0 +1,610 @@
+/* ============================================
+   Charts & Visualizations
+   ============================================ */
+
+/* ============================================
+   Chart Grid Layout
+   ============================================ */
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.chart-grid.two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chart-grid.three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ============================================
+   Chart Containers
+   ============================================ */
+
+.chart-container {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.chart-container.large {
+    grid-column: 1 / -1;
+    min-height: 450px;
+}
+
+.chart-container.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.chart-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* ============================================
+   Chart Headers
+   ============================================ */
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.chart-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0;
+}
+
+.chart-header .chart-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+.chart-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.chart-toggle {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chart-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.chart-toggle.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ============================================
+   Chart Canvas & Content
+   ============================================ */
+
+.chart-content {
+    flex: 1;
+    position: relative;
+    min-height: 250px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+/* Ensure charts are responsive */
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px;
+}
+
+.chart-container.large canvas {
+    max-height: 450px;
+}
+
+/* ============================================
+   Chart Legends
+   ============================================ */
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.legend-item:hover {
+    opacity: 0.7;
+}
+
+.legend-item.inactive {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-label {
+    font-weight: 500;
+}
+
+.legend-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-left: var(--spacing-xs);
+}
+
+/* ============================================
+   Chart Stats Summary
+   ============================================ */
+
+.chart-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.chart-stat {
+    text-align: center;
+}
+
+.chart-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.chart-stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.chart-stat-value.positive {
+    color: var(--excellent-color);
+}
+
+.chart-stat-value.negative {
+    color: var(--critical-color);
+}
+
+.chart-stat-value.neutral {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Chart Tooltips
+   ============================================ */
+
+.chart-tooltip {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    box-shadow: var(--shadow-lg);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.chart-tooltip-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: var(--spacing-xs);
+}
+
+.chart-tooltip-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.chart-tooltip-item {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.chart-tooltip-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.chart-tooltip-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.chart-tooltip-value {
+    font-weight: 600;
+}
+
+/* ============================================
+   Chart Empty State
+   ============================================ */
+
+.chart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.chart-empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.3;
+}
+
+.chart-empty-message {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Chart Annotations
+   ============================================ */
+
+.chart-annotation {
+    position: absolute;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.chart-annotation.target {
+    border-left: 3px solid var(--excellent-color);
+    color: var(--excellent-color);
+}
+
+.chart-annotation.threshold {
+    border-left: 3px solid var(--warning-color);
+    color: var(--warning-color);
+}
+
+.chart-annotation.benchmark {
+    border-left: 3px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ============================================
+   Sparkline Charts
+   ============================================ */
+
+.sparkline-container {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.sparkline-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none;
+}
+
+/* ============================================
+   Chart Data Labels
+   ============================================ */
+
+.chart-data-labels {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Chart Zoom Controls
+   ============================================ */
+
+.chart-zoom-controls {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-xs);
+    z-index: 10;
+}
+
+.chart-zoom-button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-zoom-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(44, 90, 160, 0.05);
+}
+
+/* ============================================
+   Chart Filters
+   ============================================ */
+
+.chart-filters {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.chart-filter-chip {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-secondary);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    user-select: none;
+}
+
+.chart-filter-chip:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.chart-filter-chip.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.chart-filter-chip.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   Time Series Chart Specific
+   ============================================ */
+
+.time-series-chart {
+    position: relative;
+}
+
+.time-range-selector {
+    display: flex;
+    gap: var(--spacing-xs);
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.time-range-button {
+    padding: 6px 14px;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.time-range-button:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.time-range-button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ============================================
+   Comparison Charts
+   ============================================ */
+
+.comparison-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.comparison-legend {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.comparison-legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.comparison-legend-line {
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.comparison-legend-line.solid {
+    background: var(--primary-color);
+}
+
+.comparison-legend-line.dashed {
+    background: repeating-linear-gradient(
+        to right,
+        var(--secondary-color) 0px,
+        var(--secondary-color) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+}
+
+/* ============================================
+   Distribution Charts (Histogram, Box Plot)
+   ============================================ */
+
+.distribution-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--background-color);
+    border-radius: var(--radius-md);
+}
+
+.distribution-stat {
+    text-align: center;
+}
+
+.distribution-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.distribution-stat-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: var(--spacing-xs);
+}
+
+/* ============================================
+   Gauge Charts
+   ============================================ */
+
+.gauge-chart-container {
+    position: relative;
+    text-align: center;
+}
+
+.gauge-value {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.gauge-label {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   Responsive Chart Adjustments
+   ============================================ */
+
+@media (max-width: 768px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-legend {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .chart-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

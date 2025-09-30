@@ -1,0 +1,687 @@
+/* ============================================
+   Print Styles - Optimize for Paper Output
+   ============================================ */
+
+@media print {
+
+    /* ============================================
+       Base Print Styles
+       ============================================ */
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    html {
+        font-size: 10pt;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-family: 'Times New Roman', serif;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ============================================
+       Page Setup
+       ============================================ */
+
+    @page {
+        size: letter;
+        margin: 0.75in;
+        orphans: 3;
+        widows: 3;
+    }
+
+    @page :first {
+        margin-top: 0.5in;
+    }
+
+    /* ============================================
+       Hide Interactive Elements
+       ============================================ */
+
+    .dashboard-nav,
+    .export-controls,
+    .filter-panel,
+    .section-controls,
+    .chart-controls,
+    .chart-zoom-controls,
+    .nav-tab,
+    .btn,
+    .btn-close,
+    .action-button,
+    .loading-overlay,
+    input[type="checkbox"],
+    select,
+    button,
+    .insight-action {
+        display: none !important;
+    }
+
+    /* ============================================
+       Header Adjustments
+       ============================================ */
+
+    .dashboard-header {
+        background: white !important;
+        color: black !important;
+        padding: 0.5in 0;
+        border-bottom: 3pt solid black;
+        box-shadow: none;
+        position: static;
+        page-break-after: avoid;
+    }
+
+    .header-content {
+        display: block;
+    }
+
+    .logo-section {
+        margin-bottom: 0.2in;
+    }
+
+    .dashboard-title {
+        font-size: 24pt;
+        font-weight: bold;
+        color: black !important;
+        margin-bottom: 0.1in;
+    }
+
+    .dashboard-subtitle {
+        font-size: 12pt;
+        color: #333 !important;
+        margin-bottom: 0;
+    }
+
+    .period-selector {
+        display: block !important;
+        margin-top: 0.1in;
+    }
+
+    .period-selector label {
+        color: black !important;
+    }
+
+    /* ============================================
+       Main Content
+       ============================================ */
+
+    .dashboard-main {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dashboard-view {
+        display: block !important;
+    }
+
+    .dashboard-view:not(.active) {
+        display: none !important;
+    }
+
+    .dashboard-section {
+        background: white;
+        border: 1pt solid #ccc;
+        border-radius: 0;
+        padding: 0.2in;
+        margin-bottom: 0.15in;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .section-header {
+        border-bottom: 2pt solid black;
+        padding-bottom: 0.1in;
+        margin-bottom: 0.15in;
+        page-break-after: avoid;
+    }
+
+    .section-header h2 {
+        font-size: 16pt;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 0;
+    }
+
+    /* ============================================
+       Metrics Grid
+       ============================================ */
+
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.15in;
+        margin-bottom: 0.2in;
+        page-break-inside: avoid;
+    }
+
+    .metric-card {
+        background: white;
+        border: 1pt solid #ccc;
+        border-radius: 0;
+        padding: 0.15in;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .metric-card::before {
+        display: none;
+    }
+
+    .metric-card.primary {
+        border-left: 3pt solid black;
+        background: #f5f5f5 !important;
+    }
+
+    .metric-header h3 {
+        font-size: 9pt;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+    .metric-value {
+        font-size: 20pt;
+        font-weight: bold;
+        color: black !important;
+        margin: 0.05in 0;
+    }
+
+    .metric-footer {
+        font-size: 8pt;
+        border-top: 1pt solid #ccc;
+        padding-top: 0.05in;
+    }
+
+    .metric-indicator,
+    .metric-trend {
+        background: none !important;
+        border: 1pt solid #ccc;
+        padding: 2pt 6pt;
+        font-size: 8pt;
+    }
+
+    /* ============================================
+       Heat Map
+       ============================================ */
+
+    .risk-heatmap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.1in;
+        page-break-inside: avoid;
+    }
+
+    .heatmap-cell {
+        border: 1pt solid #ccc;
+        border-radius: 0;
+        padding: 0.1in;
+        min-height: auto;
+        page-break-inside: avoid;
+    }
+
+    .heatmap-cell.risk-excellent {
+        border-left: 3pt solid #2e7d32;
+        background: #e8f5e9 !important;
+    }
+
+    .heatmap-cell.risk-good {
+        border-left: 3pt solid #66bb6a;
+        background: #f1f8e9 !important;
+    }
+
+    .heatmap-cell.risk-warning {
+        border-left: 3pt solid #ffa726;
+        background: #fff3e0 !important;
+    }
+
+    .heatmap-cell.risk-critical {
+        border-left: 3pt solid #d32f2f;
+        background: #ffebee !important;
+    }
+
+    .heatmap-cell-header {
+        font-size: 9pt;
+        font-weight: bold;
+    }
+
+    .heatmap-cell-score {
+        font-size: 16pt;
+        font-weight: bold;
+    }
+
+    /* ============================================
+       Charts
+       ============================================ */
+
+    .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2in;
+        page-break-inside: avoid;
+    }
+
+    .chart-container {
+        background: white;
+        border: 1pt solid #ccc;
+        padding: 0.15in;
+        box-shadow: none;
+        min-height: auto;
+        page-break-inside: avoid;
+    }
+
+    .chart-container.large {
+        grid-column: 1 / -1;
+    }
+
+    .chart-header {
+        border-bottom: 1pt solid #ccc;
+        margin-bottom: 0.1in;
+        padding-bottom: 0.05in;
+    }
+
+    .chart-header h3 {
+        font-size: 11pt;
+        font-weight: bold;
+        color: black;
+    }
+
+    canvas {
+        max-height: 3in !important;
+        page-break-inside: avoid;
+    }
+
+    .chart-container.large canvas {
+        max-height: 4in !important;
+    }
+
+    .chart-legend {
+        font-size: 8pt;
+        margin-top: 0.1in;
+        padding-top: 0.05in;
+        border-top: 1pt solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    .chart-stats {
+        font-size: 8pt;
+        margin-top: 0.1in;
+        padding-top: 0.05in;
+        border-top: 1pt solid #ccc;
+    }
+
+    /* ============================================
+       Data Tables
+       ============================================ */
+
+    .table-container {
+        overflow: visible;
+        border: 1pt solid #ccc;
+        border-radius: 0;
+        page-break-inside: auto;
+    }
+
+    .data-table {
+        width: 100%;
+        font-size: 8pt;
+        border-collapse: collapse;
+    }
+
+    .data-table thead {
+        background: #f5f5f5 !important;
+        color: black !important;
+    }
+
+    .data-table thead th {
+        border: 1pt solid #ccc;
+        padding: 6pt;
+        font-weight: bold;
+        text-align: left;
+        background: #f5f5f5 !important;
+        color: black !important;
+        font-size: 8pt;
+    }
+
+    .data-table tbody tr {
+        border-bottom: 1pt solid #e0e0e0;
+        page-break-inside: avoid;
+    }
+
+    .data-table tbody td {
+        border: 1pt solid #e0e0e0;
+        padding: 6pt;
+        font-size: 8pt;
+    }
+
+    /* Repeat table headers on each page */
+    .data-table thead {
+        display: table-header-group;
+    }
+
+    .data-table tbody {
+        display: table-row-group;
+    }
+
+    .data-table tfoot {
+        display: table-footer-group;
+    }
+
+    /* Table badges and indicators */
+    .status-badge,
+    .severity-badge {
+        border: 1pt solid #ccc;
+        padding: 2pt 6pt;
+        background: none !important;
+        font-size: 7pt;
+        font-weight: bold;
+    }
+
+    .status-badge.critical,
+    .severity-badge.critical {
+        color: #b71c1c !important;
+        border-color: #b71c1c;
+    }
+
+    .status-badge.high,
+    .severity-badge.high {
+        color: #d84315 !important;
+        border-color: #d84315;
+    }
+
+    .status-badge.warning,
+    .status-badge.medium,
+    .severity-badge.medium {
+        color: #f57c00 !important;
+        border-color: #f57c00;
+    }
+
+    .status-badge.excellent,
+    .status-badge.good {
+        color: #2e7d32 !important;
+        border-color: #2e7d32;
+    }
+
+    /* ============================================
+       Insights Grid
+       ============================================ */
+
+    .insights-grid {
+        display: block;
+        columns: 2;
+        column-gap: 0.2in;
+    }
+
+    .insight-card {
+        background: white;
+        border: 1pt solid #ccc;
+        border-radius: 0;
+        padding: 0.15in;
+        margin-bottom: 0.15in;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .insight-card.warning {
+        border-left: 3pt solid #ffa726;
+    }
+
+    .insight-card.critical {
+        border-left: 3pt solid #d32f2f;
+    }
+
+    .insight-card.positive {
+        border-left: 3pt solid #2e7d32;
+    }
+
+    .insight-title {
+        font-size: 10pt;
+        font-weight: bold;
+        color: black;
+    }
+
+    .insight-body {
+        font-size: 9pt;
+        color: #333;
+    }
+
+    .insight-icon {
+        display: none;
+    }
+
+    /* ============================================
+       Findings Summary
+       ============================================ */
+
+    .findings-summary {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.1in;
+        page-break-inside: avoid;
+    }
+
+    .finding-stat {
+        border: 1pt solid #ccc;
+        border-radius: 0;
+        padding: 0.15in;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+
+    .finding-stat .stat-value {
+        font-size: 24pt;
+        font-weight: bold;
+    }
+
+    .finding-stat .stat-label {
+        font-size: 9pt;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .finding-stat.critical {
+        border-left: 3pt solid #b71c1c;
+        background: #ffebee !important;
+    }
+
+    .finding-stat.critical .stat-value {
+        color: #b71c1c !important;
+    }
+
+    .finding-stat.high {
+        border-left: 3pt solid #d84315;
+        background: #fbe9e7 !important;
+    }
+
+    .finding-stat.high .stat-value {
+        color: #d84315 !important;
+    }
+
+    .finding-stat.medium {
+        border-left: 3pt solid #f57c00;
+        background: #fff3e0 !important;
+    }
+
+    .finding-stat.medium .stat-value {
+        color: #f57c00 !important;
+    }
+
+    .finding-stat.low {
+        border-left: 3pt solid #fbc02d;
+        background: #fffde7 !important;
+    }
+
+    .finding-stat.low .stat-value {
+        color: #fbc02d !important;
+    }
+
+    /* ============================================
+       Detail Panel (Hide in Print)
+       ============================================ */
+
+    .detail-panel {
+        display: none !important;
+    }
+
+    /* ============================================
+       Footer
+       ============================================ */
+
+    .dashboard-footer {
+        background: white;
+        border-top: 2pt solid black;
+        padding: 0.2in 0;
+        margin-top: 0.3in;
+        page-break-before: avoid;
+        position: static;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .footer-info p,
+    .footer-disclaimer p {
+        font-size: 8pt;
+        color: #333;
+        margin-bottom: 0.05in;
+    }
+
+    .footer-disclaimer {
+        margin-top: 0.1in;
+        border-top: 1pt solid #ccc;
+        padding-top: 0.1in;
+    }
+
+    /* ============================================
+       Page Breaks
+       ============================================ */
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    .metric-card,
+    .chart-container,
+    .insight-card,
+    .finding-stat,
+    .heatmap-cell {
+        page-break-inside: avoid;
+    }
+
+    .dashboard-section {
+        page-break-after: auto;
+    }
+
+    /* Force page break before certain sections */
+    #business-units-view,
+    #risk-analysis-view,
+    #compliance-view,
+    #findings-view,
+    #trends-view {
+        page-break-before: always;
+    }
+
+    /* ============================================
+       Links
+       ============================================ */
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        font-style: italic;
+    }
+
+    /* ============================================
+       Progress Bars
+       ============================================ */
+
+    .progress-bar {
+        border: 1pt solid #ccc;
+        height: 12pt;
+        background: white !important;
+    }
+
+    .progress-fill {
+        background: #333 !important;
+    }
+
+    .progress-fill.excellent {
+        background: #2e7d32 !important;
+    }
+
+    .progress-fill.good {
+        background: #66bb6a !important;
+    }
+
+    .progress-fill.warning {
+        background: #ffa726 !important;
+    }
+
+    .progress-fill.critical {
+        background: #d32f2f !important;
+    }
+
+    /* ============================================
+       Print Header/Footer (Auto-generated)
+       ============================================ */
+
+    @page {
+        @top-right {
+            content: "Page " counter(page) " of " counter(pages);
+            font-size: 8pt;
+            color: #666;
+        }
+
+        @bottom-left {
+            content: "Enterprise Audit Dashboard - Q3 2024";
+            font-size: 8pt;
+            color: #666;
+        }
+
+        @bottom-right {
+            content: "Confidential - Internal Use Only";
+            font-size: 8pt;
+            color: #666;
+        }
+    }
+
+    /* ============================================
+       Utility Classes
+       ============================================ */
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    /* ============================================
+       Prevent Unnecessary Breaks
+       ============================================ */
+
+    tr, td, th {
+        page-break-inside: avoid;
+    }
+
+    ul, ol {
+        page-break-before: avoid;
+    }
+}

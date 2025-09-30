@@ -1,0 +1,617 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "timeSeriesData": {
+    "periodCovered": {
+      "startDate": "2022-01-01",
+      "endDate": "2024-09-30",
+      "totalQuarters": 11,
+      "frequency": "quarterly"
+    },
+    "enterpriseTrends": [
+      {
+        "period": "Q1 2022",
+        "date": "2022-03-31",
+        "metrics": {
+          "enterpriseRiskScore": 71.4,
+          "totalAuditFindings": 127,
+          "criticalFindings": 8,
+          "trainingCompletion": 89.7,
+          "systemAvailability": 99.78,
+          "cyberIncidents": 45,
+          "regulatoryExams": 2,
+          "totalLossEvents": 89,
+          "operationalLosses": 23400000
+        }
+      },
+      {
+        "period": "Q2 2022",
+        "date": "2022-06-30",
+        "metrics": {
+          "enterpriseRiskScore": 72.8,
+          "totalAuditFindings": 118,
+          "criticalFindings": 6,
+          "trainingCompletion": 91.2,
+          "systemAvailability": 99.81,
+          "cyberIncidents": 38,
+          "regulatoryExams": 1,
+          "totalLossEvents": 76,
+          "operationalLosses": 19800000
+        }
+      },
+      {
+        "period": "Q3 2022",
+        "date": "2022-09-30",
+        "metrics": {
+          "enterpriseRiskScore": 74.1,
+          "totalAuditFindings": 134,
+          "criticalFindings": 9,
+          "trainingCompletion": 92.8,
+          "systemAvailability": 99.79,
+          "cyberIncidents": 52,
+          "regulatoryExams": 3,
+          "totalLossEvents": 94,
+          "operationalLosses": 31200000
+        }
+      },
+      {
+        "period": "Q4 2022",
+        "date": "2022-12-31",
+        "metrics": {
+          "enterpriseRiskScore": 75.6,
+          "totalAuditFindings": 142,
+          "criticalFindings": 7,
+          "trainingCompletion": 94.1,
+          "systemAvailability": 99.83,
+          "cyberIncidents": 41,
+          "regulatoryExams": 2,
+          "totalLossEvents": 67,
+          "operationalLosses": 18900000
+        }
+      },
+      {
+        "period": "Q1 2023",
+        "date": "2023-03-31",
+        "metrics": {
+          "enterpriseRiskScore": 76.9,
+          "totalAuditFindings": 156,
+          "criticalFindings": 11,
+          "trainingCompletion": 93.7,
+          "systemAvailability": 99.85,
+          "cyberIncidents": 67,
+          "regulatoryExams": 4,
+          "totalLossEvents": 112,
+          "operationalLosses": 42300000
+        }
+      },
+      {
+        "period": "Q2 2023",
+        "date": "2023-06-30",
+        "metrics": {
+          "enterpriseRiskScore": 77.8,
+          "totalAuditFindings": 129,
+          "criticalFindings": 8,
+          "trainingCompletion": 95.2,
+          "systemAvailability": 99.86,
+          "cyberIncidents": 34,
+          "regulatoryExams": 2,
+          "totalLossEvents": 89,
+          "operationalLosses": 27600000
+        }
+      },
+      {
+        "period": "Q3 2023",
+        "date": "2023-09-30",
+        "metrics": {
+          "enterpriseRiskScore": 78.5,
+          "totalAuditFindings": 121,
+          "criticalFindings": 5,
+          "trainingCompletion": 96.8,
+          "systemAvailability": 99.84,
+          "cyberIncidents": 28,
+          "regulatoryExams": 1,
+          "totalLossEvents": 78,
+          "operationalLosses": 22100000
+        }
+      },
+      {
+        "period": "Q4 2023",
+        "date": "2023-12-31",
+        "metrics": {
+          "enterpriseRiskScore": 79.2,
+          "totalAuditFindings": 108,
+          "criticalFindings": 4,
+          "trainingCompletion": 97.4,
+          "systemAvailability": 99.87,
+          "cyberIncidents": 23,
+          "regulatoryExams": 2,
+          "totalLossEvents": 65,
+          "operationalLosses": 19700000
+        }
+      },
+      {
+        "period": "Q1 2024",
+        "date": "2024-03-31",
+        "metrics": {
+          "enterpriseRiskScore": 79.8,
+          "totalAuditFindings": 94,
+          "criticalFindings": 6,
+          "trainingCompletion": 95.9,
+          "systemAvailability": 99.85,
+          "cyberIncidents": 31,
+          "regulatoryExams": 3,
+          "totalLossEvents": 72,
+          "operationalLosses": 28400000
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "date": "2024-06-30",
+        "metrics": {
+          "enterpriseRiskScore": 80.9,
+          "totalAuditFindings": 87,
+          "criticalFindings": 4,
+          "trainingCompletion": 96.7,
+          "systemAvailability": 99.88,
+          "cyberIncidents": 26,
+          "regulatoryExams": 1,
+          "totalLossEvents": 68,
+          "operationalLosses": 24900000
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "date": "2024-09-30",
+        "metrics": {
+          "enterpriseRiskScore": 81.8,
+          "totalAuditFindings": 75,
+          "criticalFindings": 3,
+          "trainingCompletion": 95.9,
+          "systemAvailability": 99.87,
+          "cyberIncidents": 22,
+          "regulatoryExams": 2,
+          "totalLossEvents": 61,
+          "operationalLosses": 21600000
+        }
+      }
+    ],
+    "businessUnitTrends": {
+      "consumer-banking": [
+        {
+          "period": "Q1 2022",
+          "riskScore": 69.8,
+          "amlAlerts": 38947,
+          "falsePositiveRate": 91.2,
+          "sarFilings": 2234,
+          "fraudLosses": 24500000
+        },
+        {
+          "period": "Q2 2022",
+          "riskScore": 71.4,
+          "amlAlerts": 40123,
+          "falsePositiveRate": 90.8,
+          "sarFilings": 2345,
+          "fraudLosses": 22100000
+        },
+        {
+          "period": "Q3 2022",
+          "riskScore": 72.9,
+          "amlAlerts": 41567,
+          "falsePositiveRate": 90.3,
+          "sarFilings": 2456,
+          "fraudLosses": 25300000
+        },
+        {
+          "period": "Q4 2022",
+          "riskScore": 73.8,
+          "amlAlerts": 39876,
+          "falsePositiveRate": 89.9,
+          "sarFilings": 2567,
+          "fraudLosses": 19800000
+        },
+        {
+          "period": "Q1 2023",
+          "riskScore": 74.6,
+          "amlAlerts": 41234,
+          "falsePositiveRate": 89.4,
+          "sarFilings": 2678,
+          "fraudLosses": 21900000
+        },
+        {
+          "period": "Q2 2023",
+          "riskScore": 75.9,
+          "amlAlerts": 42890,
+          "falsePositiveRate": 88.7,
+          "sarFilings": 2789,
+          "fraudLosses": 20600000
+        },
+        {
+          "period": "Q3 2023",
+          "riskScore": 76.7,
+          "amlAlerts": 43567,
+          "falsePositiveRate": 88.1,
+          "sarFilings": 2834,
+          "fraudLosses": 18900000
+        },
+        {
+          "period": "Q4 2023",
+          "riskScore": 77.2,
+          "amlAlerts": 42123,
+          "falsePositiveRate": 87.6,
+          "sarFilings": 2901,
+          "fraudLosses": 17200000
+        },
+        {
+          "period": "Q1 2024",
+          "riskScore": 74.2,
+          "amlAlerts": 42156,
+          "falsePositiveRate": 89.1,
+          "sarFilings": 2634,
+          "fraudLosses": 19800000
+        },
+        {
+          "period": "Q2 2024",
+          "riskScore": 76.8,
+          "amlAlerts": 43920,
+          "falsePositiveRate": 88.7,
+          "sarFilings": 2741,
+          "fraudLosses": 18100000
+        },
+        {
+          "period": "Q3 2024",
+          "riskScore": 78.5,
+          "amlAlerts": 45673,
+          "falsePositiveRate": 87.3,
+          "sarFilings": 2847,
+          "fraudLosses": 18400000
+        }
+      ],
+      "commercial-banking": [
+        {
+          "period": "Q1 2022",
+          "riskScore": 77.9,
+          "amlAlerts": 24567,
+          "falsePositiveRate": 86.4,
+          "sarFilings": 1234,
+          "sanctionsHits": 89
+        },
+        {
+          "period": "Q2 2022",
+          "riskScore": 78.8,
+          "amlAlerts": 25123,
+          "falsePositiveRate": 85.9,
+          "sarFilings": 1345,
+          "sanctionsHits": 76
+        },
+        {
+          "period": "Q3 2022",
+          "riskScore": 79.4,
+          "amlAlerts": 25890,
+          "falsePositiveRate": 85.3,
+          "sarFilings": 1456,
+          "sanctionsHits": 94
+        },
+        {
+          "period": "Q4 2022",
+          "riskScore": 80.1,
+          "amlAlerts": 24876,
+          "falsePositiveRate": 84.7,
+          "sarFilings": 1567,
+          "sanctionsHits": 67
+        },
+        {
+          "period": "Q1 2023",
+          "riskScore": 80.8,
+          "amlAlerts": 26234,
+          "falsePositiveRate": 84.1,
+          "sarFilings": 1623,
+          "sanctionsHits": 78
+        },
+        {
+          "period": "Q2 2023",
+          "riskScore": 81.7,
+          "amlAlerts": 26890,
+          "falsePositiveRate": 83.6,
+          "sarFilings": 1734,
+          "sanctionsHits": 82
+        },
+        {
+          "period": "Q3 2023",
+          "riskScore": 82.4,
+          "amlAlerts": 27456,
+          "falsePositiveRate": 83.2,
+          "sarFilings": 1789,
+          "sanctionsHits": 69
+        },
+        {
+          "period": "Q4 2023",
+          "riskScore": 83.1,
+          "amlAlerts": 26789,
+          "falsePositiveRate": 82.8,
+          "sarFilings": 1823,
+          "sanctionsHits": 71
+        },
+        {
+          "period": "Q1 2024",
+          "riskScore": 81.7,
+          "amlAlerts": 26834,
+          "falsePositiveRate": 85.9,
+          "sarFilings": 1634,
+          "sanctionsHits": 89
+        },
+        {
+          "period": "Q2 2024",
+          "riskScore": 83.9,
+          "amlAlerts": 27891,
+          "falsePositiveRate": 84.2,
+          "sarFilings": 1756,
+          "sanctionsHits": 67
+        },
+        {
+          "period": "Q3 2024",
+          "riskScore": 85.2,
+          "amlAlerts": 28947,
+          "falsePositiveRate": 82.6,
+          "sarFilings": 1879,
+          "sanctionsHits": 56
+        }
+      ],
+      "investment-banking": [
+        {
+          "period": "Q1 2022",
+          "riskScore": 85.4,
+          "tradingVolume": 7234567,
+          "varUtilization": 84.7,
+          "complianceAlerts": 234,
+          "operationalLoss": 2300000
+        },
+        {
+          "period": "Q2 2022",
+          "riskScore": 86.1,
+          "tradingVolume": 7789012,
+          "varUtilization": 83.9,
+          "complianceAlerts": 198,
+          "operationalLoss": 1900000
+        },
+        {
+          "period": "Q3 2022",
+          "riskScore": 86.8,
+          "tradingVolume": 8234567,
+          "varUtilization": 82.4,
+          "complianceAlerts": 212,
+          "operationalLoss": 2100000
+        },
+        {
+          "period": "Q4 2022",
+          "riskScore": 87.2,
+          "tradingVolume": 8567890,
+          "varUtilization": 81.8,
+          "complianceAlerts": 189,
+          "operationalLoss": 1800000
+        },
+        {
+          "period": "Q1 2023",
+          "riskScore": 87.6,
+          "tradingVolume": 8789012,
+          "varUtilization": 81.2,
+          "complianceAlerts": 176,
+          "operationalLoss": 1600000
+        },
+        {
+          "period": "Q2 2023",
+          "riskScore": 88.3,
+          "tradingVolume": 9123456,
+          "varUtilization": 80.6,
+          "complianceAlerts": 164,
+          "operationalLoss": 1400000
+        },
+        {
+          "period": "Q3 2023",
+          "riskScore": 88.9,
+          "tradingVolume": 9456789,
+          "varUtilization": 79.8,
+          "complianceAlerts": 152,
+          "operationalLoss": 1200000
+        },
+        {
+          "period": "Q4 2023",
+          "riskScore": 89.4,
+          "tradingVolume": 9789012,
+          "varUtilization": 79.2,
+          "complianceAlerts": 143,
+          "operationalLoss": 1100000
+        },
+        {
+          "period": "Q1 2024",
+          "riskScore": 87.9,
+          "tradingVolume": 8945678,
+          "varUtilization": 82.1,
+          "complianceAlerts": 167,
+          "operationalLoss": 1500000
+        },
+        {
+          "period": "Q2 2024",
+          "riskScore": 89.1,
+          "tradingVolume": 9234567,
+          "varUtilization": 79.8,
+          "complianceAlerts": 145,
+          "operationalLoss": 1300000
+        },
+        {
+          "period": "Q3 2024",
+          "riskScore": 89.7,
+          "tradingVolume": 9567890,
+          "varUtilization": 78.4,
+          "complianceAlerts": 134,
+          "operationalLoss": 1200000
+        }
+      ],
+      "operations-tech": [
+        {
+          "period": "Q1 2022",
+          "riskScore": 65.7,
+          "systemAvailability": 99.74,
+          "securityIncidents": 89,
+          "changeSuccessRate": 87.4,
+          "vulnerabilities": 1678
+        },
+        {
+          "period": "Q2 2022",
+          "riskScore": 66.8,
+          "systemAvailability": 99.76,
+          "securityIncidents": 76,
+          "changeSuccessRate": 88.1,
+          "vulnerabilities": 1534
+        },
+        {
+          "period": "Q3 2022",
+          "riskScore": 67.9,
+          "systemAvailability": 99.78,
+          "securityIncidents": 82,
+          "changeSuccessRate": 88.7,
+          "vulnerabilities": 1689
+        },
+        {
+          "period": "Q4 2022",
+          "riskScore": 68.6,
+          "systemAvailability": 99.79,
+          "securityIncidents": 71,
+          "changeSuccessRate": 89.3,
+          "vulnerabilities": 1456
+        },
+        {
+          "period": "Q1 2023",
+          "riskScore": 69.3,
+          "systemAvailability": 99.81,
+          "securityIncidents": 94,
+          "changeSuccessRate": 89.8,
+          "vulnerabilities": 1723
+        },
+        {
+          "period": "Q2 2023",
+          "riskScore": 70.7,
+          "systemAvailability": 99.82,
+          "securityIncidents": 68,
+          "changeSuccessRate": 90.4,
+          "vulnerabilities": 1398
+        },
+        {
+          "period": "Q3 2023",
+          "riskScore": 71.4,
+          "systemAvailability": 99.83,
+          "securityIncidents": 59,
+          "changeSuccessRate": 90.9,
+          "vulnerabilities": 1267
+        },
+        {
+          "period": "Q4 2023",
+          "riskScore": 72.1,
+          "systemAvailability": 99.84,
+          "securityIncidents": 52,
+          "changeSuccessRate": 91.2,
+          "vulnerabilities": 1189
+        },
+        {
+          "period": "Q1 2024",
+          "riskScore": 68.4,
+          "systemAvailability": 99.82,
+          "securityIncidents": 73,
+          "changeSuccessRate": 89.7,
+          "vulnerabilities": 1456
+        },
+        {
+          "period": "Q2 2024",
+          "riskScore": 71.6,
+          "systemAvailability": 99.85,
+          "securityIncidents": 61,
+          "changeSuccessRate": 90.8,
+          "vulnerabilities": 1298
+        },
+        {
+          "period": "Q3 2024",
+          "riskScore": 73.8,
+          "systemAvailability": 99.87,
+          "securityIncidents": 54,
+          "changeSuccessRate": 91.4,
+          "vulnerabilities": 1234
+        }
+      ]
+    },
+    "keyEvents": [
+      {
+        "date": "2022-05-15",
+        "event": "Major System Upgrade - Core Banking Platform",
+        "impact": "Temporary increase in operational risk scores",
+        "affectedUnits": ["consumer-banking", "operations-tech"]
+      },
+      {
+        "date": "2022-09-20",
+        "event": "Regulatory Examination - AML/BSA Focus",
+        "impact": "Increased scrutiny on transaction monitoring",
+        "affectedUnits": ["consumer-banking", "commercial-banking"]
+      },
+      {
+        "date": "2023-03-10",
+        "event": "Cybersecurity Incident - Phishing Campaign",
+        "impact": "Elevated security metrics and training requirements",
+        "affectedUnits": ["operations-tech", "all"]
+      },
+      {
+        "date": "2023-08-01",
+        "event": "New AML Monitoring System Implementation",
+        "impact": "Initial spike in false positives, then improvement",
+        "affectedUnits": ["consumer-banking", "commercial-banking"]
+      },
+      {
+        "date": "2024-01-15",
+        "event": "Model Risk Management Framework Update",
+        "impact": "Enhanced model validation requirements",
+        "affectedUnits": ["investment-banking", "commercial-banking"]
+      },
+      {
+        "date": "2024-06-01",
+        "event": "Cloud Migration Initiative Launch",
+        "impact": "Technology risk assessment and controls enhancement",
+        "affectedUnits": ["operations-tech"]
+      }
+    ],
+    "seasonalPatterns": {
+      "q1": {
+        "description": "Typically higher operational losses due to year-end adjustments",
+        "riskScoreImpact": -1.2,
+        "auditActivityIncrease": 15.0
+      },
+      "q2": {
+        "description": "Moderate performance with focus on mid-year assessments",
+        "riskScoreImpact": 0.3,
+        "auditActivityIncrease": 5.0
+      },
+      "q3": {
+        "description": "Peak regulatory examination season",
+        "riskScoreImpact": -0.8,
+        "auditActivityIncrease": 25.0
+      },
+      "q4": {
+        "description": "Year-end reporting and control attestation period",
+        "riskScoreImpact": 1.1,
+        "auditActivityIncrease": 20.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse - Historical Analytics",
+    "confidence": 93.4,
+    "dataQuality": {
+      "completeness": 97.8,
+      "accuracy": 95.2,
+      "consistency": 96.1
+    },
+    "methodology": "Quarterly aggregation with seasonal adjustments and event-based corrections",
+    "caveats": [
+      "Data includes the impact of major system implementations and regulatory changes",
+      "Q1 2024 shows temporary dip due to new model validation requirements",
+      "Seasonal patterns are based on 3-year historical averages",
+      "Forecasting models incorporate both cyclical and strategic factors"
+    ]
+  }
+}

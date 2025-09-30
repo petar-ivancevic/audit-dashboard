@@ -1,0 +1,535 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "vendor-management",
+      "name": "Vendor Management",
+      "category": "support-operations",
+      "region": "Global",
+      "headcount": 1200,
+      "assets": 1500000000,
+      "riskTier": "medium",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 83.4,
+      "trend": "improving",
+      "benchmark": "good"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 83.4,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 86.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "third-party-risk",
+        "name": "Third Party Risk Score",
+        "value": 85.9,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "due-diligence-completion",
+        "name": "Due Diligence Completion Rate",
+        "value": 94.6,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "contract-compliance",
+        "name": "Contract Compliance Score",
+        "value": 91.8,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "vendor-performance",
+        "name": "Vendor Performance Score",
+        "value": 87.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "sla-compliance",
+        "name": "SLA Compliance Rate",
+        "value": 93.7,
+        "target": 92.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "vendor-incidents",
+        "name": "Vendor Risk Incidents",
+        "value": 18,
+        "target": 20,
+        "unit": "count",
+        "status": "excellent",
+        "trend": "down",
+        "category": "risk"
+      },
+      {
+        "id": "cyber-risk-score",
+        "name": "Vendor Cyber Risk Score",
+        "value": 82.6,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "concentration-risk",
+        "name": "Concentration Risk Score",
+        "value": 88.4,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "risk"
+      }
+    ],
+    "alerts": {
+      "critical": 1,
+      "high": 4,
+      "medium": 11,
+      "low": 19
+    },
+    "trending": {
+      "quarterOverQuarter": 2.3,
+      "yearOverYear": 5.7,
+      "trendingUp": ["Control Maturity", "Third Party Risk", "Vendor Performance", "Cyber Risk"],
+      "trendingDown": ["Vendor Incidents"]
+    }
+  },
+  "operationalMetrics": {
+    "vendorPortfolio": {
+      "inventory": {
+        "totalVendors": 3847,
+        "criticalVendors": 287,
+        "highRiskVendors": 456,
+        "activeContracts": 4234
+      },
+      "segmentation": {
+        "technology": 34.6,
+        "operations": 28.4,
+        "professional Services": 18.7,
+        "facilities": 12.3,
+        "other": 6.0
+      },
+      "spending": {
+        "totalAnnualSpend": 4560000000,
+        "criticalVendorSpend": 2340000000,
+        "topTenConcentration": 38.7
+      }
+    },
+    "dueDiligence": {
+      "onboarding": {
+        "newVendors": 234,
+        "dueDiligenceCompleted": 94.6,
+        "averageTimeToOnboard": 42.3,
+        "rejectionRate": 8.7
+      },
+      "assessments": {
+        "riskAssessments": 456,
+        "securityReviews": 287,
+        "financialReviews": 234,
+        "complianceReviews": 389
+      },
+      "quality": {
+        "assessmentQuality": 91.4,
+        "documentationScore": 88.9,
+        "reviewTimeliness": 87.6
+      }
+    },
+    "monitoring": {
+      "ongoing": {
+        "quarterlyReviews": 287,
+        "annualReviews": 1234,
+        "complianceRate": 94.6,
+        "reassessments": 178
+      },
+      "performance": {
+        "slaCompliance": 93.7,
+        "qualityScore": 87.3,
+        "issueResolution": 14.6,
+        "escalations": 67
+      },
+      "incidents": {
+        "total": 18,
+        "dataBreaches": 2,
+        "serviceDisruptions": 8,
+        "complianceViolations": 5,
+        "other": 3
+      }
+    },
+    "contractManagement": {
+      "lifecycle": {
+        "expiringWithin90Days": 234,
+        "renewalRate": 87.6,
+        "renegotiationSuccess": 76.4,
+        "terminationRate": 4.3
+      },
+      "compliance": {
+        "termsCompliance": 91.8,
+        "pricingAccuracy": 96.4,
+        "slaAdherence": 93.7,
+        "deliverableCompletion": 89.6
+      }
+    }
+  },
+  "riskMetrics": {
+    "thirdPartyRisk": {
+      "inherent": {
+        "highRisk": 11.9,
+        "mediumRisk": 46.3,
+        "lowRisk": 41.8
+      },
+      "residual": {
+        "highRisk": 4.7,
+        "mediumRisk": 32.8,
+        "lowRisk": 62.5
+      },
+      "controls": {
+        "effectiveness": 85.9,
+        "coverage": 94.6,
+        "testing": 91.8
+      }
+    },
+    "concentrationRisk": {
+      "vendorConcentration": {
+        "singleVendor": 12.4,
+        "topFive": 38.7,
+        "topTen": 56.3
+      },
+      "geographic": {
+        "singleCountry": 67.8,
+        "offshorePercentage": 32.2,
+        "diversification": 88.4
+      },
+      "serviceType": {
+        "criticalServices": 48.7,
+        "alternativeProviders": 67.8,
+        "exitStrategy": 82.6
+      }
+    },
+    "cyberRisk": {
+      "securityAssessments": {
+        "completed": 94.6,
+        "passRate": 82.6,
+        "remediation": 76.8
+      },
+      "dataAccess": {
+        "vendorsWithAccess": 456,
+        "sensitiveData": 234,
+        "encryptionCompliance": 96.8,
+        "accessReviews": 94.2
+      },
+      "incidents": {
+        "breaches": 2,
+        "vulnerabilities": 23,
+        "patchCompliance": 87.4,
+        "responseTime": 4.6
+      }
+    },
+    "operationalRisk": {
+      "businessContinuity": {
+        "bcpDocumented": 91.6,
+        "drTested": 84.7,
+        "recoveryTimeCompliance": 88.9
+      },
+      "financial": {
+        "creditRatings": 87.3,
+        "financialHealth": 91.8,
+        "insuranceCoverage": 96.4
+      },
+      "regulatory": {
+        "complianceRate": 94.6,
+        "auditFindings": 12,
+        "regulatoryInquiries": 3
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "dueDiligence": {
+        "ininialDDCompliance": 94.6,
+        "ongoingMonitoring": 92.8,
+        "documentationQuality": 88.9
+      },
+      "occ": {
+        "guidanceCompliance": 91.8,
+        "riskAssessments": 94.2,
+        "boardReporting": 96.4
+      },
+      "cfpb": {
+        "servicePproviderOversight": 93.6,
+        "consumerDataProtection": 95.8
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 95.7,
+        "thirdPartyRisk": 97.3,
+        "contractManagement": 94.6,
+        "cyberSecurity": 96.2
+      },
+      "effectiveness": {
+        "testScores": 89.8,
+        "retention": 87.6,
+        "application": 86.4
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 95.8,
+        "overdue": 2,
+        "scheduled": 3
+      },
+      "approval": {
+        "timely": 94.6,
+        "documented": 98.9,
+        "authorized": 100.0
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 96.4,
+        "accuracy": 97.8,
+        "completeness": 95.6
+      },
+      "regulatory": {
+        "timeliness": 98.9,
+        "accuracy": 99.2,
+        "corrections": 1
+      },
+      "board": {
+        "frequency": "Quarterly",
+        "quality": 94.8,
+        "actionItems": 7
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 13,
+      "bySeverity": {
+        "critical": 0,
+        "high": 2,
+        "medium": 7,
+        "low": 4
+      },
+      "byCategory": [
+        {
+          "category": "Vendor Risk Assessment",
+          "count": 4
+        },
+        {
+          "category": "Contract Management",
+          "count": 3
+        },
+        {
+          "category": "Cyber Security",
+          "count": 3
+        },
+        {
+          "category": "Ongoing Monitoring",
+          "count": 2
+        },
+        {
+          "category": "Concentration Risk",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 4,
+        "inProgress": 8,
+        "closed": 1,
+        "overdue": 0
+      }
+    },
+    "findings": [
+      {
+        "id": "VM-2024-001",
+        "title": "Fourth Party Risk Management",
+        "description": "Enhanced controls needed for subcontractor oversight and monitoring",
+        "severity": "high",
+        "category": "Vendor Risk Assessment",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Third Party Risk Manager",
+        "businessUnit": "vendor-management"
+      },
+      {
+        "id": "VM-2024-002",
+        "title": "Vendor Cyber Risk Assessments",
+        "description": "Standardize and enhance frequency of vendor cybersecurity assessments",
+        "severity": "high",
+        "category": "Cyber Security",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "Vendor Security Officer",
+        "businessUnit": "vendor-management"
+      },
+      {
+        "id": "VM-2024-003",
+        "title": "Contract Performance Monitoring",
+        "description": "Implement automated contract compliance and performance tracking",
+        "severity": "medium",
+        "category": "Contract Management",
+        "status": "in-progress",
+        "dueDate": "2025-01-31",
+        "owner": "Contract Management Lead",
+        "businessUnit": "vendor-management"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 11,
+        "inDevelopment": 2,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 84.6,
+        "delayed": 7.7,
+        "completed": 7.7
+      },
+      "effectiveness": {
+        "validated": 92.3,
+        "repeat": 7.7,
+        "sustained": 92.3
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 93.8,
+        "processes": 95.6,
+        "systems": 89.4
+      },
+      "results": {
+        "pass": 91.2,
+        "fail": 6.4,
+        "exception": 2.4
+      },
+      "methodology": {
+        "sampling": 61.8,
+        "walkthrough": 28.4,
+        "reperformance": 9.8
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 79.8,
+          "ddCompletion": 91.2,
+          "slaCompliance": 91.8,
+          "incidents": 24
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 81.6,
+          "ddCompletion": 93.4,
+          "slaCompliance": 92.6,
+          "incidents": 21
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 83.4,
+          "ddCompletion": 94.6,
+          "slaCompliance": 93.7,
+          "incidents": 18
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 84.8,
+        "ddCompletion": 95.2,
+        "slaCompliance": 94.3
+      },
+      "nextYear": {
+        "overallScore": 87.5,
+        "ddCompletion": 96.5,
+        "slaCompliance": 95.5
+      },
+      "confidence": 86.7
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 78.6,
+        "ddCompletion": 89.4,
+        "slaCompliance": 88.7
+      },
+      "peers": {
+        "overallScore": 81.3,
+        "ddCompletion": 92.6,
+        "slaCompliance": 91.2
+      },
+      "internal": {
+        "bestPerforming": "wealth-management",
+        "averageScore": 81.8,
+        "improvementTarget": 87.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 95.3,
+    "caveats": [
+      "Vendor management demonstrates strong improvement trajectory",
+      "Third party risk oversight enhanced following regulatory guidance",
+      "Concentration risk metrics reflect strategic vendor consolidation",
+      "Cyber security assessments prioritized for technology vendors"
+    ],
+    "dataQuality": {
+      "completeness": 96.8,
+      "accuracy": 95.4,
+      "timeliness": 94.7
+    }
+  }
+}
