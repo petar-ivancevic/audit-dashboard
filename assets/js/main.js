@@ -635,8 +635,74 @@
      */
     function updateHeatMap(category) {
         console.log(`[Main] Updating heat map for category: ${category}`);
-        // In a full implementation, this would filter/update the heat map
-        // For now, just log the action
+
+        if (!state.businessUnitsData) return;
+
+        const heatMapContainer = document.getElementById('riskHeatMap');
+        if (!heatMapContainer) return;
+
+        heatMapContainer.innerHTML = '';
+
+        // Build heat map data based on category
+        state.businessUnitsData.forEach(buData => {
+            const bu = buData.businessUnits?.[0];
+            if (!bu) return;
+
+            let score, scoreLabel;
+
+            // Get score based on selected category
+            switch(category) {
+                case 'aml':
+                    score = buData.operationalMetrics?.amlMonitoring?.effectiveness?.modelAccuracy || 0;
+                    scoreLabel = 'AML';
+                    break;
+                case 'kyc':
+                    const kycMetrics = buData.riskMetrics?.kycCompliance;
+                    score = kycMetrics ? ((kycMetrics.completion.cip + kycMetrics.completion.cdd + kycMetrics.completion.edd) / 3) : 0;
+                    scoreLabel = 'KYC';
+                    break;
+                case 'fraud':
+                    score = buData.riskMetrics?.fraudPrevention?.detection?.modelAccuracy || 0;
+                    scoreLabel = 'Fraud';
+                    break;
+                case 'cyber':
+                    score = buData.executiveScorecard?.kpis?.find(k => k.id === 'cyber-posture')?.value || 0;
+                    scoreLabel = 'Cyber';
+                    break;
+                default: // 'overall'
+                    score = buData.executiveScorecard?.overallScore?.value || 0;
+                    scoreLabel = 'Overall';
+            }
+
+            const cell = document.createElement('div');
+            cell.className = 'heatmap-cell';
+
+            // Determine risk level class
+            let riskClass = 'risk-critical';
+            if (score >= 85) riskClass = 'risk-excellent';
+            else if (score >= 75) riskClass = 'risk-good';
+            else if (score >= 65) riskClass = 'risk-warning';
+
+            cell.classList.add(riskClass);
+
+            const trend = buData.executiveScorecard?.overallScore?.trend || 'stable';
+            const trendIcon = trend === 'improving' ? '↑' : trend === 'declining' ? '↓' : '→';
+
+            cell.innerHTML = `
+                <div class="heatmap-cell-header">${bu.name}</div>
+                <div class="heatmap-cell-score">${score.toFixed(1)}</div>
+                <div class="heatmap-cell-footer">
+                    <span class="heatmap-cell-trend ${trend}">${trendIcon} ${trend}</span>
+                </div>
+            `;
+
+            // Add click handler
+            cell.addEventListener('click', () => {
+                DrillDown.openBusinessUnitDetail(bu.id);
+            });
+
+            heatMapContainer.appendChild(cell);
+        });
     }
 
     /**
@@ -649,29 +715,50 @@
 
         tbody.innerHTML = '';
 
-        businessUnits.forEach(bu => {
-            const metrics = bu.auditMetrics || {};
-            const unit = bu.businessUnit || {};
+        businessUnits.forEach(buData => {
+            // Extract business unit info from the JSON structure
+            const bu = buData.businessUnits?.[0];
+            if (!bu) return;
+
+            const scorecard = buData.executiveScorecard;
+            const overallScore = scorecard?.overallScore?.value || 0;
+            const trend = scorecard?.overallScore?.trend || 'stable';
+            const findings = buData.auditFindings?.summary?.total || 0;
+
+            // Calculate compliance rate from training and policy metrics
+            const compliance = buData.complianceMetrics;
+            const complianceRate = compliance?.training?.completion?.overall || 0;
+
+            // Determine category display name
+            let categoryDisplay = bu.category;
+            if (categoryDisplay === 'core-banking') categoryDisplay = 'Core Banking';
+            else if (categoryDisplay === 'support-operations') categoryDisplay = 'Support & Operations';
+            else if (categoryDisplay === 'geographic-region') categoryDisplay = 'Geographic Region';
 
             const row = document.createElement('tr');
-            row.dataset.id = unit.id;
-            row.dataset.division = unit.division;
-            row.dataset.category = unit.category;
-            row.dataset.score = metrics.overallRiskScore;
-            row.dataset.riskTier = getRiskTier(metrics.overallRiskScore);
+            row.dataset.id = bu.id;
+            row.dataset.category = bu.category;
+            row.dataset.score = overallScore;
+            row.dataset.risktier = bu.riskTier;
 
-            const riskBadge = getRiskBadge(metrics.overallRiskScore);
-            const trendIcon = getTrendIcon(metrics.trend);
+            // Determine risk badge
+            let riskBadge = 'critical';
+            if (overallScore >= 90) riskBadge = 'excellent';
+            else if (overallScore >= 80) riskBadge = 'good';
+            else if (overallScore >= 70) riskBadge = 'warning';
+
+            // Trend icon
+            const trendIcon = trend === 'improving' ? '↑' : trend === 'declining' ? '↓' : '→';
 
             row.innerHTML = `
-                <td><input type="checkbox"></td>
-                <td><strong>${unit.name || 'Unknown'}</strong></td>
-                <td>${unit.category || 'N/A'}</td>
-                <td><span class="status-badge ${riskBadge.class}">${metrics.overallRiskScore || 'N/A'}</span></td>
-                <td><span class="trend-indicator ${metrics.trend || 'flat'}">${trendIcon}</span></td>
-                <td>${(bu.findings || []).length}</td>
-                <td>${metrics.overallComplianceScore || 'N/A'}%</td>
-                <td><button class="action-button" onclick="DrillDown.openBusinessUnitDetail('${unit.id}')">View Details</button></td>
+                <td><input type="checkbox" class="bu-checkbox"></td>
+                <td><strong>${bu.name}</strong></td>
+                <td>${categoryDisplay}</td>
+                <td><span class="status-badge ${riskBadge}">${overallScore.toFixed(1)}</span></td>
+                <td><span class="trend-indicator ${trend}">${trendIcon}</span></td>
+                <td>${findings}</td>
+                <td>${complianceRate.toFixed(1)}%</td>
+                <td><button class="btn btn-secondary" onclick="window.DrillDown.openBusinessUnitDetail('${bu.id}')">View Details</button></td>
             `;
 
             tbody.appendChild(row);
