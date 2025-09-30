@@ -1,0 +1,781 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "consumer-banking",
+      "name": "Consumer Banking & Lending",
+      "category": "core-banking",
+      "region": "National",
+      "headcount": 45000,
+      "assets": 950000000000,
+      "riskTier": "high",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 75.99579773113527,
+      "trend": "improving",
+      "benchmark": "good"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 78.5,
+        "target": 80.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 82.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "regulatory-readiness",
+        "name": "Regulatory Readiness Index",
+        "value": 86.7,
+        "target": 90.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "issue-mgmt-effectiveness",
+        "name": "Issue Management Effectiveness",
+        "value": 74.2,
+        "target": 80.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "audit-opinion-trend",
+        "name": "Audit Opinion Trend",
+        "value": 3.2,
+        "target": 3.5,
+        "unit": "rating",
+        "status": "good",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 94.8,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "policy-currency",
+        "name": "Policy Currency Rate",
+        "value": 91.5,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "control-testing-pass",
+        "name": "Control Testing Pass Rate",
+        "value": 87.3,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "exception-mgmt",
+        "name": "Exception Management Score",
+        "value": 79.6,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "incident-response",
+        "name": "Incident Response Effectiveness",
+        "value": 88.4,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "data-quality",
+        "name": "Data Quality Score",
+        "value": 83.7,
+        "target": 88.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "cyber-posture",
+        "name": "Cyber Risk Posture",
+        "value": 81.9,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "vendor-risk-score",
+        "name": "Third Party Risk Score",
+        "value": 76.8,
+        "target": 80.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "model-risk-score",
+        "name": "Model Risk Management Score",
+        "value": 84.1,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "fraud-loss-rate",
+        "name": "Fraud Loss Rate",
+        "value": 0.048,
+        "target": 0.04,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "down",
+        "category": "risk"
+      }
+    ],
+    "alerts": {
+      "critical": 3,
+      "high": 11,
+      "medium": 27,
+      "low": 46
+    },
+    "trending": {
+      "quarterOverQuarter": 2.8,
+      "yearOverYear": 5.4,
+      "trendingUp": [
+        "Control Maturity",
+        "Training Completion",
+        "Data Quality",
+        "Cyber Posture"
+      ],
+      "trendingDown": [
+        "Fraud Loss Rate",
+        "Third Party Risk"
+      ]
+    }
+  },
+  "operationalMetrics": {
+    "amlMonitoring": {
+      "alerts": {
+        "total": 45673,
+        "falsePositiveRate": 87.3,
+        "averageDispositionTime": 4.2,
+        "backlog": 892
+      },
+      "scenarios": [
+        {
+          "name": "Large Cash Deposits",
+          "alertVolume": 8934,
+          "falsePositiveRate": 92.1,
+          "effectiveness": 73.5
+        },
+        {
+          "name": "Structuring Patterns",
+          "alertVolume": 3421,
+          "falsePositiveRate": 78.9,
+          "effectiveness": 84.2
+        },
+        {
+          "name": "Unusual Wire Activity",
+          "alertVolume": 5782,
+          "falsePositiveRate": 85.6,
+          "effectiveness": 79.8
+        },
+        {
+          "name": "High-Risk Geography",
+          "alertVolume": 2156,
+          "falsePositiveRate": 68.4,
+          "effectiveness": 91.3
+        },
+        {
+          "name": "Velocity Anomalies",
+          "alertVolume": 6845,
+          "falsePositiveRate": 89.7,
+          "effectiveness": 71.6
+        },
+        {
+          "name": "Account Funding Patterns",
+          "alertVolume": 4231,
+          "falsePositiveRate": 86.2,
+          "effectiveness": 76.8
+        },
+        {
+          "name": "Cross-Border Transactions",
+          "alertVolume": 3567,
+          "falsePositiveRate": 81.4,
+          "effectiveness": 82.5
+        },
+        {
+          "name": "Cash-Intensive Business",
+          "alertVolume": 2890,
+          "falsePositiveRate": 75.3,
+          "effectiveness": 88.1
+        },
+        {
+          "name": "ATM Transaction Patterns",
+          "alertVolume": 4123,
+          "falsePositiveRate": 94.2,
+          "effectiveness": 68.7
+        },
+        {
+          "name": "Digital Payment Anomalies",
+          "alertVolume": 7724,
+          "falsePositiveRate": 91.8,
+          "effectiveness": 72.4
+        }
+      ],
+      "effectiveness": {
+        "sarConversionRate": 3.2,
+        "modelAccuracy": 77.39103567077535,
+        "coverageRatio": 96.8
+      }
+    },
+    "investigations": {
+      "caseLoad": {
+        "active": 1247,
+        "closed": 3891,
+        "escalated": 156,
+        "aging": {
+          "under30Days": 892,
+          "days30to60": 234,
+          "days60to90": 89,
+          "over90Days": 32
+        }
+      },
+      "cycleTime": {
+        "average": 12.6,
+        "median": 9.8,
+        "target": 10.0
+      },
+      "quality": {
+        "qaScore": 84.7,
+        "reworkRate": 8.3,
+        "documentationScore": 88.9
+      },
+      "staffing": {
+        "analysts": 145,
+        "seniors": 32,
+        "managers": 8,
+        "utilizationRate": 89.4
+      }
+    },
+    "caseManagement": {
+      "workflow": {
+        "automated": 67.8,
+        "manual": 23.5,
+        "hybrid": 8.7
+      },
+      "slaCompliance": {
+        "overall": 91.2,
+        "byPriority": {
+          "critical": 97.8,
+          "high": 93.6,
+          "medium": 89.4,
+          "low": 86.7
+        }
+      },
+      "escalations": {
+        "total": 156,
+        "reasons": [
+          {
+            "reason": "Complex Investigation Required",
+            "count": 67,
+            "percentage": 42.9
+          },
+          {
+            "reason": "Regulatory Inquiry",
+            "count": 34,
+            "percentage": 21.8
+          },
+          {
+            "reason": "Legal Review Needed",
+            "count": 28,
+            "percentage": 17.9
+          },
+          {
+            "reason": "Senior Management Decision",
+            "count": 19,
+            "percentage": 12.2
+          },
+          {
+            "reason": "System Issue",
+            "count": 8,
+            "percentage": 5.1
+          }
+        ],
+        "resolutionTime": 6.8
+      }
+    },
+    "productivity": {
+      "casesPerAnalyst": 26.8,
+      "alertsPerAnalyst": 314.9,
+      "automationRate": 67.8
+    }
+  },
+  "riskMetrics": {
+    "kycCompliance": {
+      "completion": {
+        "cip": 98.7,
+        "cdd": 94.6,
+        "edd": 91.3
+      },
+      "quality": {
+        "documentationScore": 88.9,
+        "accuracyRate": 92.4,
+        "deficiencyRate": 4.7
+      },
+      "periodicReviews": {
+        "onTime": 87.6,
+        "pastDue": 1567,
+        "riskTierCompliance": {
+          "high": 94.2,
+          "medium": 89.3,
+          "low": 82.7
+        }
+      },
+      "riskRatings": {
+        "distribution": {
+          "high": 8.9,
+          "medium": 34.7,
+          "low": 56.4
+        },
+        "changes": 2847,
+        "accuracy": 91.8
+      }
+    },
+    "sanctionsScreening": {
+      "coverage": {
+        "customers": 99.7,
+        "transactions": 97.23373155320051,
+        "wires": 100.0,
+        "vendors": 96.3
+      },
+      "hitRates": {
+        "truePositives": 0.019,
+        "falsePositives": 2.14,
+        "accuracy": 91.2
+      },
+      "processing": {
+        "averageResponseTime": 0.23,
+        "slaCompliance": 96.8,
+        "escalations": 89
+      },
+      "listManagement": {
+        "updateFrequency": "Daily",
+        "latency": 0.08,
+        "coverage": 99.9
+      }
+    },
+    "fraudPrevention": {
+      "losses": {
+        "total": 18400000,
+        "rate": 0.048,
+        "recovery": 34.7
+      },
+      "detection": {
+        "modelAccuracy": 81.4,
+        "timeToDetection": 2.3,
+        "alertVolume": 156783
+      },
+      "prevention": {
+        "blockedTransactions": 78934,
+        "preventedLoss": 67800000,
+        "falsePositives": 12.8
+      },
+      "customer": {
+        "impactScore": 7.6,
+        "complaintRate": 0.023,
+        "resolutionTime": 1.8
+      }
+    },
+    "modelRisk": {
+      "inventory": {
+        "total": 67,
+        "byTier": {
+          "tier1": 12,
+          "tier2": 28,
+          "tier3": 27
+        },
+        "documentation": 94.8
+      },
+      "validation": {
+        "onTime": 89.6,
+        "overdue": 7,
+        "quality": 87.3
+      },
+      "monitoring": {
+        "performanceDrift": 2.4,
+        "dataQuality": 91.7,
+        "alerting": 88.9
+      },
+      "governance": {
+        "committee": 92.5,
+        "policies": 96.3,
+        "training": 91.8
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "sarFiling": {
+        "volume": 3007,
+        "timeliness": 94.30744444950753,
+        "quality": 90.73808051376534,
+        "categories": [
+          {
+            "category": "Structuring",
+            "count": 892,
+            "percentage": 31.3
+          },
+          {
+            "category": "Money Laundering",
+            "count": 634,
+            "percentage": 22.3
+          },
+          {
+            "category": "Check Fraud",
+            "count": 445,
+            "percentage": 15.6
+          },
+          {
+            "category": "Identity Theft",
+            "count": 378,
+            "percentage": 13.3
+          },
+          {
+            "category": "Wire Fraud",
+            "count": 289,
+            "percentage": 10.1
+          },
+          {
+            "category": "Other",
+            "count": 209,
+            "percentage": 7.3
+          }
+        ]
+      },
+      "ctrReporting": {
+        "volume": 89567,
+        "timeliness": 98.9,
+        "accuracy": 97.6,
+        "exemptions": 12340
+      },
+      "examination": {
+        "lastDate": "2023-11-15",
+        "rating": "satisfactory",
+        "findings": 8,
+        "mra": 3
+      },
+      "consent": {
+        "active": false,
+        "compliance": 0,
+        "requirements": 0
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 92.00671444126925,
+        "aml": 96.2,
+        "fraud": 93.7,
+        "sanctions": 95.1
+      },
+      "effectiveness": {
+        "testScores": 87.9,
+        "retention": 84.6,
+        "application": 81.3
+      },
+      "currency": {
+        "upToDate": 91.5,
+        "renewal": 89.7,
+        "specialized": 92.8
+      },
+      "specialized": {
+        "investigators": 98.6,
+        "managers": 97.2,
+        "executives": 94.8
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 91.5,
+        "overdue": 12,
+        "scheduled": 8
+      },
+      "approval": {
+        "timely": 88.7,
+        "documented": 96.4,
+        "authorized": 98.9
+      },
+      "distribution": {
+        "coverage": 94.2,
+        "acknowledgment": 86.49638753970531,
+        "training": 87.6
+      },
+      "exceptions": {
+        "total": 234,
+        "approved": 198,
+        "expired": 23
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 92.4,
+        "accuracy": 94.7,
+        "completeness": 91.8
+      },
+      "regulatory": {
+        "timeliness": 96.8,
+        "accuracy": 97.2,
+        "corrections": 7
+      },
+      "board": {
+        "frequency": "Monthly",
+        "quality": 89.6,
+        "actionItems": 14
+      },
+      "quality": {
+        "dataIntegrity": 91.7,
+        "lineage": 87.9,
+        "controls": 89.4
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 25,
+      "bySeverity": {
+        "critical": 1,
+        "high": 4,
+        "medium": 14,
+        "low": 6
+      },
+      "byCategory": [
+        {
+          "category": "AML Transaction Monitoring",
+          "count": 6
+        },
+        {
+          "category": "KYC/CDD Processes",
+          "count": 5
+        },
+        {
+          "category": "Data Quality & Governance",
+          "count": 4
+        },
+        {
+          "category": "Model Risk Management",
+          "count": 3
+        },
+        {
+          "category": "Fraud Prevention",
+          "count": 2
+        },
+        {
+          "category": "Training & Awareness",
+          "count": 2
+        },
+        {
+          "category": "Policy Management",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 8,
+        "inProgress": 12,
+        "closed": 3,
+        "overdue": 2
+      }
+    },
+    "findings": [
+      {
+        "id": "CB-2024-001",
+        "title": "AML Alert Disposition Documentation",
+        "description": "Alert disposition rationale not consistently documented for complex cases",
+        "severity": "medium",
+        "category": "AML Transaction Monitoring",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "AML Investigation Manager",
+        "businessUnit": "consumer-banking"
+      },
+      {
+        "id": "CB-2024-002",
+        "title": "KYC Periodic Review Timeliness",
+        "description": "High-risk customer periodic reviews exceeding 12-month timeframes",
+        "severity": "high",
+        "category": "KYC/CDD Processes",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "KYC Operations Manager",
+        "businessUnit": "consumer-banking"
+      },
+      {
+        "id": "CB-2024-003",
+        "title": "Model Performance Monitoring",
+        "description": "Fraud detection model drift monitoring controls need enhancement",
+        "severity": "medium",
+        "category": "Model Risk Management",
+        "status": "open",
+        "dueDate": "2025-01-31",
+        "owner": "Model Risk Officer",
+        "businessUnit": "consumer-banking"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 18,
+        "inDevelopment": 4,
+        "pending": 1
+      },
+      "progress": {
+        "onTrack": 78.3,
+        "delayed": 17.4,
+        "completed": 4.3
+      },
+      "effectiveness": {
+        "validated": 86.7,
+        "repeat": 8.7,
+        "sustained": 91.3
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 89.4,
+        "processes": 92.7,
+        "systems": 85.6
+      },
+      "results": {
+        "pass": 86.84395783606364,
+        "fail": 8.9,
+        "exception": 3.8
+      },
+      "methodology": {
+        "sampling": 67.4,
+        "walkthrough": 23.8,
+        "reperformance": 8.8
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 74.2,
+          "alertVolume": 42156,
+          "falsePositiveRate": 89.1,
+          "sarFilings": 2634
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 76.8,
+          "alertVolume": 43920,
+          "falsePositiveRate": 88.7,
+          "sarFilings": 2741
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 78.5,
+          "alertVolume": 45673,
+          "falsePositiveRate": 87.3,
+          "sarFilings": 2847
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 80.1,
+        "alertVolume": 47200,
+        "falsePositiveRate": 86.5
+      },
+      "nextYear": {
+        "overallScore": 83.5,
+        "alertVolume": 195000,
+        "falsePositiveRate": 82.0
+      },
+      "confidence": 78.5
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 75.2,
+        "falsePositiveRate": 89.7,
+        "trainingCompletion": 91.3
+      },
+      "peers": {
+        "overallScore": 77.8,
+        "falsePositiveRate": 88.1,
+        "trainingCompletion": 93.6
+      },
+      "internal": {
+        "bestPerforming": "investment-banking",
+        "averageScore": 76.9,
+        "improvementTarget": 85.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 94.7,
+    "caveats": [
+      "Q3 2024 data includes impact of new AML monitoring system implementation",
+      "KYC periodic review backlog partially due to system migration delays",
+      "Fraud loss rates include one-time charge-off adjustment in August 2024",
+      "Training completion rates reflect enhanced curriculum rollout"
+    ],
+    "dataQuality": {
+      "completeness": 96.8,
+      "accuracy": 94.2,
+      "timeliness": 91.5
+    }
+  },
+  "quarter": "Q2-2024",
+  "date": "2024-06-30"
+}

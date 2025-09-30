@@ -8,6 +8,9 @@ const DataLoader = (() => {
     const cache = new Map();
     const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
+    // Current reporting period
+    let currentPeriod = 'q3-2024';
+
     /**
      * Load JSON data from a file with caching
      * @param {string} filePath - Path to the JSON file
@@ -56,27 +59,33 @@ const DataLoader = (() => {
 
     /**
      * Load enterprise dashboard data
+     * @param {string} period - Optional reporting period (defaults to currentPeriod)
      * @returns {Promise<Object>} Enterprise dashboard data
      */
-    async function loadEnterpriseData() {
-        return loadJSON('data/enterprise-dashboard-q3-2024.json');
+    async function loadEnterpriseData(period = null) {
+        const periodToUse = period || currentPeriod;
+        return loadJSON(`data/enterprise-dashboard-${periodToUse}.json`);
     }
 
     /**
      * Load business unit data by ID
      * @param {string} businessUnitId - Business unit identifier
+     * @param {string} period - Optional reporting period (defaults to currentPeriod)
      * @returns {Promise<Object>} Business unit data
      */
-    async function loadBusinessUnitData(businessUnitId) {
-        const fileName = `${businessUnitId}-q3-2024.json`;
+    async function loadBusinessUnitData(businessUnitId, period = null) {
+        const periodToUse = period || currentPeriod;
+        const fileName = `${businessUnitId}-${periodToUse}.json`;
         return loadJSON(`data/business-units/${fileName}`);
     }
 
     /**
      * Load all business units data
+     * @param {string} period - Optional reporting period (defaults to currentPeriod)
      * @returns {Promise<Array>} Array of all business unit data
      */
-    async function loadAllBusinessUnits() {
+    async function loadAllBusinessUnits(period = null) {
+        const periodToUse = period || currentPeriod;
         const businessUnitIds = [
             'consumer-banking',
             'commercial-banking',
@@ -96,7 +105,7 @@ const DataLoader = (() => {
         ];
 
         try {
-            const promises = businessUnitIds.map(id => loadBusinessUnitData(id));
+            const promises = businessUnitIds.map(id => loadBusinessUnitData(id, periodToUse));
             const results = await Promise.allSettled(promises);
 
             // Filter successful results
@@ -149,15 +158,17 @@ const DataLoader = (() => {
 
     /**
      * Preload critical data for faster initial render
+     * @param {string} period - Optional reporting period (defaults to currentPeriod)
      * @returns {Promise<Object>} Preloaded data
      */
-    async function preloadCriticalData() {
-        console.log('[DataLoader] Preloading critical data...');
+    async function preloadCriticalData(period = null) {
+        const periodToUse = period || currentPeriod;
+        console.log(`[DataLoader] Preloading critical data for ${periodToUse}...`);
 
         try {
             const [enterpriseData, businessUnitsData] = await Promise.all([
-                loadEnterpriseData(),
-                loadAllBusinessUnits()
+                loadEnterpriseData(periodToUse),
+                loadAllBusinessUnits(periodToUse)
             ]);
 
             return {
@@ -172,18 +183,44 @@ const DataLoader = (() => {
 
     /**
      * Load data by reporting period
-     * @param {string} period - Reporting period (e.g., 'q3-2024')
+     * @param {string} period - Reporting period (e.g., 'q3-2024', 'q4-2023', etc.)
      * @returns {Promise<Object>} Period-specific data
      */
     async function loadDataByPeriod(period) {
-        // For now, we only have Q3 2024 data
-        // This function can be extended when more periods are available
-        if (period === 'q3-2024') {
-            return loadEnterpriseData();
-        } else {
-            console.warn(`[DataLoader] Data for period ${period} not available, using Q3 2024`);
-            return loadEnterpriseData();
+        console.log(`[DataLoader] Changing period to: ${period}`);
+        currentPeriod = period;
+
+        try {
+            const [enterpriseData, businessUnitsData] = await Promise.all([
+                loadEnterpriseData(period),
+                loadAllBusinessUnits(period)
+            ]);
+
+            return {
+                enterprise: enterpriseData,
+                businessUnits: businessUnitsData
+            };
+        } catch (error) {
+            console.error(`[DataLoader] Error loading data for period ${period}:`, error);
+            throw error;
         }
+    }
+
+    /**
+     * Get current reporting period
+     * @returns {string} Current period
+     */
+    function getCurrentPeriod() {
+        return currentPeriod;
+    }
+
+    /**
+     * Set current reporting period
+     * @param {string} period - Period to set
+     */
+    function setCurrentPeriod(period) {
+        console.log(`[DataLoader] Setting current period to: ${period}`);
+        currentPeriod = period;
     }
 
     /**
@@ -261,6 +298,8 @@ const DataLoader = (() => {
         loadHistoricalTrends,
         loadDataByPeriod,
         preloadCriticalData,
+        getCurrentPeriod,
+        setCurrentPeriod,
         clearCache,
         getCacheStats,
         validateData,

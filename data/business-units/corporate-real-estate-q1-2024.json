@@ -1,0 +1,488 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "corporate-real-estate",
+      "name": "Corporate Real Estate",
+      "category": "support-operations",
+      "region": "National + International",
+      "headcount": 2800,
+      "assets": 42000000000,
+      "riskTier": "low",
+      "regulatoryFocus": false
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 76.04384822175003,
+      "trend": "stable",
+      "benchmark": "good"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 79.8,
+        "target": 78.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 81.4,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "property-risk-score",
+        "name": "Property Risk Management Score",
+        "value": 84.6,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 91.8,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "safety-incidents",
+        "name": "Safety Incident Rate",
+        "value": 1.8,
+        "target": 2.5,
+        "unit": "per 100 employees",
+        "status": "excellent",
+        "trend": "down",
+        "category": "operational"
+      },
+      {
+        "id": "environmental-compliance",
+        "name": "Environmental Compliance Score",
+        "value": 93.7,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "space-utilization",
+        "name": "Space Utilization Rate",
+        "value": 78.4,
+        "target": 75.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "maintenance-efficiency",
+        "name": "Maintenance Efficiency Score",
+        "value": 86.2,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "vendor-performance",
+        "name": "Vendor Performance Score",
+        "value": 82.7,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "cost-efficiency",
+        "name": "Operating Cost Efficiency",
+        "value": 94.3,
+        "target": 92.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      }
+    ],
+    "alerts": {
+      "critical": 0,
+      "high": 1,
+      "medium": 5,
+      "low": 14
+    },
+    "trending": {
+      "quarterOverQuarter": 0.6,
+      "yearOverYear": 2.3,
+      "trendingUp": [
+        "Control Maturity",
+        "Training",
+        "Cost Efficiency"
+      ],
+      "trendingDown": [
+        "Safety Incidents"
+      ]
+    }
+  },
+  "operationalMetrics": {
+    "portfolioManagement": {
+      "properties": {
+        "totalProperties": 3456,
+        "branches": 2840,
+        "offices": 487,
+        "dataCenter": 12,
+        "other": 117
+      },
+      "occupancy": {
+        "occupied": 96.4,
+        "vacant": 3.6,
+        "underRenovation": 2.8
+      },
+      "leaseManagement": {
+        "expiringWithin12Months": 287,
+        "renewalRate": 84.6,
+        "optionExercised": 78.9
+      }
+    },
+    "facilities": {
+      "maintenance": {
+        "preventive": 94.8,
+        "corrective": 87.6,
+        "emergency": 96.2,
+        "averageResponseTime": 2.4
+      },
+      "energy": {
+        "consumption": 456789000,
+        "efficiency": 87.3,
+        "renewablePercentage": 34.7,
+        "costPerSqFt": 2.34
+      },
+      "security": {
+        "incidents": 23,
+        "accessControlCompliance": 97.8,
+        "surveillanceCoverage": 96.4,
+        "badgeManagement": 98.6
+      }
+    },
+    "safety": {
+      "incidents": {
+        "total": 34,
+        "lostTime": 3,
+        "recordable": 8,
+        "nearMiss": 23
+      },
+      "training": {
+        "safetyTraining": 96.8,
+        "emergencyResponse": 94.2,
+        "firstAid": 89.6
+      },
+      "inspections": {
+        "scheduled": 1234,
+        "completed": 1196,
+        "complianceRate": 96.9
+      }
+    },
+    "environmental": {
+      "compliance": {
+        "permits": 98.6,
+        "inspections": 96.4,
+        "violations": 2,
+        "corrective Actions": 2
+      },
+      "sustainability": {
+        "wasteReduction": 23.4,
+        "recyclingRate": 67.8,
+        "carbonFootprint": -8.6
+      }
+    },
+    "vendor": {
+      "management": {
+        "totalVendors": 456,
+        "criticalVendors": 67,
+        "performanceReviews": 94.3,
+        "contractCompliance": 91.8
+      },
+      "spending": {
+        "total": 234000000,
+        "onbudget": 96.7,
+        "costSavings": 8.4
+      }
+    }
+  },
+  "riskMetrics": {
+    "propertyRisk": {
+      "physical": {
+        "propertyDamage": 4,
+        "totalLosses": 2340000,
+        "insuranceCoverage": 98.7,
+        "claimsRatio": 23.4
+      },
+      "businessContinuity": {
+        "backupSites": 23,
+        "generatorCapacity": 98.9,
+        "disasterRecovery": 96.4
+      },
+      "natural": {
+        "floodRisk": 8.7,
+        "earthquakeRisk": 12.4,
+        "hurricaneRisk": 15.6,
+        "mitigation": 91.8
+      }
+    },
+    "regulatoryRisk": {
+      "compliance": {
+        "buildingCodes": 97.8,
+        "ada": 96.4,
+        "fireCode": 98.9,
+        "environmental": 93.7
+      },
+      "inspections": {
+        "passed": 96.4,
+        "conditionalPass": 3.2,
+        "failed": 0.4
+      }
+    },
+    "operationalRisk": {
+      "systemDowntime": 0.4,
+      "maintenanceBacklog": 4.8,
+      "contractDisputes": 3,
+      "budgetVariance": 3.3
+    }
+  },
+  "complianceMetrics": {
+    "training": {
+      "completion": {
+        "overall": 90.4445332457766,
+        "safety": 96.8,
+        "environmental": 93.4,
+        "security": 94.6
+      },
+      "effectiveness": {
+        "testScores": 84.6,
+        "retention": 81.7,
+        "application": 86.3
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 89.6,
+        "overdue": 6,
+        "scheduled": 8
+      },
+      "approval": {
+        "timely": 87.4,
+        "documented": 96.2,
+        "authorized": 98.4
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 93.4,
+        "accuracy": 94.8,
+        "completeness": 92.6
+      },
+      "regulatory": {
+        "timeliness": 96.8,
+        "accuracy": 97.4,
+        "corrections": 4
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 8,
+      "bySeverity": {
+        "critical": 0,
+        "high": 1,
+        "medium": 4,
+        "low": 3
+      },
+      "byCategory": [
+        {
+          "category": "Environmental Compliance",
+          "count": 2
+        },
+        {
+          "category": "Contract Management",
+          "count": 2
+        },
+        {
+          "category": "Safety & Security",
+          "count": 2
+        },
+        {
+          "category": "Asset Management",
+          "count": 1
+        },
+        {
+          "category": "Vendor Management",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 2,
+        "inProgress": 5,
+        "closed": 1,
+        "overdue": 0
+      }
+    },
+    "findings": [
+      {
+        "id": "CRE-2024-001",
+        "title": "Environmental Permit Tracking",
+        "description": "Centralized tracking system needed for environmental permits across portfolio",
+        "severity": "medium",
+        "category": "Environmental Compliance",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Environmental Compliance Manager",
+        "businessUnit": "corporate-real-estate"
+      },
+      {
+        "id": "CRE-2024-002",
+        "title": "Vendor Performance Monitoring",
+        "description": "Enhance vendor scorecard and performance review processes",
+        "severity": "medium",
+        "category": "Vendor Management",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "Vendor Management Lead",
+        "businessUnit": "corporate-real-estate"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 7,
+        "inDevelopment": 1,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 87.5,
+        "delayed": 0.0,
+        "completed": 12.5
+      },
+      "effectiveness": {
+        "validated": 87.5,
+        "repeat": 12.5,
+        "sustained": 87.5
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 88.6,
+        "processes": 91.4,
+        "systems": 84.2
+      },
+      "results": {
+        "pass": 85.86350487188267,
+        "fail": 9.2,
+        "exception": 3.2
+      },
+      "methodology": {
+        "sampling": 71.4,
+        "walkthrough": 22.8,
+        "reperformance": 5.8
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 78.6,
+          "safetyIncidents": 2.3,
+          "environmentalScore": 92.4,
+          "costEfficiency": 92.8
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 79.3,
+          "safetyIncidents": 2.1,
+          "environmentalScore": 93.1,
+          "costEfficiency": 93.6
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 79.8,
+          "safetyIncidents": 1.8,
+          "environmentalScore": 93.7,
+          "costEfficiency": 94.3
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 80.4,
+        "safetyIncidents": 1.6,
+        "environmentalScore": 94.2
+      },
+      "nextYear": {
+        "overallScore": 82.0,
+        "safetyIncidents": 1.4,
+        "environmentalScore": 95.0
+      },
+      "confidence": 81.4
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 76.4,
+        "safetyIncidents": 2.8,
+        "environmentalScore": 88.6
+      },
+      "peers": {
+        "overallScore": 78.2,
+        "safetyIncidents": 2.2,
+        "environmentalScore": 91.4
+      },
+      "internal": {
+        "bestPerforming": "wealth-management",
+        "averageScore": 81.8,
+        "improvementTarget": 82.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 91.6,
+    "caveats": [
+      "Corporate real estate demonstrates effective property risk management",
+      "Environmental compliance continues to improve with sustainability initiatives",
+      "Safety performance better than industry benchmarks",
+      "Lower regulatory focus compared to revenue-generating business units"
+    ],
+    "dataQuality": {
+      "completeness": 93.8,
+      "accuracy": 92.4,
+      "timeliness": 91.6
+    }
+  },
+  "quarter": "Q1-2024",
+  "date": "2024-03-31"
+}

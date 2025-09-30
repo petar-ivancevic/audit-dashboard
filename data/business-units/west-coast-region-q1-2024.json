@@ -1,0 +1,781 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "west-coast-region",
+      "name": "West Coast Region",
+      "category": "geographic-region",
+      "region": "West Coast United States + Hawaii",
+      "headcount": 19500,
+      "assets": 380000000000,
+      "riskTier": "high",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 78.29827572058295,
+      "trend": "improving",
+      "benchmark": "good"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 82.4,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 85.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "regulatory-readiness",
+        "name": "Regulatory Readiness Index",
+        "value": 87.9,
+        "target": 90.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "issue-mgmt-effectiveness",
+        "name": "Issue Management Effectiveness",
+        "value": 80.7,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "audit-opinion-trend",
+        "name": "Audit Opinion Trend",
+        "value": 3.6,
+        "target": 3.5,
+        "unit": "rating",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 95.7,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "policy-currency",
+        "name": "Policy Currency Rate",
+        "value": 93.8,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "control-testing-pass",
+        "name": "Control Testing Pass Rate",
+        "value": 89.4,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "exception-mgmt",
+        "name": "Exception Management Score",
+        "value": 84.8,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "incident-response",
+        "name": "Incident Response Effectiveness",
+        "value": 89.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "data-quality",
+        "name": "Data Quality Score",
+        "value": 87.3,
+        "target": 88.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "cyber-posture",
+        "name": "Cyber Risk Posture",
+        "value": 84.6,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "vendor-risk-score",
+        "name": "Third Party Risk Score",
+        "value": 80.9,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "model-risk-score",
+        "name": "Model Risk Management Score",
+        "value": 85.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "fraud-loss-rate",
+        "name": "Fraud Loss Rate",
+        "value": 0.039,
+        "target": 0.04,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "down",
+        "category": "risk"
+      }
+    ],
+    "alerts": {
+      "critical": 1,
+      "high": 8,
+      "medium": 24,
+      "low": 35
+    },
+    "trending": {
+      "quarterOverQuarter": 2.9,
+      "yearOverYear": 6.2,
+      "trendingUp": [
+        "Control Maturity",
+        "Regulatory Readiness",
+        "Incident Response",
+        "Cyber Posture",
+        "Model Risk"
+      ],
+      "trendingDown": [
+        "Fraud Loss Rate"
+      ]
+    }
+  },
+  "operationalMetrics": {
+    "amlMonitoring": {
+      "alerts": {
+        "total": 33567,
+        "falsePositiveRate": 84.8,
+        "averageDispositionTime": 3.7,
+        "backlog": 534
+      },
+      "scenarios": [
+        {
+          "name": "Tech Company Transactions",
+          "alertVolume": 6789,
+          "falsePositiveRate": 86.4,
+          "effectiveness": 82.3
+        },
+        {
+          "name": "Real Estate Investment Patterns",
+          "alertVolume": 5234,
+          "falsePositiveRate": 81.7,
+          "effectiveness": 85.9
+        },
+        {
+          "name": "Venture Capital Transactions",
+          "alertVolume": 3890,
+          "falsePositiveRate": 78.3,
+          "effectiveness": 88.6
+        },
+        {
+          "name": "Entertainment Industry Patterns",
+          "alertVolume": 2456,
+          "falsePositiveRate": 83.9,
+          "effectiveness": 83.1
+        },
+        {
+          "name": "Cryptocurrency Related Activity",
+          "alertVolume": 4123,
+          "falsePositiveRate": 79.8,
+          "effectiveness": 87.2
+        },
+        {
+          "name": "Cross-Border Asia-Pacific",
+          "alertVolume": 3456,
+          "falsePositiveRate": 82.4,
+          "effectiveness": 84.7
+        },
+        {
+          "name": "High Net Worth Patterns",
+          "alertVolume": 2678,
+          "falsePositiveRate": 77.6,
+          "effectiveness": 89.3
+        },
+        {
+          "name": "Private Equity Transactions",
+          "alertVolume": 1890,
+          "falsePositiveRate": 74.8,
+          "effectiveness": 91.4
+        },
+        {
+          "name": "Digital Payment Innovations",
+          "alertVolume": 5234,
+          "falsePositiveRate": 88.7,
+          "effectiveness": 76.8
+        },
+        {
+          "name": "Fintech Partnership Activity",
+          "alertVolume": 3817,
+          "falsePositiveRate": 85.9,
+          "effectiveness": 80.4
+        }
+      ],
+      "effectiveness": {
+        "sarConversionRate": 4.2,
+        "modelAccuracy": 81.00679273959267,
+        "coverageRatio": 97.9
+      }
+    },
+    "investigations": {
+      "caseLoad": {
+        "active": 967,
+        "closed": 3012,
+        "escalated": 176,
+        "aging": {
+          "under30Days": 698,
+          "days30to60": 178,
+          "days60to90": 67,
+          "over90Days": 24
+        }
+      },
+      "cycleTime": {
+        "average": 10.8,
+        "median": 8.2,
+        "target": 10.0
+      },
+      "quality": {
+        "qaScore": 87.3,
+        "reworkRate": 7.1,
+        "documentationScore": 90.6
+      },
+      "staffing": {
+        "analysts": 112,
+        "seniors": 34,
+        "managers": 13,
+        "utilizationRate": 90.8
+      }
+    },
+    "caseManagement": {
+      "workflow": {
+        "automated": 76.8,
+        "manual": 17.4,
+        "hybrid": 5.8
+      },
+      "slaCompliance": {
+        "overall": 93.7,
+        "byPriority": {
+          "critical": 98.4,
+          "high": 95.8,
+          "medium": 92.6,
+          "low": 88.7
+        }
+      },
+      "escalations": {
+        "total": 176,
+        "reasons": [
+          {
+            "reason": "Complex Investigation Required",
+            "count": 67,
+            "percentage": 38.1
+          },
+          {
+            "reason": "Cryptocurrency Related",
+            "count": 42,
+            "percentage": 23.9
+          },
+          {
+            "reason": "Regulatory Inquiry",
+            "count": 34,
+            "percentage": 19.3
+          },
+          {
+            "reason": "Tech Sector Complexity",
+            "count": 23,
+            "percentage": 13.1
+          },
+          {
+            "reason": "Legal Review Needed",
+            "count": 10,
+            "percentage": 5.7
+          }
+        ],
+        "resolutionTime": 5.9
+      }
+    },
+    "productivity": {
+      "casesPerAnalyst": 26.9,
+      "alertsPerAnalyst": 299.7,
+      "automationRate": 76.8
+    }
+  },
+  "riskMetrics": {
+    "kycCompliance": {
+      "completion": {
+        "cip": 98.9,
+        "cdd": 95.7,
+        "edd": 92.8
+      },
+      "quality": {
+        "documentationScore": 90.6,
+        "accuracyRate": 93.8,
+        "deficiencyRate": 3.9
+      },
+      "periodicReviews": {
+        "onTime": 89.7,
+        "pastDue": 1456,
+        "riskTierCompliance": {
+          "high": 95.8,
+          "medium": 91.4,
+          "low": 85.6
+        }
+      },
+      "riskRatings": {
+        "distribution": {
+          "high": 14.7,
+          "medium": 38.9,
+          "low": 46.4
+        },
+        "changes": 1987,
+        "accuracy": 92.8
+      }
+    },
+    "sanctionsScreening": {
+      "coverage": {
+        "customers": 99.7,
+        "transactions": 96.91509931314569,
+        "wires": 100.0,
+        "vendors": 97.3
+      },
+      "hitRates": {
+        "truePositives": 0.021,
+        "falsePositives": 2.04,
+        "accuracy": 91.8
+      },
+      "processing": {
+        "averageResponseTime": 0.19,
+        "slaCompliance": 97.8,
+        "escalations": 61
+      },
+      "listManagement": {
+        "updateFrequency": "Daily",
+        "latency": 0.05,
+        "coverage": 99.9
+      }
+    },
+    "fraudPrevention": {
+      "losses": {
+        "total": 12700000,
+        "rate": 0.039,
+        "recovery": 52.3
+      },
+      "detection": {
+        "modelAccuracy": 84.3,
+        "timeToDetection": 1.7,
+        "alertVolume": 112890
+      },
+      "prevention": {
+        "blockedTransactions": 67890,
+        "preventedLoss": 98700000,
+        "falsePositives": 11.2
+      },
+      "customer": {
+        "impactScore": 6.8,
+        "complaintRate": 0.021,
+        "resolutionTime": 1.3
+      }
+    },
+    "modelRisk": {
+      "inventory": {
+        "total": 63,
+        "byTier": {
+          "tier1": 13,
+          "tier2": 26,
+          "tier3": 24
+        },
+        "documentation": 95.7
+      },
+      "validation": {
+        "onTime": 92.1,
+        "overdue": 5,
+        "quality": 88.9
+      },
+      "monitoring": {
+        "performanceDrift": 1.9,
+        "dataQuality": 92.8,
+        "alerting": 90.6
+      },
+      "governance": {
+        "committee": 95.3,
+        "policies": 97.1,
+        "training": 94.8
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "sarFiling": {
+        "volume": 1870,
+        "timeliness": 96.65756315739755,
+        "quality": 90.66509015565781,
+        "categories": [
+          {
+            "category": "Tech Sector Money Laundering",
+            "count": 537,
+            "percentage": 27.0
+          },
+          {
+            "category": "Real Estate Fraud",
+            "count": 458,
+            "percentage": 23.0
+          },
+          {
+            "category": "Cryptocurrency Related",
+            "count": 397,
+            "percentage": 20.0
+          },
+          {
+            "category": "Investment Fraud",
+            "count": 298,
+            "percentage": 15.0
+          },
+          {
+            "category": "Wire Fraud",
+            "count": 199,
+            "percentage": 10.0
+          },
+          {
+            "category": "Other",
+            "count": 100,
+            "percentage": 5.0
+          }
+        ]
+      },
+      "ctrReporting": {
+        "volume": 58901,
+        "timeliness": 98.9,
+        "accuracy": 98.2,
+        "exemptions": 8901
+      },
+      "examination": {
+        "lastDate": "2024-03-10",
+        "rating": "satisfactory",
+        "findings": 7,
+        "mra": 2
+      },
+      "consent": {
+        "active": false,
+        "compliance": 0,
+        "requirements": 0
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 91.58829421757261,
+        "aml": 97.1,
+        "fraud": 94.8,
+        "sanctions": 96.3
+      },
+      "effectiveness": {
+        "testScores": 88.9,
+        "retention": 86.4,
+        "application": 83.7
+      },
+      "currency": {
+        "upToDate": 93.8,
+        "renewal": 91.7,
+        "specialized": 94.6
+      },
+      "specialized": {
+        "investigators": 98.9,
+        "managers": 97.8,
+        "executives": 96.3
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 93.8,
+        "overdue": 9,
+        "scheduled": 6
+      },
+      "approval": {
+        "timely": 91.4,
+        "documented": 97.3,
+        "authorized": 99.1
+      },
+      "distribution": {
+        "coverage": 95.7,
+        "acknowledgment": 88.85228001762226,
+        "training": 90.4
+      },
+      "exceptions": {
+        "total": 178,
+        "approved": 156,
+        "expired": 16
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 94.7,
+        "accuracy": 95.8,
+        "completeness": 93.6
+      },
+      "regulatory": {
+        "timeliness": 97.8,
+        "accuracy": 97.9,
+        "corrections": 5
+      },
+      "board": {
+        "frequency": "Monthly",
+        "quality": 91.7,
+        "actionItems": 12
+      },
+      "quality": {
+        "dataIntegrity": 92.8,
+        "lineage": 89.7,
+        "controls": 91.3
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 20,
+      "bySeverity": {
+        "critical": 0,
+        "high": 3,
+        "medium": 12,
+        "low": 5
+      },
+      "byCategory": [
+        {
+          "category": "AML Transaction Monitoring",
+          "count": 4
+        },
+        {
+          "category": "Cryptocurrency Risk Management",
+          "count": 3
+        },
+        {
+          "category": "KYC/CDD Processes",
+          "count": 3
+        },
+        {
+          "category": "Data Quality & Governance",
+          "count": 3
+        },
+        {
+          "category": "Model Risk Management",
+          "count": 2
+        },
+        {
+          "category": "Third Party Risk",
+          "count": 2
+        },
+        {
+          "category": "Training & Awareness",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 5,
+        "inProgress": 11,
+        "closed": 2,
+        "overdue": 1
+      }
+    },
+    "findings": [
+      {
+        "id": "WC-2024-001",
+        "title": "Cryptocurrency Transaction Monitoring",
+        "description": "Enhanced monitoring controls needed for cryptocurrency-related business activities",
+        "severity": "high",
+        "category": "Cryptocurrency Risk Management",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "AML Investigation Manager",
+        "businessUnit": "west-coast-region"
+      },
+      {
+        "id": "WC-2024-002",
+        "title": "Tech Sector KYC Standards",
+        "description": "KYC procedures for tech startups and venture-backed companies need standardization",
+        "severity": "medium",
+        "category": "KYC/CDD Processes",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "KYC Operations Manager",
+        "businessUnit": "west-coast-region"
+      },
+      {
+        "id": "WC-2024-003",
+        "title": "Fintech Partnership Due Diligence",
+        "description": "Third-party due diligence for fintech partnerships requires enhancement",
+        "severity": "high",
+        "category": "Third Party Risk",
+        "status": "in-progress",
+        "dueDate": "2024-10-31",
+        "owner": "Third Party Risk Manager",
+        "businessUnit": "west-coast-region"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 15,
+        "inDevelopment": 3,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 83.3,
+        "delayed": 11.1,
+        "completed": 5.6
+      },
+      "effectiveness": {
+        "validated": 88.9,
+        "repeat": 5.6,
+        "sustained": 91.7
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 90.6,
+        "processes": 93.8,
+        "systems": 87.4
+      },
+      "results": {
+        "pass": 88.72967704974091,
+        "fail": 7.8,
+        "exception": 2.8
+      },
+      "methodology": {
+        "sampling": 68.9,
+        "walkthrough": 22.3,
+        "reperformance": 8.8
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 77.9,
+          "alertVolume": 31234,
+          "falsePositiveRate": 87.8,
+          "sarFilings": 1823
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 79.8,
+          "alertVolume": 32401,
+          "falsePositiveRate": 86.3,
+          "sarFilings": 1906
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 82.4,
+          "alertVolume": 33567,
+          "falsePositiveRate": 84.8,
+          "sarFilings": 1989
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 84.2,
+        "alertVolume": 34800,
+        "falsePositiveRate": 83.4
+      },
+      "nextYear": {
+        "overallScore": 87.5,
+        "alertVolume": 145000,
+        "falsePositiveRate": 78.9
+      },
+      "confidence": 83.7
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 75.2,
+        "falsePositiveRate": 89.7,
+        "trainingCompletion": 91.3
+      },
+      "peers": {
+        "overallScore": 77.8,
+        "falsePositiveRate": 88.1,
+        "trainingCompletion": 93.6
+      },
+      "internal": {
+        "bestPerforming": "commercial-banking",
+        "averageScore": 76.9,
+        "improvementTarget": 85.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 94.8,
+    "caveats": [
+      "Q3 2024 cryptocurrency monitoring framework enhancement in progress",
+      "Tech sector KYC standardization initiative launched across region",
+      "Fintech partnership due diligence framework being developed",
+      "Real estate market volatility driving enhanced monitoring controls"
+    ],
+    "dataQuality": {
+      "completeness": 96.7,
+      "accuracy": 94.8,
+      "timeliness": 92.4
+    }
+  },
+  "quarter": "Q1-2024",
+  "date": "2024-03-31"
+}

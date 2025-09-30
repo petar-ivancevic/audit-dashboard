@@ -1,0 +1,794 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "digital-banking",
+      "name": "Digital Banking Unit",
+      "category": "geographic-region",
+      "region": "National Digital Presence",
+      "headcount": 5500,
+      "assets": 85000000000,
+      "riskTier": "high",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 75.32630765162463,
+      "trend": "improving",
+      "benchmark": "acceptable"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 77.3,
+        "target": 80.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 79.8,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "regulatory-readiness",
+        "name": "Regulatory Readiness Index",
+        "value": 83.6,
+        "target": 90.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "issue-mgmt-effectiveness",
+        "name": "Issue Management Effectiveness",
+        "value": 75.9,
+        "target": 80.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "audit-opinion-trend",
+        "name": "Audit Opinion Trend",
+        "value": 3.2,
+        "target": 3.5,
+        "unit": "rating",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 92.4,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "policy-currency",
+        "name": "Policy Currency Rate",
+        "value": 89.7,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "control-testing-pass",
+        "name": "Control Testing Pass Rate",
+        "value": 84.9,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "exception-mgmt",
+        "name": "Exception Management Score",
+        "value": 78.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "incident-response",
+        "name": "Incident Response Effectiveness",
+        "value": 85.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "data-quality",
+        "name": "Data Quality Score",
+        "value": 81.4,
+        "target": 88.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "cyber-posture",
+        "name": "Cyber Risk Posture",
+        "value": 80.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "vendor-risk-score",
+        "name": "Third Party Risk Score",
+        "value": 75.8,
+        "target": 80.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "model-risk-score",
+        "name": "Model Risk Management Score",
+        "value": 81.9,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "fraud-loss-rate",
+        "name": "Fraud Loss Rate",
+        "value": 0.056,
+        "target": 0.04,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "flat",
+        "category": "risk"
+      }
+    ],
+    "alerts": {
+      "critical": 4,
+      "high": 15,
+      "medium": 30,
+      "low": 52
+    },
+    "trending": {
+      "quarterOverQuarter": 2.7,
+      "yearOverYear": 5.8,
+      "trendingUp": [
+        "Control Maturity",
+        "Regulatory Readiness",
+        "Incident Response",
+        "Cyber Posture",
+        "Training Completion"
+      ],
+      "trendingDown": [
+        "Third Party Risk"
+      ]
+    }
+  },
+  "operationalMetrics": {
+    "amlMonitoring": {
+      "alerts": {
+        "total": 52890,
+        "falsePositiveRate": 91.4,
+        "averageDispositionTime": 4.9,
+        "backlog": 987
+      },
+      "scenarios": [
+        {
+          "name": "Digital Wallet Anomalies",
+          "alertVolume": 12345,
+          "falsePositiveRate": 93.7,
+          "effectiveness": 71.8
+        },
+        {
+          "name": "Mobile Payment Patterns",
+          "alertVolume": 9876,
+          "falsePositiveRate": 92.8,
+          "effectiveness": 73.4
+        },
+        {
+          "name": "Account Opening Velocity",
+          "alertVolume": 7234,
+          "falsePositiveRate": 89.6,
+          "effectiveness": 77.9
+        },
+        {
+          "name": "P2P Transfer Anomalies",
+          "alertVolume": 6789,
+          "falsePositiveRate": 91.2,
+          "effectiveness": 74.6
+        },
+        {
+          "name": "Digital Identity Fraud",
+          "alertVolume": 5678,
+          "falsePositiveRate": 87.4,
+          "effectiveness": 81.3
+        },
+        {
+          "name": "API Transaction Patterns",
+          "alertVolume": 4567,
+          "falsePositiveRate": 90.8,
+          "effectiveness": 75.8
+        },
+        {
+          "name": "Cryptocurrency Integration",
+          "alertVolume": 2890,
+          "falsePositiveRate": 85.3,
+          "effectiveness": 83.7
+        },
+        {
+          "name": "Robo-Advisory Anomalies",
+          "alertVolume": 1456,
+          "falsePositiveRate": 88.9,
+          "effectiveness": 78.6
+        },
+        {
+          "name": "Open Banking API Misuse",
+          "alertVolume": 2345,
+          "falsePositiveRate": 86.7,
+          "effectiveness": 82.1
+        },
+        {
+          "name": "Synthetic Identity Detection",
+          "alertVolume": 4710,
+          "falsePositiveRate": 89.4,
+          "effectiveness": 79.3
+        }
+      ],
+      "effectiveness": {
+        "sarConversionRate": 2.4,
+        "modelAccuracy": 72.75505641690921,
+        "coverageRatio": 94.7
+      }
+    },
+    "investigations": {
+      "caseLoad": {
+        "active": 1178,
+        "closed": 2890,
+        "escalated": 167,
+        "aging": {
+          "under30Days": 789,
+          "days30to60": 234,
+          "days60to90": 112,
+          "over90Days": 43
+        }
+      },
+      "cycleTime": {
+        "average": 14.6,
+        "median": 11.2,
+        "target": 10.0
+      },
+      "quality": {
+        "qaScore": 81.7,
+        "reworkRate": 10.8,
+        "documentationScore": 85.9
+      },
+      "staffing": {
+        "analysts": 78,
+        "seniors": 24,
+        "managers": 9,
+        "utilizationRate": 94.6
+      }
+    },
+    "caseManagement": {
+      "workflow": {
+        "automated": 71.8,
+        "manual": 21.6,
+        "hybrid": 6.6
+      },
+      "slaCompliance": {
+        "overall": 87.9,
+        "byPriority": {
+          "critical": 95.7,
+          "high": 90.8,
+          "medium": 86.4,
+          "low": 81.3
+        }
+      },
+      "escalations": {
+        "total": 167,
+        "reasons": [
+          {
+            "reason": "Complex Investigation Required",
+            "count": 62,
+            "percentage": 37.1
+          },
+          {
+            "reason": "Technology Risk Issue",
+            "count": 48,
+            "percentage": 28.7
+          },
+          {
+            "reason": "Regulatory Inquiry",
+            "count": 31,
+            "percentage": 18.6
+          },
+          {
+            "reason": "Third Party Fintech Issue",
+            "count": 18,
+            "percentage": 10.8
+          },
+          {
+            "reason": "System Issue",
+            "count": 8,
+            "percentage": 4.8
+          }
+        ],
+        "resolutionTime": 8.4
+      }
+    },
+    "productivity": {
+      "casesPerAnalyst": 37.1,
+      "alertsPerAnalyst": 678.1,
+      "automationRate": 71.8
+    }
+  },
+  "riskMetrics": {
+    "kycCompliance": {
+      "completion": {
+        "cip": 97.3,
+        "cdd": 91.8,
+        "edd": 87.6
+      },
+      "quality": {
+        "documentationScore": 85.9,
+        "accuracyRate": 90.6,
+        "deficiencyRate": 6.7
+      },
+      "periodicReviews": {
+        "onTime": 84.7,
+        "pastDue": 2134,
+        "riskTierCompliance": {
+          "high": 92.4,
+          "medium": 87.3,
+          "low": 79.8
+        }
+      },
+      "riskRatings": {
+        "distribution": {
+          "high": 6.8,
+          "medium": 28.4,
+          "low": 64.8
+        },
+        "changes": 3456,
+        "accuracy": 89.7
+      }
+    },
+    "sanctionsScreening": {
+      "coverage": {
+        "customers": 99.6,
+        "transactions": 96.021643811508,
+        "wires": 99.9,
+        "vendors": 96.4
+      },
+      "hitRates": {
+        "truePositives": 0.014,
+        "falsePositives": 2.67,
+        "accuracy": 89.8
+      },
+      "processing": {
+        "averageResponseTime": 0.28,
+        "slaCompliance": 95.3,
+        "escalations": 89
+      },
+      "listManagement": {
+        "updateFrequency": "Daily",
+        "latency": 0.07,
+        "coverage": 99.8
+      }
+    },
+    "fraudPrevention": {
+      "losses": {
+        "total": 4760000,
+        "rate": 0.056,
+        "recovery": 34.8
+      },
+      "detection": {
+        "modelAccuracy": 78.9,
+        "timeToDetection": 2.9,
+        "alertVolume": 189567
+      },
+      "prevention": {
+        "blockedTransactions": 98765,
+        "preventedLoss": 34500000,
+        "falsePositives": 18.7
+      },
+      "customer": {
+        "impactScore": 11.4,
+        "complaintRate": 0.042,
+        "resolutionTime": 2.4
+      }
+    },
+    "modelRisk": {
+      "inventory": {
+        "total": 42,
+        "byTier": {
+          "tier1": 9,
+          "tier2": 18,
+          "tier3": 15
+        },
+        "documentation": 92.8
+      },
+      "validation": {
+        "onTime": 87.8,
+        "overdue": 7,
+        "quality": 85.9
+      },
+      "monitoring": {
+        "performanceDrift": 3.1,
+        "dataQuality": 89.7,
+        "alerting": 87.4
+      },
+      "governance": {
+        "committee": 90.8,
+        "policies": 95.3,
+        "training": 89.7
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "sarFiling": {
+        "volume": 1181,
+        "timeliness": 94.52864110434865,
+        "quality": 90.16397237434178,
+        "categories": [
+          {
+            "category": "Digital Payment Fraud",
+            "count": 432,
+            "percentage": 35.0
+          },
+          {
+            "category": "Account Takeover",
+            "count": 296,
+            "percentage": 24.0
+          },
+          {
+            "category": "Synthetic Identity Fraud",
+            "count": 234,
+            "percentage": 19.0
+          },
+          {
+            "category": "Mobile Banking Fraud",
+            "count": 148,
+            "percentage": 12.0
+          },
+          {
+            "category": "API Misuse",
+            "count": 86,
+            "percentage": 7.0
+          },
+          {
+            "category": "Other",
+            "count": 38,
+            "percentage": 3.0
+          }
+        ]
+      },
+      "ctrReporting": {
+        "volume": 12345,
+        "timeliness": 98.4,
+        "accuracy": 97.6,
+        "exemptions": 1890
+      },
+      "examination": {
+        "lastDate": "2023-10-20",
+        "rating": "satisfactory",
+        "findings": 11,
+        "mra": 4
+      },
+      "consent": {
+        "active": false,
+        "compliance": 0,
+        "requirements": 0
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 88.88650386813111,
+        "aml": 94.7,
+        "fraud": 91.3,
+        "sanctions": 93.8
+      },
+      "effectiveness": {
+        "testScores": 86.8,
+        "retention": 83.4,
+        "application": 80.7
+      },
+      "currency": {
+        "upToDate": 89.7,
+        "renewal": 87.9,
+        "specialized": 92.3
+      },
+      "specialized": {
+        "investigators": 97.3,
+        "managers": 96.1,
+        "executives": 94.8
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 89.7,
+        "overdue": 15,
+        "scheduled": 8
+      },
+      "approval": {
+        "timely": 86.8,
+        "documented": 95.7,
+        "authorized": 98.6
+      },
+      "distribution": {
+        "coverage": 92.4,
+        "acknowledgment": 84.90388901342128,
+        "training": 86.7
+      },
+      "exceptions": {
+        "total": 234,
+        "approved": 198,
+        "expired": 24
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 90.8,
+        "accuracy": 92.7,
+        "completeness": 89.6
+      },
+      "regulatory": {
+        "timeliness": 96.8,
+        "accuracy": 96.4,
+        "corrections": 8
+      },
+      "board": {
+        "frequency": "Quarterly",
+        "quality": 87.9,
+        "actionItems": 16
+      },
+      "quality": {
+        "dataIntegrity": 89.7,
+        "lineage": 86.3,
+        "controls": 87.8
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 26,
+      "bySeverity": {
+        "critical": 2,
+        "high": 7,
+        "medium": 12,
+        "low": 5
+      },
+      "byCategory": [
+        {
+          "category": "Cyber Risk & Technology Controls",
+          "count": 7
+        },
+        {
+          "category": "AML Transaction Monitoring",
+          "count": 5
+        },
+        {
+          "category": "Digital Identity & KYC",
+          "count": 4
+        },
+        {
+          "category": "Third Party Fintech Risk",
+          "count": 4
+        },
+        {
+          "category": "Data Quality & Governance",
+          "count": 3
+        },
+        {
+          "category": "API Security & Controls",
+          "count": 2
+        },
+        {
+          "category": "Model Risk Management",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 9,
+        "inProgress": 14,
+        "closed": 3,
+        "overdue": 3
+      }
+    },
+    "findings": [
+      {
+        "id": "DB-2024-001",
+        "title": "API Security and Monitoring Controls",
+        "description": "Enhanced monitoring and security controls needed for open banking APIs",
+        "severity": "critical",
+        "category": "API Security & Controls",
+        "status": "in-progress",
+        "dueDate": "2024-11-15",
+        "owner": "Chief Technology Officer",
+        "businessUnit": "digital-banking"
+      },
+      {
+        "id": "DB-2024-002",
+        "title": "Digital Identity Verification",
+        "description": "Synthetic identity detection capabilities require enhancement",
+        "severity": "high",
+        "category": "Digital Identity & KYC",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Digital Product Manager",
+        "businessUnit": "digital-banking"
+      },
+      {
+        "id": "DB-2024-003",
+        "title": "Third Party Fintech Due Diligence",
+        "description": "Enhanced due diligence framework needed for fintech partnerships and API integrations",
+        "severity": "high",
+        "category": "Third Party Fintech Risk",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "Third Party Risk Manager",
+        "businessUnit": "digital-banking"
+      },
+      {
+        "id": "DB-2024-004",
+        "title": "Cloud Security Controls",
+        "description": "Cloud-native security controls require strengthening across digital platforms",
+        "severity": "critical",
+        "category": "Cyber Risk & Technology Controls",
+        "status": "in-progress",
+        "dueDate": "2024-10-31",
+        "owner": "Chief Information Security Officer",
+        "businessUnit": "digital-banking"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 20,
+        "inDevelopment": 5,
+        "pending": 1
+      },
+      "progress": {
+        "onTrack": 69.2,
+        "delayed": 23.1,
+        "completed": 7.7
+      },
+      "effectiveness": {
+        "validated": 83.3,
+        "repeat": 11.5,
+        "sustained": 87.2
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 86.8,
+        "processes": 90.3,
+        "systems": 83.7
+      },
+      "results": {
+        "pass": 81.35111166242109,
+        "fail": 10.7,
+        "exception": 4.4
+      },
+      "methodology": {
+        "sampling": 62.5,
+        "walkthrough": 27.3,
+        "reperformance": 10.2
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 72.4,
+          "alertVolume": 48234,
+          "falsePositiveRate": 93.8,
+          "sarFilings": 1087
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 74.6,
+          "alertVolume": 50562,
+          "falsePositiveRate": 92.6,
+          "sarFilings": 1160
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 77.3,
+          "alertVolume": 52890,
+          "falsePositiveRate": 91.4,
+          "sarFilings": 1234
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 79.8,
+        "alertVolume": 55300,
+        "falsePositiveRate": 90.2
+      },
+      "nextYear": {
+        "overallScore": 84.5,
+        "alertVolume": 235000,
+        "falsePositiveRate": 85.5
+      },
+      "confidence": 76.8
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 75.2,
+        "falsePositiveRate": 89.7,
+        "trainingCompletion": 91.3
+      },
+      "peers": {
+        "overallScore": 77.8,
+        "falsePositiveRate": 88.1,
+        "trainingCompletion": 93.6
+      },
+      "internal": {
+        "bestPerforming": "commercial-banking",
+        "averageScore": 76.9,
+        "improvementTarget": 85.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 91.3,
+    "caveats": [
+      "Q3 2024 rapid growth in digital channels driving increased monitoring complexity",
+      "API security framework enhancement project underway",
+      "Synthetic identity detection capabilities being upgraded",
+      "Cloud security controls strengthening following audit findings",
+      "Fintech partnership due diligence framework in development",
+      "Mobile fraud rates elevated but improving with new detection models"
+    ],
+    "dataQuality": {
+      "completeness": 94.7,
+      "accuracy": 92.3,
+      "timeliness": 90.6
+    }
+  },
+  "quarter": "Q1-2024",
+  "date": "2024-03-31"
+}

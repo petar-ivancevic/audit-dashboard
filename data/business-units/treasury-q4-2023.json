@@ -1,0 +1,729 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "treasury",
+      "name": "Treasury & Balance Sheet Management",
+      "category": "core-banking",
+      "region": "Global",
+      "headcount": 850,
+      "assets": 180000000000,
+      "riskTier": "high",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 81.52472564288925,
+      "trend": "improving",
+      "benchmark": "good"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 84.9,
+        "target": 85.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 88.6,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "regulatory-readiness",
+        "name": "Regulatory Readiness Index",
+        "value": 91.4,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "liquidity-risk-score",
+        "name": "Liquidity Risk Management Score",
+        "value": 92.8,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "interest-rate-risk",
+        "name": "Interest Rate Risk Management",
+        "value": 89.3,
+        "target": 88.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "risk"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 96.4,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "policy-currency",
+        "name": "Policy Currency Rate",
+        "value": 94.8,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "control-testing-pass",
+        "name": "Control Testing Pass Rate",
+        "value": 92.3,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "model-risk-score",
+        "name": "Model Risk Management Score",
+        "value": 87.6,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "counterparty-risk",
+        "name": "Counterparty Risk Score",
+        "value": 90.7,
+        "target": 88.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "risk"
+      },
+      {
+        "id": "market-risk-var",
+        "name": "Market Risk (VaR Compliance)",
+        "value": 98.4,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "risk"
+      },
+      {
+        "id": "data-quality",
+        "name": "Data Quality Score",
+        "value": 91.2,
+        "target": 88.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      }
+    ],
+    "alerts": {
+      "critical": 1,
+      "high": 6,
+      "medium": 16,
+      "low": 20
+    },
+    "trending": {
+      "quarterOverQuarter": 2.1,
+      "yearOverYear": 6.3,
+      "trendingUp": [
+        "Liquidity Risk",
+        "Model Risk",
+        "Data Quality",
+        "Control Testing"
+      ],
+      "trendingDown": []
+    }
+  },
+  "operationalMetrics": {
+    "amlMonitoring": {
+      "alerts": {
+        "total": 892,
+        "falsePositiveRate": 64.3,
+        "averageDispositionTime": 2.8,
+        "backlog": 23
+      },
+      "scenarios": [
+        {
+          "name": "Unusual Wire Activity",
+          "alertVolume": 456,
+          "falsePositiveRate": 62.7,
+          "effectiveness": 92.8
+        },
+        {
+          "name": "High-Risk Geography",
+          "alertVolume": 234,
+          "falsePositiveRate": 58.9,
+          "effectiveness": 95.6
+        },
+        {
+          "name": "Cross-Border Transactions",
+          "alertVolume": 202,
+          "falsePositiveRate": 71.8,
+          "effectiveness": 88.4
+        }
+      ],
+      "effectiveness": {
+        "sarConversionRate": 12.4,
+        "modelAccuracy": 87.44819665563958,
+        "coverageRatio": 99.8
+      }
+    },
+    "investigations": {
+      "caseLoad": {
+        "active": 34,
+        "closed": 128,
+        "escalated": 12,
+        "aging": {
+          "under30Days": 28,
+          "days30to60": 5,
+          "days60to90": 1,
+          "over90Days": 0
+        }
+      },
+      "cycleTime": {
+        "average": 7.3,
+        "median": 6.1,
+        "target": 10.0
+      },
+      "quality": {
+        "qaScore": 94.8,
+        "reworkRate": 2.7,
+        "documentationScore": 96.3
+      },
+      "staffing": {
+        "analysts": 12,
+        "seniors": 4,
+        "managers": 2,
+        "utilizationRate": 78.4
+      }
+    },
+    "caseManagement": {
+      "workflow": {
+        "automated": 82.6,
+        "manual": 12.4,
+        "hybrid": 5.0
+      },
+      "slaCompliance": {
+        "overall": 97.3,
+        "byPriority": {
+          "critical": 100.0,
+          "high": 98.6,
+          "medium": 96.8,
+          "low": 95.2
+        }
+      },
+      "escalations": {
+        "total": 12,
+        "reasons": [
+          {
+            "reason": "Complex Investigation Required",
+            "count": 6,
+            "percentage": 50.0
+          },
+          {
+            "reason": "Regulatory Inquiry",
+            "count": 4,
+            "percentage": 33.3
+          },
+          {
+            "reason": "Legal Review Needed",
+            "count": 2,
+            "percentage": 16.7
+          }
+        ],
+        "resolutionTime": 3.8
+      }
+    },
+    "productivity": {
+      "casesPerAnalyst": 10.7,
+      "alertsPerAnalyst": 74.3,
+      "automationRate": 82.6
+    }
+  },
+  "riskMetrics": {
+    "kycCompliance": {
+      "completion": {
+        "cip": 99.8,
+        "cdd": 99.2,
+        "edd": 98.7
+      },
+      "quality": {
+        "documentationScore": 97.4,
+        "accuracyRate": 98.6,
+        "deficiencyRate": 0.8
+      },
+      "periodicReviews": {
+        "onTime": 97.8,
+        "pastDue": 12,
+        "riskTierCompliance": {
+          "high": 99.2,
+          "medium": 98.6,
+          "low": 96.4
+        }
+      },
+      "riskRatings": {
+        "distribution": {
+          "high": 18.6,
+          "medium": 56.7,
+          "low": 24.7
+        },
+        "changes": 89,
+        "accuracy": 98.3
+      }
+    },
+    "sanctionsScreening": {
+      "coverage": {
+        "customers": 100.0,
+        "transactions": 95.64208618665056,
+        "wires": 100.0,
+        "vendors": 99.8
+      },
+      "hitRates": {
+        "truePositives": 0.034,
+        "falsePositives": 0.87,
+        "accuracy": 97.8
+      },
+      "processing": {
+        "averageResponseTime": 0.09,
+        "slaCompliance": 99.6,
+        "escalations": 18
+      },
+      "listManagement": {
+        "updateFrequency": "Real-time",
+        "latency": 0.02,
+        "coverage": 100.0
+      }
+    },
+    "fraudPrevention": {
+      "losses": {
+        "total": 340000,
+        "rate": 0.008,
+        "recovery": 78.4
+      },
+      "detection": {
+        "modelAccuracy": 94.7,
+        "timeToDetection": 0.4,
+        "alertVolume": 2156
+      },
+      "prevention": {
+        "blockedTransactions": 1234,
+        "preventedLoss": 8900000,
+        "falsePositives": 4.2
+      },
+      "customer": {
+        "impactScore": 2.1,
+        "complaintRate": 0.002,
+        "resolutionTime": 0.3
+      }
+    },
+    "modelRisk": {
+      "inventory": {
+        "total": 18,
+        "byTier": {
+          "tier1": 8,
+          "tier2": 7,
+          "tier3": 3
+        },
+        "documentation": 97.2
+      },
+      "validation": {
+        "onTime": 94.4,
+        "overdue": 1,
+        "quality": 93.8
+      },
+      "monitoring": {
+        "performanceDrift": 1.2,
+        "dataQuality": 96.8,
+        "alerting": 95.3
+      },
+      "governance": {
+        "committee": 96.4,
+        "policies": 97.8,
+        "training": 95.7
+      }
+    },
+    "liquidityRisk": {
+      "lcrCompliance": {
+        "ratio": 142.6,
+        "target": 100.0,
+        "buffer": 42.6
+      },
+      "nsfrCompliance": {
+        "ratio": 128.4,
+        "target": 100.0,
+        "buffer": 28.4
+      },
+      "stressTestResults": {
+        "baseCase": 98.7,
+        "adverseCase": 87.3,
+        "severelyAdverse": 76.8
+      },
+      "fundingConcentration": {
+        "topTenDepositors": 18.4,
+        "wholesaleFunding": 23.7,
+        "stableFunding": 76.3
+      }
+    },
+    "interestRateRisk": {
+      "netInterestIncome": {
+        "upShock200bp": -8.4,
+        "downShock200bp": 6.7,
+        "limitCompliance": 94.8
+      },
+      "economicValue": {
+        "upShock200bp": -12.6,
+        "downShock200bp": 9.3,
+        "limitCompliance": 91.7
+      },
+      "durationGap": {
+        "current": 1.34,
+        "target": 1.5,
+        "withinLimits": true
+      }
+    },
+    "counterpartyRisk": {
+      "exposureManagement": {
+        "totalExposure": 45600000000,
+        "limitUtilization": 67.8,
+        "creditRating": "A+"
+      },
+      "collateralManagement": {
+        "collateralCoverage": 156.8,
+        "marginCallCompliance": 99.8,
+        "disputeResolution": 2.3
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "sarFiling": {
+        "volume": 33,
+        "timeliness": 96.17591111318512,
+        "quality": 91.62059575982677,
+        "categories": [
+          {
+            "category": "Suspicious Wire Transfers",
+            "count": 18,
+            "percentage": 52.9
+          },
+          {
+            "category": "Money Laundering",
+            "count": 9,
+            "percentage": 26.5
+          },
+          {
+            "category": "Sanctions Evasion",
+            "count": 5,
+            "percentage": 14.7
+          },
+          {
+            "category": "Other",
+            "count": 2,
+            "percentage": 5.9
+          }
+        ]
+      },
+      "ctrReporting": {
+        "volume": 3456,
+        "timeliness": 100.0,
+        "accuracy": 99.6,
+        "exemptions": 234
+      },
+      "examination": {
+        "lastDate": "2024-05-22",
+        "rating": "satisfactory",
+        "findings": 3,
+        "mra": 1
+      },
+      "consent": {
+        "active": false,
+        "compliance": 0,
+        "requirements": 0
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 91.05174587012685,
+        "aml": 97.8,
+        "fraud": 95.6,
+        "sanctions": 98.2
+      },
+      "effectiveness": {
+        "testScores": 92.7,
+        "retention": 91.4,
+        "application": 89.8
+      },
+      "currency": {
+        "upToDate": 95.8,
+        "renewal": 94.6,
+        "specialized": 96.7
+      },
+      "specialized": {
+        "investigators": 98.9,
+        "managers": 97.6,
+        "executives": 96.4
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 94.8,
+        "overdue": 2,
+        "scheduled": 4
+      },
+      "approval": {
+        "timely": 93.6,
+        "documented": 98.4,
+        "authorized": 100.0
+      },
+      "distribution": {
+        "coverage": 96.8,
+        "acknowledgment": 93.08672535636688,
+        "training": 93.7
+      },
+      "exceptions": {
+        "total": 18,
+        "approved": 17,
+        "expired": 0
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 97.8,
+        "accuracy": 98.4,
+        "completeness": 96.7
+      },
+      "regulatory": {
+        "timeliness": 99.6,
+        "accuracy": 99.2,
+        "corrections": 1
+      },
+      "board": {
+        "frequency": "Monthly",
+        "quality": 96.8,
+        "actionItems": 3
+      },
+      "quality": {
+        "dataIntegrity": 97.6,
+        "lineage": 96.2,
+        "controls": 95.8
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 9,
+      "bySeverity": {
+        "critical": 0,
+        "high": 2,
+        "medium": 5,
+        "low": 2
+      },
+      "byCategory": [
+        {
+          "category": "Model Risk Management",
+          "count": 3
+        },
+        {
+          "category": "Interest Rate Risk",
+          "count": 2
+        },
+        {
+          "category": "Liquidity Risk",
+          "count": 2
+        },
+        {
+          "category": "Data Quality & Governance",
+          "count": 1
+        },
+        {
+          "category": "Counterparty Risk",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 3,
+        "inProgress": 5,
+        "closed": 1,
+        "overdue": 0
+      }
+    },
+    "findings": [
+      {
+        "id": "TR-2024-001",
+        "title": "Interest Rate Risk Model Validation",
+        "description": "Annual validation of EVE model requires enhancement of scenario analysis",
+        "severity": "high",
+        "category": "Model Risk Management",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Treasury Model Risk Officer",
+        "businessUnit": "treasury"
+      },
+      {
+        "id": "TR-2024-002",
+        "title": "Liquidity Stress Testing Documentation",
+        "description": "Enhanced documentation needed for idiosyncratic stress scenarios",
+        "severity": "medium",
+        "category": "Liquidity Risk",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "Liquidity Risk Manager",
+        "businessUnit": "treasury"
+      },
+      {
+        "id": "TR-2024-003",
+        "title": "Counterparty Credit Risk Limits",
+        "description": "Strengthen monitoring of intraday exposure limits for clearing counterparties",
+        "severity": "high",
+        "category": "Counterparty Risk",
+        "status": "in-progress",
+        "dueDate": "2024-10-31",
+        "owner": "Counterparty Risk Manager",
+        "businessUnit": "treasury"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 8,
+        "inDevelopment": 1,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 88.9,
+        "delayed": 0.0,
+        "completed": 11.1
+      },
+      "effectiveness": {
+        "validated": 100.0,
+        "repeat": 0.0,
+        "sustained": 100.0
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 95.7,
+        "processes": 96.8,
+        "systems": 93.4
+      },
+      "results": {
+        "pass": 87.82830120680543,
+        "fail": 5.8,
+        "exception": 1.9
+      },
+      "methodology": {
+        "sampling": 54.8,
+        "walkthrough": 31.6,
+        "reperformance": 13.6
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 81.7,
+          "alertVolume": 834,
+          "falsePositiveRate": 67.2,
+          "sarFilings": 28
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 83.4,
+          "alertVolume": 867,
+          "falsePositiveRate": 65.8,
+          "sarFilings": 31
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 84.9,
+          "alertVolume": 892,
+          "falsePositiveRate": 64.3,
+          "sarFilings": 34
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 86.2,
+        "alertVolume": 920,
+        "falsePositiveRate": 62.8
+      },
+      "nextYear": {
+        "overallScore": 88.7,
+        "alertVolume": 3800,
+        "falsePositiveRate": 58.0
+      },
+      "confidence": 89.4
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 81.6,
+        "falsePositiveRate": 69.4,
+        "trainingCompletion": 93.8
+      },
+      "peers": {
+        "overallScore": 83.9,
+        "falsePositiveRate": 66.7,
+        "trainingCompletion": 95.2
+      },
+      "internal": {
+        "bestPerforming": "investment-banking",
+        "averageScore": 81.8,
+        "improvementTarget": 88.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 96.8,
+    "caveats": [
+      "Treasury maintains strong liquidity and funding risk management controls",
+      "Interest rate risk management enhanced following 2023 banking sector stress",
+      "Model risk governance continues to mature with enhanced validation processes",
+      "Low transaction volumes result in lower alert generation compared to business units"
+    ],
+    "dataQuality": {
+      "completeness": 98.2,
+      "accuracy": 97.4,
+      "timeliness": 97.8
+    }
+  },
+  "quarter": "Q4-2023",
+  "date": "2023-12-31"
+}

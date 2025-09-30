@@ -1,0 +1,503 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "human-resources",
+      "name": "Human Resources",
+      "category": "support-operations",
+      "region": "Global",
+      "headcount": 4500,
+      "assets": 8500000000,
+      "riskTier": "medium",
+      "regulatoryFocus": false
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 80.08410923950153,
+      "trend": "stable",
+      "benchmark": "good"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 82.6,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 85.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "employment-risk-score",
+        "name": "Employment Risk Score",
+        "value": 88.7,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 94.2,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "policy-currency",
+        "name": "Policy Currency Rate",
+        "value": 93.6,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "control-testing-pass",
+        "name": "Control Testing Pass Rate",
+        "value": 89.4,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "data-privacy-score",
+        "name": "Data Privacy Compliance Score",
+        "value": 91.8,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "employee-satisfaction",
+        "name": "Employee Satisfaction Score",
+        "value": 76.4,
+        "target": 75.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "turnover-rate",
+        "name": "Voluntary Turnover Rate",
+        "value": 8.9,
+        "target": 10.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "down",
+        "category": "operational"
+      },
+      {
+        "id": "compliance-incidents",
+        "name": "HR Compliance Incidents",
+        "value": 12,
+        "target": 15,
+        "unit": "count",
+        "status": "excellent",
+        "trend": "down",
+        "category": "compliance"
+      }
+    ],
+    "alerts": {
+      "critical": 0,
+      "high": 2,
+      "medium": 9,
+      "low": 13
+    },
+    "trending": {
+      "quarterOverQuarter": 0.4,
+      "yearOverYear": 2.8,
+      "trendingUp": [
+        "Control Maturity",
+        "Training Completion",
+        "Policy Currency"
+      ],
+      "trendingDown": [
+        "Turnover Rate",
+        "Compliance Incidents"
+      ]
+    }
+  },
+  "operationalMetrics": {
+    "talentManagement": {
+      "recruitment": {
+        "timeToFill": 42.3,
+        "offerAcceptanceRate": 87.6,
+        "qualityOfHire": 4.2,
+        "diversityHiring": 43.8
+      },
+      "retention": {
+        "voluntaryTurnover": 8.9,
+        "involuntaryTurnover": 2.3,
+        "retentionRate": 88.8,
+        "criticalRoleRetention": 94.2
+      },
+      "performance": {
+        "reviewCompletion": 96.8,
+        "calibrationCompliance": 92.4,
+        "developmentPlanExecution": 84.7
+      },
+      "succession": {
+        "criticalRoleCoverage": 87.6,
+        "readinessLevel": 2.8,
+        "internalPromotionRate": 72.4
+      }
+    },
+    "compensation": {
+      "payEquity": {
+        "genderPayGap": 2.1,
+        "minorityPayGap": 1.8,
+        "complianceScore": 96.8
+      },
+      "marketPositioning": {
+        "marketRatio": 98.4,
+        "executiveCompensation": 94.7,
+        "incentivePayoutAccuracy": 99.2
+      },
+      "benefits": {
+        "participationRate": 91.6,
+        "benefitsCost": 18.4,
+        "employeeSatisfaction": 82.3
+      }
+    },
+    "compliance": {
+      "regulatory": {
+        "eeocCompliance": 97.6,
+        "flsaCompliance": 96.8,
+        "fmlaCompliance": 98.4,
+        "aaaCompliance": 95.2
+      },
+      "training": {
+        "mandatoryTrainingCompletion": 94.2,
+        "managerTraining": 96.8,
+        "specializedCertifications": 89.7
+      },
+      "recordkeeping": {
+        "accuracy": 97.4,
+        "timeliness": 96.2,
+        "retentionCompliance": 98.6
+      }
+    },
+    "dataPrivacy": {
+      "accessControls": {
+        "appropriateAccess": 96.8,
+        "accessReviewCompletion": 94.7,
+        "privilegedAccessManagement": 97.2
+      },
+      "dataHandling": {
+        "encryptionCompliance": 99.4,
+        "dataMinimization": 92.8,
+        "retentionPolicyCompliance": 95.6
+      },
+      "incidents": {
+        "dataBreaches": 0,
+        "unauthorizedAccess": 2,
+        "policyViolations": 8
+      }
+    }
+  },
+  "riskMetrics": {
+    "employmentRisk": {
+      "litigation": {
+        "activeCases": 8,
+        "settlements": 2,
+        "totalExposure": 4200000,
+        "preventativeControls": 91.8
+      },
+      "grievances": {
+        "total": 67,
+        "resolved": 58,
+        "averageResolutionTime": 18.4,
+        "repeatIssues": 3.2
+      },
+      "misconduct": {
+        "reportedIncidents": 34,
+        "substantiated": 18,
+        "disciplinaryActions": 21,
+        "terminationRate": 2.3
+      }
+    },
+    "regulatoryRisk": {
+      "audits": {
+        "internal": 4,
+        "external": 2,
+        "findings": 6,
+        "remediationRate": 83.3
+      },
+      "penalties": {
+        "total": 0,
+        "amount": 0,
+        "correctedDeficiencies": 6
+      }
+    },
+    "operationalRisk": {
+      "systemAvailability": 99.6,
+      "dataQuality": 94.8,
+      "processEfficiency": 87.6,
+      "errorRates": 0.8
+    }
+  },
+  "complianceMetrics": {
+    "training": {
+      "completion": {
+        "overall": 91.08603351102012,
+        "mandatoryCompliance": 96.8,
+        "leadershipDevelopment": 89.4,
+        "technicalSkills": 87.6
+      },
+      "effectiveness": {
+        "testScores": 86.4,
+        "retention": 82.7,
+        "application": 78.9
+      },
+      "currency": {
+        "upToDate": 92.8,
+        "renewal": 91.6,
+        "specialized": 88.4
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 93.6,
+        "overdue": 4,
+        "scheduled": 6
+      },
+      "approval": {
+        "timely": 91.4,
+        "documented": 97.8,
+        "authorized": 99.2
+      },
+      "distribution": {
+        "coverage": 96.2,
+        "acknowledgment": 90.89746426162847,
+        "training": 92.6
+      },
+      "exceptions": {
+        "total": 23,
+        "approved": 21,
+        "expired": 1
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 94.6,
+        "accuracy": 96.2,
+        "completeness": 93.8
+      },
+      "regulatory": {
+        "timeliness": 97.8,
+        "accuracy": 98.4,
+        "corrections": 3
+      },
+      "board": {
+        "frequency": "Quarterly",
+        "quality": 92.6,
+        "actionItems": 6
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 11,
+      "bySeverity": {
+        "critical": 0,
+        "high": 1,
+        "medium": 6,
+        "low": 4
+      },
+      "byCategory": [
+        {
+          "category": "Data Privacy & Security",
+          "count": 4
+        },
+        {
+          "category": "Compensation & Benefits",
+          "count": 3
+        },
+        {
+          "category": "Employment Compliance",
+          "count": 2
+        },
+        {
+          "category": "Record Keeping",
+          "count": 1
+        },
+        {
+          "category": "Policy Management",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 3,
+        "inProgress": 7,
+        "closed": 1,
+        "overdue": 0
+      }
+    },
+    "findings": [
+      {
+        "id": "HR-2024-001",
+        "title": "Employee Data Access Controls",
+        "description": "Strengthen access controls and monitoring for sensitive employee data",
+        "severity": "high",
+        "category": "Data Privacy & Security",
+        "status": "in-progress",
+        "dueDate": "2024-11-30",
+        "owner": "HR Operations Director",
+        "businessUnit": "human-resources"
+      },
+      {
+        "id": "HR-2024-002",
+        "title": "Compensation Analysis Documentation",
+        "description": "Enhanced documentation needed for pay equity analysis methodology",
+        "severity": "medium",
+        "category": "Compensation & Benefits",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Compensation Manager",
+        "businessUnit": "human-resources"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 9,
+        "inDevelopment": 2,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 81.8,
+        "delayed": 9.1,
+        "completed": 9.1
+      },
+      "effectiveness": {
+        "validated": 90.9,
+        "repeat": 0.0,
+        "sustained": 100.0
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 91.4,
+        "processes": 93.8,
+        "systems": 88.6
+      },
+      "results": {
+        "pass": 87.79630216031525,
+        "fail": 7.8,
+        "exception": 2.8
+      },
+      "methodology": {
+        "sampling": 64.2,
+        "walkthrough": 26.8,
+        "reperformance": 9.0
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 81.4,
+          "turnoverRate": 9.8,
+          "trainingCompletion": 92.6,
+          "complianceIncidents": 15
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 82.1,
+          "turnoverRate": 9.2,
+          "trainingCompletion": 93.4,
+          "complianceIncidents": 14
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 82.6,
+          "turnoverRate": 8.9,
+          "trainingCompletion": 94.2,
+          "complianceIncidents": 12
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 83.1,
+        "turnoverRate": 8.6,
+        "trainingCompletion": 94.8
+      },
+      "nextYear": {
+        "overallScore": 84.5,
+        "turnoverRate": 8.0,
+        "trainingCompletion": 96.0
+      },
+      "confidence": 84.6
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 79.8,
+        "turnoverRate": 11.4,
+        "trainingCompletion": 89.6
+      },
+      "peers": {
+        "overallScore": 81.2,
+        "turnoverRate": 10.2,
+        "trainingCompletion": 92.8
+      },
+      "internal": {
+        "bestPerforming": "wealth-management",
+        "averageScore": 81.8,
+        "improvementTarget": 85.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 93.4,
+    "caveats": [
+      "HR function demonstrates strong employment risk management",
+      "Data privacy controls enhanced following regulatory guidance updates",
+      "Turnover rates improved due to enhanced retention initiatives",
+      "Support operations have lower regulatory focus compared to revenue units"
+    ],
+    "dataQuality": {
+      "completeness": 95.6,
+      "accuracy": 94.2,
+      "timeliness": 93.8
+    }
+  },
+  "quarter": "Q1-2024",
+  "date": "2024-03-31"
+}

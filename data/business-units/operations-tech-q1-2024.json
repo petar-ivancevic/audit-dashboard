@@ -1,0 +1,610 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "operations-tech",
+      "name": "Operations & Technology",
+      "category": "support-operations",
+      "region": "Global",
+      "headcount": 32000,
+      "assets": 25000000000,
+      "riskTier": "high",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 72.88262803823856,
+      "trend": "improving",
+      "benchmark": "needs-improvement"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 73.8,
+        "target": 80.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 76.4,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "cyber-risk-posture",
+        "name": "Cyber Risk Posture",
+        "value": 79.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "warning",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "system-availability",
+        "name": "System Availability",
+        "value": 99.87,
+        "target": 99.9,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "incident-response-time",
+        "name": "Average Incident Response Time",
+        "value": 47.2,
+        "target": 30.0,
+        "unit": "minutes",
+        "status": "critical",
+        "trend": "down",
+        "category": "operational"
+      },
+      {
+        "id": "change-success-rate",
+        "name": "Change Success Rate",
+        "value": 91.4,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "vulnerability-remediation",
+        "name": "Critical Vulnerability Remediation",
+        "value": 85.7,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "security"
+      },
+      {
+        "id": "data-quality-score",
+        "name": "Data Quality Score",
+        "value": 88.9,
+        "target": 92.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "up",
+        "category": "data"
+      },
+      {
+        "id": "backup-success-rate",
+        "name": "Backup Success Rate",
+        "value": 97.8,
+        "target": 99.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "access-control-compliance",
+        "name": "Access Control Compliance",
+        "value": 82.4,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "security"
+      },
+      {
+        "id": "vendor-risk-assessment",
+        "name": "Vendor Risk Assessment Currency",
+        "value": 78.6,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "business-continuity-test",
+        "name": "Business Continuity Test Results",
+        "value": 86.3,
+        "target": 90.0,
+        "unit": "score",
+        "status": "good",
+        "trend": "flat",
+        "category": "risk"
+      },
+      {
+        "id": "training-completion",
+        "name": "Security Training Completion",
+        "value": 92.7,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "good",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "patch-management",
+        "name": "Patch Management Timeliness",
+        "value": 76.8,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "security"
+      },
+      {
+        "id": "capacity-utilization",
+        "name": "Infrastructure Capacity Utilization",
+        "value": 78.4,
+        "target": 75.0,
+        "unit": "percent",
+        "status": "warning",
+        "trend": "up",
+        "category": "operational"
+      }
+    ],
+    "alerts": {
+      "critical": 7,
+      "high": 28,
+      "medium": 52,
+      "low": 104
+    },
+    "trending": {
+      "quarterOverQuarter": 3.7,
+      "yearOverYear": 8.9,
+      "trendingUp": [
+        "Control Maturity",
+        "Cyber Risk Posture",
+        "Data Quality",
+        "Security Training"
+      ],
+      "trendingDown": [
+        "Incident Response Time",
+        "System Availability"
+      ]
+    }
+  },
+  "operationalMetrics": {
+    "systemReliability": {
+      "availability": {
+        "coreSystemsUptime": 99.87,
+        "digitalChannelsUptime": 99.92,
+        "paymentSystemsUptime": 99.95,
+        "dataWarehouseUptime": 99.84
+      },
+      "performance": {
+        "averageResponseTime": 1.23,
+        "peakLoadHandling": 87.4,
+        "throughputCapacity": 94.7
+      },
+      "incidents": {
+        "totalIncidents": 287,
+        "criticalIncidents": 8,
+        "averageResolutionTime": 47.2,
+        "repeatIncidents": 12.3
+      }
+    },
+    "changeManagement": {
+      "changeVolume": {
+        "total": 4567,
+        "emergency": 67,
+        "standard": 3890,
+        "normal": 610
+      },
+      "successRate": {
+        "overall": 91.4,
+        "emergency": 85.1,
+        "standard": 92.8,
+        "normal": 96.7
+      },
+      "rollbackRate": 4.2,
+      "approvalCompliance": 94.8
+    },
+    "securityOperations": {
+      "threatDetection": {
+        "alertsGenerated": 156789,
+        "falsePositiveRate": 76.8,
+        "meanTimeToDetection": 14.7,
+        "meanTimeToResponse": 31.4
+      },
+      "vulnerabilityManagement": {
+        "criticalVulnsIdentified": 234,
+        "criticalVulnsRemediated": 200,
+        "averageRemediationTime": 8.9,
+        "vulnerabilityScore": 7.2
+      },
+      "accessManagement": {
+        "accessReviewsCompleted": 82.4,
+        "privilegedAccountsReviewed": 94.7,
+        "orphanAccountsCleaned": 78.9,
+        "accessViolations": 45
+      }
+    },
+    "dataManagement": {
+      "dataQuality": {
+        "completeness": 94.7,
+        "accuracy": 91.8,
+        "consistency": 89.3,
+        "timeliness": 87.6
+      },
+      "dataGovernance": {
+        "policyCompliance": 86.4,
+        "lineageDocumentation": 78.9,
+        "retentionCompliance": 92.3,
+        "privacyControls": 88.7
+      },
+      "backupRecovery": {
+        "backupSuccessRate": 97.8,
+        "recoveryTestSuccess": 89.4,
+        "rpoCompliance": 94.2,
+        "rtoCompliance": 87.6
+      }
+    }
+  },
+  "riskMetrics": {
+    "cyberRisk": {
+      "threatLandscape": {
+        "phishingAttempts": 45678,
+        "malwareDetections": 1234,
+        "intrusionAttempts": 567,
+        "ddosAttempts": 23
+      },
+      "securityPosture": {
+        "patchCompliance": 76.8,
+        "configurationCompliance": 84.3,
+        "endpointProtection": 96.7,
+        "networkSegmentation": 89.4
+      },
+      "incidentResponse": {
+        "securityIncidents": 67,
+        "dataBreaches": 0,
+        "containmentTime": 2.8,
+        "recoveryTime": 6.4
+      }
+    },
+    "operationalRisk": {
+      "processAutomation": {
+        "automationRate": 67.8,
+        "stp": 89.4,
+        "manualOverrides": 234,
+        "processFailures": 45
+      },
+      "capacityManagement": {
+        "cpuUtilization": 76.8,
+        "memoryUtilization": 82.3,
+        "storageUtilization": 68.9,
+        "networkUtilization": 71.4
+      },
+      "businessContinuity": {
+        "drTestsCompleted": 86.3,
+        "rpoTargetsMet": 94.2,
+        "rtoTargetsMet": 87.6,
+        "planCurrency": 91.8
+      }
+    },
+    "vendorRisk": {
+      "criticalVendors": 156,
+      "assessmentsCompleted": 78.6,
+      "slaCompliance": 92.4,
+      "securityReviews": 84.7,
+      "contractCompliance": 89.3
+    },
+    "complianceRisk": {
+      "regulatoryRequirements": {
+        "gdprCompliance": 88.7,
+        "soxCompliance": 91.4,
+        "pciCompliance": 94.6,
+        "ffiecCompliance": 86.9
+      },
+      "auditFindings": {
+        "openFindings": 18,
+        "overdueFindings": 3,
+        "repeatFindings": 2,
+        "highRiskFindings": 5
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "dataPrivacy": {
+        "gdprRequests": 234,
+        "requestProcessingTime": 18.7,
+        "dataRetentionCompliance": 92.3,
+        "consentManagement": 89.4
+      },
+      "sox": {
+        "controlsTestingPassed": 91.4,
+        "deficienciesRemediated": 87.6,
+        "managementCertification": 100.0,
+        "externalAuditorRating": "Unqualified"
+      },
+      "pci": {
+        "complianceScore": 94.6,
+        "vulnerabilityScans": 98.9,
+        "penetrationTests": 92.3,
+        "compensatingControls": 8
+      },
+      "ffiec": {
+        "cyberMaturityScore": 86.9,
+        "riskAssessmentCurrency": 89.7,
+        "incidentReporting": 96.8,
+        "thirdPartyOversight": 78.6
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 89.04934927223518,
+        "cybersecurity": 95.4,
+        "dataPrivacy": 89.8,
+        "changeManagement": 91.6
+      },
+      "effectiveness": {
+        "testScores": 84.7,
+        "retention": 81.9,
+        "application": 78.4
+      },
+      "specialized": {
+        "securityPersonnel": 97.8,
+        "dataEngineers": 94.3,
+        "systemAdministrators": 91.7
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 89.4,
+        "overdue": 23,
+        "scheduled": 12
+      },
+      "approval": {
+        "timely": 86.7,
+        "documented": 94.8,
+        "authorized": 97.3
+      },
+      "distribution": {
+        "coverage": 91.8,
+        "acknowledgment": 83.54192919500866,
+        "training": 85.6
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 32,
+      "bySeverity": {
+        "critical": 2,
+        "high": 8,
+        "medium": 16,
+        "low": 6
+      },
+      "byCategory": [
+        {
+          "category": "Cyber Security Controls",
+          "count": 9
+        },
+        {
+          "category": "Change Management",
+          "count": 6
+        },
+        {
+          "category": "Data Governance",
+          "count": 5
+        },
+        {
+          "category": "Access Controls",
+          "count": 4
+        },
+        {
+          "category": "Vendor Management",
+          "count": 3
+        },
+        {
+          "category": "Business Continuity",
+          "count": 2
+        },
+        {
+          "category": "Incident Response",
+          "count": 2
+        }
+      ],
+      "status": {
+        "open": 12,
+        "inProgress": 16,
+        "closed": 3,
+        "overdue": 3
+      }
+    },
+    "findings": [
+      {
+        "id": "OT-2024-001",
+        "title": "Privileged Access Management Controls",
+        "description": "Privileged access reviews not consistently performed within required timeframes",
+        "severity": "critical",
+        "category": "Access Controls",
+        "status": "in-progress",
+        "dueDate": "2024-11-15",
+        "owner": "Identity and Access Management Director",
+        "businessUnit": "operations-tech"
+      },
+      {
+        "id": "OT-2024-002",
+        "title": "Critical Vulnerability Remediation",
+        "description": "Critical security vulnerabilities exceeding 30-day remediation SLA",
+        "severity": "critical",
+        "category": "Cyber Security Controls",
+        "status": "overdue",
+        "dueDate": "2024-10-31",
+        "owner": "Chief Information Security Officer",
+        "businessUnit": "operations-tech"
+      },
+      {
+        "id": "OT-2024-003",
+        "title": "Change Management Documentation",
+        "description": "Emergency change documentation incomplete for 15% of changes",
+        "severity": "high",
+        "category": "Change Management",
+        "status": "in-progress",
+        "dueDate": "2024-12-31",
+        "owner": "Change Control Manager",
+        "businessUnit": "operations-tech"
+      },
+      {
+        "id": "OT-2024-004",
+        "title": "Data Lineage Documentation",
+        "description": "Critical data flows lack comprehensive lineage documentation",
+        "severity": "medium",
+        "category": "Data Governance",
+        "status": "open",
+        "dueDate": "2025-02-28",
+        "owner": "Chief Data Officer",
+        "businessUnit": "operations-tech"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 24,
+        "inDevelopment": 6,
+        "pending": 1
+      },
+      "progress": {
+        "onTrack": 67.7,
+        "delayed": 25.8,
+        "completed": 6.5
+      },
+      "effectiveness": {
+        "validated": 78.4,
+        "repeat": 12.9,
+        "sustained": 83.9
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 86.8,
+        "processes": 84.2,
+        "systems": 91.7
+      },
+      "results": {
+        "pass": 78.68359736804648,
+        "fail": 12.9,
+        "exception": 5.5
+      },
+      "methodology": {
+        "sampling": 58.7,
+        "walkthrough": 28.4,
+        "reperformance": 12.9
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 68.4,
+          "systemAvailability": 99.82,
+          "incidentCount": 341,
+          "securityAlerts": 189456
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 71.6,
+          "systemAvailability": 99.85,
+          "incidentCount": 298,
+          "securityAlerts": 167234
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 73.8,
+          "systemAvailability": 99.87,
+          "incidentCount": 287,
+          "securityAlerts": 156789
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 76.2,
+        "systemAvailability": 99.89,
+        "incidentCount": 275
+      },
+      "nextYear": {
+        "overallScore": 82.5,
+        "systemAvailability": 99.93,
+        "incidentCount": 1000
+      },
+      "confidence": 72.4
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 76.8,
+        "systemAvailability": 99.91,
+        "securityPosture": 81.4
+      },
+      "peers": {
+        "overallScore": 78.9,
+        "systemAvailability": 99.89,
+        "securityPosture": 83.7
+      },
+      "internal": {
+        "lowestPerforming": "operations-tech",
+        "averageScore": 76.9,
+        "improvementTarget": 85.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 89.4,
+    "caveats": [
+      "Q3 2024 incident response times impacted by major system upgrade activities",
+      "Vulnerability remediation metrics affected by discovery of new zero-day exploits",
+      "Change management improvements in progress following process automation implementation",
+      "Third-party vendor assessment backlog being addressed through enhanced resourcing",
+      "System availability includes planned maintenance windows for infrastructure upgrades"
+    ],
+    "dataQuality": {
+      "completeness": 91.7,
+      "accuracy": 89.8,
+      "timeliness": 94.2
+    }
+  },
+  "quarter": "Q1-2024",
+  "date": "2024-03-31"
+}

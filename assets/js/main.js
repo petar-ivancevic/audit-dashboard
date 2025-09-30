@@ -1545,17 +1545,33 @@
 
             // Reload data for new period
             const data = await DataLoader.loadDataByPeriod(period);
-            state.enterpriseData = data;
+            state.enterpriseData = data.enterprise;
+            state.businessUnitsData = data.businessUnits;
 
-            // Reinitialize current view
+            // Clear charts loaded flags to force recreation
+            document.querySelectorAll('[data-charts-loaded]').forEach(view => {
+                view.dataset.chartsLoaded = 'false';
+            });
+
+            // Reinitialize all views with new data
             initializeExecutiveView();
+            initializeBusinessUnitsView();
+            initializeRiskAnalysisView();
+            initializeComplianceView();
+            initializeFindingsView();
+            initializeTrendsView();
+
+            // Update heat map
+            updateHeatMap(document.getElementById('riskCategory')?.value || 'overallRisk');
 
             hideLoading();
+
+            console.log(`[Main] Successfully loaded data for ${period}`);
 
         } catch (error) {
             console.error('[Main] Error changing period:', error);
             hideLoading();
-            showError('Failed to load data for the selected period.');
+            showError('Failed to load data for the selected period. Please try again.');
         }
     }
 

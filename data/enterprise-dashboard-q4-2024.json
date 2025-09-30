@@ -1,0 +1,466 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": "Q4-2024",
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "enterpriseSummary": {
+    "totalEmployees": 220000,
+    "totalAssets": 2800000000000,
+    "businessUnitsReported": 4,
+    "auditCoverage": 87.4,
+    "overallRiskRating": "Satisfactory"
+  },
+  "executiveDashboard": {
+    "enterpriseRiskScore": {
+      "current": 81.8,
+      "target": 85.0,
+      "trend": "improving",
+      "benchmark": "good"
+    },
+    "keyMetrics": [
+      {
+        "metric": "Overall Control Effectiveness",
+        "value": 85.5,
+        "target": 85.0,
+        "status": "excellent",
+        "trend": "up"
+      },
+      {
+        "metric": "Regulatory Compliance Score",
+        "value": 92.4,
+        "target": 90.0,
+        "status": "excellent",
+        "trend": "up"
+      },
+      {
+        "metric": "Critical Findings Resolution",
+        "value": 78.3,
+        "target": 85.0,
+        "status": "warning",
+        "trend": "up"
+      },
+      {
+        "metric": "Employee Training Completion",
+        "value": 95.9,
+        "target": 95.0,
+        "status": "excellent",
+        "trend": "flat"
+      },
+      {
+        "metric": "Third Party Risk Assessment",
+        "value": 83.4,
+        "target": 85.0,
+        "status": "good",
+        "trend": "up"
+      }
+    ],
+    "riskHeatMap": [
+      {
+        "businessUnit": "Consumer Banking & Lending",
+        "riskScore": 78.5,
+        "keyRisks": [
+          "Credit Risk",
+          "Operational Risk",
+          "AML Risk"
+        ],
+        "trend": "improving",
+        "priority": "medium"
+      },
+      {
+        "businessUnit": "Commercial Banking",
+        "riskScore": 85.2,
+        "keyRisks": [
+          "Credit Risk",
+          "Sanctions Risk",
+          "Market Risk"
+        ],
+        "trend": "stable",
+        "priority": "low"
+      },
+      {
+        "businessUnit": "Investment Banking & Capital Markets",
+        "riskScore": 89.7,
+        "keyRisks": [
+          "Market Risk",
+          "Operational Risk",
+          "Conduct Risk"
+        ],
+        "trend": "stable",
+        "priority": "low"
+      },
+      {
+        "businessUnit": "Operations & Technology",
+        "riskScore": 73.8,
+        "keyRisks": [
+          "Cyber Risk",
+          "Operational Risk",
+          "Technology Risk"
+        ],
+        "trend": "improving",
+        "priority": "high"
+      }
+    ],
+    "alerts": {
+      "critical": 11,
+      "high": 47,
+      "medium": 116,
+      "low": 189
+    }
+  },
+  "businessUnitPerformance": [
+    {
+      "id": "consumer-banking",
+      "name": "Consumer Banking & Lending",
+      "overallScore": 78.5,
+      "category": "core-banking",
+      "employees": 45000,
+      "assets": 950000000000,
+      "keyMetrics": {
+        "amlEffectiveness": 78.4,
+        "kycCompliance": 94.6,
+        "fraudLossRate": 0.048,
+        "trainingCompletion": 94.8,
+        "auditFindings": 23
+      },
+      "trending": {
+        "direction": "improving",
+        "qoqChange": 2.8,
+        "yoyChange": 5.4
+      },
+      "riskProfile": "medium-high"
+    },
+    {
+      "id": "commercial-banking",
+      "name": "Commercial Banking",
+      "overallScore": 85.2,
+      "category": "core-banking",
+      "employees": 18500,
+      "assets": 780000000000,
+      "keyMetrics": {
+        "amlEffectiveness": 86.3,
+        "kycCompliance": 97.8,
+        "sanctionsCompliance": 98.9,
+        "trainingCompletion": 97.3,
+        "auditFindings": 12
+      },
+      "trending": {
+        "direction": "stable",
+        "qoqChange": 1.4,
+        "yoyChange": 7.8
+      },
+      "riskProfile": "medium"
+    },
+    {
+      "id": "investment-banking",
+      "name": "Investment Banking & Capital Markets",
+      "overallScore": 89.7,
+      "category": "core-banking",
+      "employees": 12000,
+      "assets": 420000000000,
+      "keyMetrics": {
+        "marketRiskControls": 96.3,
+        "tradingSurveillance": 99.2,
+        "complianceScore": 96.4,
+        "trainingCompletion": 98.9,
+        "auditFindings": 9
+      },
+      "trending": {
+        "direction": "stable",
+        "qoqChange": 0.8,
+        "yoyChange": 4.2
+      },
+      "riskProfile": "medium"
+    },
+    {
+      "id": "operations-tech",
+      "name": "Operations & Technology",
+      "overallScore": 73.8,
+      "category": "support-operations",
+      "employees": 32000,
+      "assets": 25000000000,
+      "keyMetrics": {
+        "systemAvailability": 99.87,
+        "cyberPosture": 79.3,
+        "changeSuccessRate": 91.4,
+        "dataQuality": 88.9,
+        "auditFindings": 31
+      },
+      "trending": {
+        "direction": "improving",
+        "qoqChange": 3.7,
+        "yoyChange": 8.9
+      },
+      "riskProfile": "high"
+    }
+  ],
+  "complianceOverview": {
+    "regulatoryExaminations": {
+      "total": 8,
+      "satisfactory": 6,
+      "needsImprovement": 2,
+      "deficient": 0,
+      "averageRating": 3.2
+    },
+    "trainingMetrics": {
+      "overallCompletion": 95.9,
+      "amlTraining": 96.8,
+      "cyberTraining": 94.1,
+      "ethicsTraining": 97.2,
+      "specializedTraining": 93.8
+    },
+    "policyManagement": {
+      "policiesCurrent": 92.8,
+      "policiesOverdue": 43,
+      "approvalTimeliness": 89.7,
+      "distributionCoverage": 94.6
+    },
+    "regulatoryReporting": {
+      "filingAccuracy": 97.4,
+      "filingTimeliness": 98.1,
+      "regulatorFeedback": "Satisfactory",
+      "correctionsRequired": 12
+    }
+  },
+  "auditFindings": {
+    "enterpriseSummary": {
+      "totalFindings": 75,
+      "bySeverity": {
+        "critical": 3,
+        "high": 15,
+        "medium": 39,
+        "low": 18
+      },
+      "byBusinessUnit": {
+        "consumer-banking": 23,
+        "commercial-banking": 12,
+        "investment-banking": 9,
+        "operations-tech": 31
+      },
+      "status": {
+        "open": 25,
+        "inProgress": 41,
+        "closed": 9,
+        "overdue": 5
+      }
+    },
+    "trending": {
+      "newFindings": 18,
+      "closedFindings": 9,
+      "overdueFindings": 5,
+      "repeatFindings": 7,
+      "findingsByCategory": [
+        {
+          "category": "Cyber Security Controls",
+          "count": 14,
+          "trend": "increasing"
+        },
+        {
+          "category": "AML Transaction Monitoring",
+          "count": 12,
+          "trend": "stable"
+        },
+        {
+          "category": "KYC/CDD Processes",
+          "count": 10,
+          "trend": "decreasing"
+        },
+        {
+          "category": "Data Quality & Governance",
+          "count": 9,
+          "trend": "stable"
+        },
+        {
+          "category": "Change Management",
+          "count": 8,
+          "trend": "increasing"
+        },
+        {
+          "category": "Model Risk Management",
+          "count": 7,
+          "trend": "stable"
+        },
+        {
+          "category": "Third Party Risk",
+          "count": 6,
+          "trend": "stable"
+        },
+        {
+          "category": "Other",
+          "count": 9,
+          "trend": "stable"
+        }
+      ]
+    },
+    "remediation": {
+      "onTrack": 76.3,
+      "delayed": 18.7,
+      "completed": 5.0,
+      "averageRemediationTime": 127,
+      "validationSuccessRate": 87.8
+    }
+  },
+  "riskMetrics": {
+    "operationalRisk": {
+      "totalLossEvents": 156,
+      "totalLosses": 45800000,
+      "averageLoss": 293590,
+      "keyRiskIndicators": {
+        "processFailures": 234,
+        "systemDowntime": 0.13,
+        "errorRates": 0.029,
+        "customerComplaints": 1567
+      }
+    },
+    "creditRisk": {
+      "portfolioVar": 234.7,
+      "concentrationRisk": 18.9,
+      "expectedLoss": 289.4,
+      "provisionCoverage": 156.8
+    },
+    "marketRisk": {
+      "tradingVar": 45.7,
+      "interestRateRisk": 123.4,
+      "fxRisk": 67.8,
+      "equityRisk": 89.2
+    },
+    "cyberRisk": {
+      "securityIncidents": 289,
+      "phishingAttempts": 156789,
+      "vulnerabilities": 1234,
+      "patchCompliance": 84.7
+    }
+  },
+  "benchmarking": {
+    "industryComparison": {
+      "overallScore": {
+        "enterprise": 81.8,
+        "industryAverage": 78.4,
+        "topQuartile": 87.2,
+        "ranking": "Above Average"
+      },
+      "keyMetrics": {
+        "amlEffectiveness": {
+          "enterprise": 82.5,
+          "industry": 79.3,
+          "position": "Above Average"
+        },
+        "cyberMaturity": {
+          "enterprise": 79.3,
+          "industry": 82.1,
+          "position": "Below Average"
+        },
+        "complianceScore": {
+          "enterprise": 92.4,
+          "industry": 88.7,
+          "position": "Above Average"
+        }
+      }
+    },
+    "internalBenchmarks": {
+      "bestPerformingUnit": "Investment Banking & Capital Markets",
+      "lowestPerformingUnit": "Operations & Technology",
+      "improvementOpportunity": 15.9,
+      "consistencyScore": 78.6
+    }
+  },
+  "forecasting": {
+    "nextQuarter": {
+      "enterpriseScore": 83.4,
+      "confidence": 82.7,
+      "keyDrivers": [
+        "Operations & Technology improvements",
+        "Consumer Banking AML enhancements",
+        "Cybersecurity investments"
+      ]
+    },
+    "nextYear": {
+      "enterpriseScore": 87.2,
+      "confidence": 76.3,
+      "keyDrivers": [
+        "Technology modernization completion",
+        "Enhanced risk management capabilities",
+        "Regulatory compliance optimization"
+      ]
+    }
+  },
+  "actionableInsights": [
+    {
+      "priority": "high",
+      "category": "Cybersecurity",
+      "finding": "Operations & Technology unit showing elevated cyber risk metrics",
+      "recommendation": "Accelerate vulnerability remediation and incident response improvements",
+      "impactedUnits": [
+        "operations-tech"
+      ],
+      "estimatedCompletion": "Q1 2025"
+    },
+    {
+      "priority": "medium",
+      "category": "AML Effectiveness",
+      "finding": "Consumer Banking false positive rates above industry benchmarks",
+      "recommendation": "Implement ML-driven alert tuning and model recalibration",
+      "impactedUnits": [
+        "consumer-banking"
+      ],
+      "estimatedCompletion": "Q2 2025"
+    },
+    {
+      "priority": "medium",
+      "category": "Control Testing",
+      "finding": "Cross-unit control testing methodologies inconsistent",
+      "recommendation": "Standardize testing approaches and quality assurance procedures",
+      "impactedUnits": [
+        "all"
+      ],
+      "estimatedCompletion": "Q4 2024"
+    },
+    {
+      "priority": "low",
+      "category": "Training",
+      "finding": "Specialized training completion rates vary significantly by unit",
+      "recommendation": "Implement centralized training management and tracking system",
+      "impactedUnits": [
+        "operations-tech",
+        "consumer-banking"
+      ],
+      "estimatedCompletion": "Q1 2025"
+    }
+  ],
+  "executiveSummary": {
+    "overallAssessment": "The enterprise maintains a satisfactory risk posture with strong performance in core banking operations and regulatory compliance. Investment Banking demonstrates excellent controls maturity, while Operations & Technology requires focused attention on cybersecurity and operational resilience. Consumer Banking shows steady improvement in AML effectiveness but needs continued focus on false positive reduction.",
+    "keyStrengths": [
+      "Strong regulatory compliance across all business units",
+      "Excellent market risk management in Investment Banking",
+      "Improving trend in most business units",
+      "High employee training completion rates"
+    ],
+    "primaryChallenges": [
+      "Cybersecurity posture in Operations & Technology",
+      "AML false positive rates in Consumer Banking",
+      "Incident response times across multiple units",
+      "Third party risk assessment standardization"
+    ],
+    "strategicRecommendations": [
+      "Prioritize cybersecurity investments and talent acquisition",
+      "Implement enterprise-wide AML optimization program",
+      "Enhance cross-unit knowledge sharing and best practices",
+      "Accelerate technology modernization initiatives"
+    ]
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 91.7,
+    "dataQuality": {
+      "completeness": 96.4,
+      "accuracy": 94.8,
+      "timeliness": 93.7
+    },
+    "caveats": [
+      "Data represents 4 of 15 business units for demonstration purposes",
+      "Benchmarking data based on industry surveys and peer analysis",
+      "Forecasting models incorporate seasonal adjustments and strategic initiatives",
+      "Risk scores calculated using enterprise risk appetite framework"
+    ]
+  },
+  "generatedDate": "2024-12-31"
+}

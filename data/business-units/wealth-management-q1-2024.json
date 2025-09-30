@@ -1,0 +1,742 @@
+{
+  "organization": "Global Financial Services Corporation",
+  "reportingPeriod": {
+    "quarter": 3,
+    "year": 2024,
+    "asOfDate": "2024-09-30"
+  },
+  "generatedAt": "2024-10-15T09:30:00Z",
+  "businessUnits": [
+    {
+      "id": "wealth-management",
+      "name": "Wealth & Investment Management",
+      "category": "core-banking",
+      "region": "Global",
+      "headcount": 8200,
+      "assets": 650000000000,
+      "riskTier": "medium",
+      "regulatoryFocus": true
+    }
+  ],
+  "executiveScorecard": {
+    "overallScore": {
+      "value": 85.55797437629224,
+      "trend": "stable",
+      "benchmark": "excellent"
+    },
+    "kpis": [
+      {
+        "id": "overall-risk-score",
+        "name": "Overall Risk Score",
+        "value": 87.3,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "control-maturity",
+        "name": "Control Maturity Rating",
+        "value": 91.2,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "regulatory-readiness",
+        "name": "Regulatory Readiness Index",
+        "value": 93.8,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "fiduciary-risk-score",
+        "name": "Fiduciary Risk Score",
+        "value": 94.7,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "executive"
+      },
+      {
+        "id": "audit-opinion-trend",
+        "name": "Audit Opinion Trend",
+        "value": 4.1,
+        "target": 3.5,
+        "unit": "rating",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "executive"
+      },
+      {
+        "id": "training-completion",
+        "name": "Training Completion Rate",
+        "value": 97.8,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "up",
+        "category": "compliance"
+      },
+      {
+        "id": "policy-currency",
+        "name": "Policy Currency Rate",
+        "value": 96.2,
+        "target": 95.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "compliance"
+      },
+      {
+        "id": "control-testing-pass",
+        "name": "Control Testing Pass Rate",
+        "value": 94.7,
+        "target": 90.0,
+        "unit": "percent",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "controls"
+      },
+      {
+        "id": "exception-mgmt",
+        "name": "Exception Management Score",
+        "value": 92.1,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "controls"
+      },
+      {
+        "id": "incident-response",
+        "name": "Incident Response Effectiveness",
+        "value": 91.8,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "data-quality",
+        "name": "Data Quality Score",
+        "value": 89.4,
+        "target": 88.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "cyber-posture",
+        "name": "Cyber Risk Posture",
+        "value": 88.6,
+        "target": 85.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "operational"
+      },
+      {
+        "id": "vendor-risk-score",
+        "name": "Third Party Risk Score",
+        "value": 86.3,
+        "target": 80.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      },
+      {
+        "id": "investment-risk-score",
+        "name": "Investment Risk Management Score",
+        "value": 93.5,
+        "target": 90.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "up",
+        "category": "risk"
+      },
+      {
+        "id": "client-satisfaction",
+        "name": "Client Satisfaction Score",
+        "value": 91.7,
+        "target": 88.0,
+        "unit": "score",
+        "status": "excellent",
+        "trend": "flat",
+        "category": "operational"
+      }
+    ],
+    "alerts": {
+      "critical": 0,
+      "high": 3,
+      "medium": 11,
+      "low": 17
+    },
+    "trending": {
+      "quarterOverQuarter": 0.8,
+      "yearOverYear": 3.6,
+      "trendingUp": [
+        "Control Maturity",
+        "Fiduciary Risk",
+        "Investment Risk",
+        "Training"
+      ],
+      "trendingDown": []
+    }
+  },
+  "operationalMetrics": {
+    "amlMonitoring": {
+      "alerts": {
+        "total": 3456,
+        "falsePositiveRate": 72.8,
+        "averageDispositionTime": 3.1,
+        "backlog": 67
+      },
+      "scenarios": [
+        {
+          "name": "Large Cash Deposits",
+          "alertVolume": 421,
+          "falsePositiveRate": 68.4,
+          "effectiveness": 89.6
+        },
+        {
+          "name": "Unusual Wire Activity",
+          "alertVolume": 867,
+          "falsePositiveRate": 74.2,
+          "effectiveness": 87.3
+        },
+        {
+          "name": "High-Risk Geography",
+          "alertVolume": 534,
+          "falsePositiveRate": 61.7,
+          "effectiveness": 94.8
+        },
+        {
+          "name": "Account Funding Patterns",
+          "alertVolume": 623,
+          "falsePositiveRate": 76.3,
+          "effectiveness": 85.2
+        },
+        {
+          "name": "Cross-Border Transactions",
+          "alertVolume": 789,
+          "falsePositiveRate": 69.8,
+          "effectiveness": 91.4
+        },
+        {
+          "name": "Alternative Investment Monitoring",
+          "alertVolume": 222,
+          "falsePositiveRate": 58.6,
+          "effectiveness": 96.3
+        }
+      ],
+      "effectiveness": {
+        "sarConversionRate": 8.7,
+        "modelAccuracy": 87.20040242499388,
+        "coverageRatio": 99.2
+      }
+    },
+    "investigations": {
+      "caseLoad": {
+        "active": 89,
+        "closed": 412,
+        "escalated": 23,
+        "aging": {
+          "under30Days": 67,
+          "days30to60": 18,
+          "days60to90": 3,
+          "over90Days": 1
+        }
+      },
+      "cycleTime": {
+        "average": 8.9,
+        "median": 7.2,
+        "target": 10.0
+      },
+      "quality": {
+        "qaScore": 92.4,
+        "reworkRate": 3.8,
+        "documentationScore": 94.7
+      },
+      "staffing": {
+        "analysts": 28,
+        "seniors": 9,
+        "managers": 3,
+        "utilizationRate": 84.6
+      }
+    },
+    "caseManagement": {
+      "workflow": {
+        "automated": 78.4,
+        "manual": 15.3,
+        "hybrid": 6.3
+      },
+      "slaCompliance": {
+        "overall": 96.8,
+        "byPriority": {
+          "critical": 100.0,
+          "high": 98.4,
+          "medium": 96.2,
+          "low": 94.8
+        }
+      },
+      "escalations": {
+        "total": 23,
+        "reasons": [
+          {
+            "reason": "Complex Investigation Required",
+            "count": 12,
+            "percentage": 52.2
+          },
+          {
+            "reason": "Regulatory Inquiry",
+            "count": 6,
+            "percentage": 26.1
+          },
+          {
+            "reason": "Legal Review Needed",
+            "count": 3,
+            "percentage": 13.0
+          },
+          {
+            "reason": "Senior Management Decision",
+            "count": 2,
+            "percentage": 8.7
+          }
+        ],
+        "resolutionTime": 4.2
+      }
+    },
+    "productivity": {
+      "casesPerAnalyst": 14.7,
+      "alertsPerAnalyst": 123.4,
+      "automationRate": 78.4
+    }
+  },
+  "riskMetrics": {
+    "kycCompliance": {
+      "completion": {
+        "cip": 99.4,
+        "cdd": 98.7,
+        "edd": 97.8
+      },
+      "quality": {
+        "documentationScore": 96.2,
+        "accuracyRate": 97.8,
+        "deficiencyRate": 1.4
+      },
+      "periodicReviews": {
+        "onTime": 96.3,
+        "pastDue": 87,
+        "riskTierCompliance": {
+          "high": 98.9,
+          "medium": 97.2,
+          "low": 94.8
+        }
+      },
+      "riskRatings": {
+        "distribution": {
+          "high": 24.7,
+          "medium": 51.3,
+          "low": 24.0
+        },
+        "changes": 456,
+        "accuracy": 96.8
+      }
+    },
+    "sanctionsScreening": {
+      "coverage": {
+        "customers": 100.0,
+        "transactions": 96.63522425795144,
+        "wires": 100.0,
+        "vendors": 98.7
+      },
+      "hitRates": {
+        "truePositives": 0.087,
+        "falsePositives": 1.23,
+        "accuracy": 96.4
+      },
+      "processing": {
+        "averageResponseTime": 0.14,
+        "slaCompliance": 98.9,
+        "escalations": 34
+      },
+      "listManagement": {
+        "updateFrequency": "Real-time",
+        "latency": 0.03,
+        "coverage": 100.0
+      }
+    },
+    "fraudPrevention": {
+      "losses": {
+        "total": 1280000,
+        "rate": 0.012,
+        "recovery": 67.8
+      },
+      "detection": {
+        "modelAccuracy": 91.7,
+        "timeToDetection": 0.8,
+        "alertVolume": 8934
+      },
+      "prevention": {
+        "blockedTransactions": 4567,
+        "preventedLoss": 23400000,
+        "falsePositives": 6.8
+      },
+      "customer": {
+        "impactScore": 3.2,
+        "complaintRate": 0.004,
+        "resolutionTime": 0.6
+      }
+    },
+    "modelRisk": {
+      "inventory": {
+        "total": 23,
+        "byTier": {
+          "tier1": 6,
+          "tier2": 11,
+          "tier3": 6
+        },
+        "documentation": 98.3
+      },
+      "validation": {
+        "onTime": 95.7,
+        "overdue": 1,
+        "quality": 94.6
+      },
+      "monitoring": {
+        "performanceDrift": 0.8,
+        "dataQuality": 96.4,
+        "alerting": 94.8
+      },
+      "governance": {
+        "committee": 97.3,
+        "policies": 98.6,
+        "training": 96.4
+      }
+    },
+    "investmentRisk": {
+      "portfolioManagement": {
+        "policyCompliance": 98.4,
+        "investmentGuidelines": 97.8,
+        "concentrationLimits": 96.3
+      },
+      "fiduciaryDuties": {
+        "suitabilityReviews": 98.9,
+        "bestExecution": 97.6,
+        "conflictOfInterest": 99.2
+      },
+      "alternativeInvestments": {
+        "dueDiligence": 96.7,
+        "valuation": 94.8,
+        "liquidityRisk": 93.6
+      }
+    }
+  },
+  "complianceMetrics": {
+    "regulatory": {
+      "sarFiling": {
+        "volume": 196,
+        "timeliness": 94.92359710437395,
+        "quality": 93.60592683406145,
+        "categories": [
+          {
+            "category": "Suspicious Wire Transfers",
+            "count": 67,
+            "percentage": 37.6
+          },
+          {
+            "category": "Money Laundering",
+            "count": 45,
+            "percentage": 25.3
+          },
+          {
+            "category": "Tax Evasion",
+            "count": 34,
+            "percentage": 19.1
+          },
+          {
+            "category": "Identity Theft",
+            "count": 18,
+            "percentage": 10.1
+          },
+          {
+            "category": "Other",
+            "count": 14,
+            "percentage": 7.9
+          }
+        ]
+      },
+      "ctrReporting": {
+        "volume": 4567,
+        "timeliness": 99.6,
+        "accuracy": 98.9,
+        "exemptions": 1234
+      },
+      "examination": {
+        "lastDate": "2024-03-12",
+        "rating": "satisfactory",
+        "findings": 2,
+        "mra": 0
+      },
+      "consent": {
+        "active": false,
+        "compliance": 0,
+        "requirements": 0
+      }
+    },
+    "training": {
+      "completion": {
+        "overall": 93.00555211678734,
+        "aml": 98.6,
+        "fraud": 97.2,
+        "sanctions": 98.9
+      },
+      "effectiveness": {
+        "testScores": 94.3,
+        "retention": 92.7,
+        "application": 91.6
+      },
+      "currency": {
+        "upToDate": 96.8,
+        "renewal": 95.4,
+        "specialized": 97.6
+      },
+      "specialized": {
+        "investigators": 99.3,
+        "managers": 98.7,
+        "executives": 97.8
+      }
+    },
+    "policy": {
+      "currency": {
+        "upToDate": 96.2,
+        "overdue": 3,
+        "scheduled": 5
+      },
+      "approval": {
+        "timely": 94.8,
+        "documented": 98.9,
+        "authorized": 100.0
+      },
+      "distribution": {
+        "coverage": 97.6,
+        "acknowledgment": 91.35416792352369,
+        "training": 94.8
+      },
+      "exceptions": {
+        "total": 34,
+        "approved": 32,
+        "expired": 1
+      }
+    },
+    "reporting": {
+      "internal": {
+        "timeliness": 96.8,
+        "accuracy": 97.4,
+        "completeness": 95.6
+      },
+      "regulatory": {
+        "timeliness": 98.9,
+        "accuracy": 99.1,
+        "corrections": 2
+      },
+      "board": {
+        "frequency": "Quarterly",
+        "quality": 96.4,
+        "actionItems": 4
+      },
+      "quality": {
+        "dataIntegrity": 96.8,
+        "lineage": 94.7,
+        "controls": 95.3
+      }
+    }
+  },
+  "auditFindings": {
+    "summary": {
+      "total": 7,
+      "bySeverity": {
+        "critical": 0,
+        "high": 1,
+        "medium": 4,
+        "low": 2
+      },
+      "byCategory": [
+        {
+          "category": "Investment Risk Management",
+          "count": 2
+        },
+        {
+          "category": "Alternative Investment Controls",
+          "count": 2
+        },
+        {
+          "category": "Data Quality & Governance",
+          "count": 1
+        },
+        {
+          "category": "Third Party Risk",
+          "count": 1
+        },
+        {
+          "category": "Technology Controls",
+          "count": 1
+        }
+      ],
+      "status": {
+        "open": 2,
+        "inProgress": 4,
+        "closed": 1,
+        "overdue": 0
+      }
+    },
+    "findings": [
+      {
+        "id": "WM-2024-001",
+        "title": "Alternative Investment Valuation Controls",
+        "description": "Enhanced controls needed for private equity and hedge fund valuation oversight",
+        "severity": "high",
+        "category": "Investment Risk Management",
+        "status": "in-progress",
+        "dueDate": "2024-12-15",
+        "owner": "Investment Risk Manager",
+        "businessUnit": "wealth-management"
+      },
+      {
+        "id": "WM-2024-002",
+        "title": "Third Party Manager Due Diligence",
+        "description": "Standardization of due diligence processes for external investment managers",
+        "severity": "medium",
+        "category": "Third Party Risk",
+        "status": "in-progress",
+        "dueDate": "2025-01-31",
+        "owner": "Due Diligence Team Lead",
+        "businessUnit": "wealth-management"
+      }
+    ],
+    "remediation": {
+      "plans": {
+        "approved": 6,
+        "inDevelopment": 1,
+        "pending": 0
+      },
+      "progress": {
+        "onTrack": 85.7,
+        "delayed": 0.0,
+        "completed": 14.3
+      },
+      "effectiveness": {
+        "validated": 94.3,
+        "repeat": 0.0,
+        "sustained": 100.0
+      }
+    },
+    "testing": {
+      "coverage": {
+        "controls": 96.8,
+        "processes": 97.4,
+        "systems": 94.2
+      },
+      "results": {
+        "pass": 92.5979346826143,
+        "fail": 3.8,
+        "exception": 1.5
+      },
+      "methodology": {
+        "sampling": 58.4,
+        "walkthrough": 28.7,
+        "reperformance": 12.9
+      }
+    }
+  },
+  "trends": {
+    "historical": [
+      {
+        "period": "Q1 2024",
+        "metrics": {
+          "overallScore": 86.1,
+          "alertVolume": 3234,
+          "falsePositiveRate": 74.8,
+          "sarFilings": 156
+        }
+      },
+      {
+        "period": "Q2 2024",
+        "metrics": {
+          "overallScore": 86.9,
+          "alertVolume": 3342,
+          "falsePositiveRate": 73.6,
+          "sarFilings": 167
+        }
+      },
+      {
+        "period": "Q3 2024",
+        "metrics": {
+          "overallScore": 87.3,
+          "alertVolume": 3456,
+          "falsePositiveRate": 72.8,
+          "sarFilings": 178
+        }
+      }
+    ],
+    "forecasts": {
+      "nextQuarter": {
+        "overallScore": 87.8,
+        "alertVolume": 3580,
+        "falsePositiveRate": 71.5
+      },
+      "nextYear": {
+        "overallScore": 89.2,
+        "alertVolume": 14800,
+        "falsePositiveRate": 68.0
+      },
+      "confidence": 87.6
+    },
+    "benchmarks": {
+      "industry": {
+        "overallScore": 83.4,
+        "falsePositiveRate": 76.8,
+        "trainingCompletion": 94.2
+      },
+      "peers": {
+        "overallScore": 85.7,
+        "falsePositiveRate": 74.3,
+        "trainingCompletion": 96.1
+      },
+      "internal": {
+        "bestPerforming": "wealth-management",
+        "averageScore": 81.8,
+        "improvementTarget": 90.0
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "source": "Enterprise Audit Data Warehouse",
+    "confidence": 97.2,
+    "caveats": [
+      "Wealth management demonstrates best-in-class controls maturity",
+      "High-net-worth client base requires enhanced due diligence standards",
+      "Alternative investment oversight continues to be area of regulatory focus",
+      "Client satisfaction scores reflect premium service model"
+    ],
+    "dataQuality": {
+      "completeness": 98.4,
+      "accuracy": 97.6,
+      "timeliness": 96.8
+    }
+  },
+  "quarter": "Q1-2024",
+  "date": "2024-03-31"
+}
